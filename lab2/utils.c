@@ -4,7 +4,8 @@
 
 int(util_get_LSB)(uint16_t val, uint8_t *lsb) {
   /* To be implemented by the students */
-  printf("%s is not yet implemented!\n", __func__);
+  
+  lsb = val & 0xff; 
 
   return 1;
 }
