@@ -1,0 +1,25 @@
+{
+    "files.associations": {
+        "algorithm": "c",
+        "chrono": "c",
+        "complex": "c",
+        "functional": "c",
+        "optional": "c",
+        "system_error": "c",
+        "type_traits": "c",
+        "xlocmon": "c",
+        "xtr1common": "c",
+        "xutility": "c",
+        "__bit_reference": "c",
+        "__functional_base": "c",
+        "atomic": "c",
+        "bitset": "c",
+        "iterator": "c",
+        "limits": "c",
+        "locale": "c",
+        "memory": "c",
+        "ratio": "c",
+        "tuple": "c",
+        "vector": "c"
+    }
+}

@@ -5,21 +5,40 @@
 int(util_get_LSB)(uint16_t val, uint8_t *lsb) {
   /* To be implemented by the students */
   
-  lsb = val & 0xff; 
+  if(val == NULL) {
+    return 1;
+  }
 
-  return 1;
+  *lsb = val;
+
+  return 0;
 }
 
 int(util_get_MSB)(uint16_t val, uint8_t *msb) {
   /* To be implemented by the students */
-  printf("%s is not yet implemented!\n", __func__);
+  if(val == NULL) {
+    return 1;
+  }
 
-  return 1;
+  *msb = val >> 8;
+
+  return 0;
 }
 
 int (util_sys_inb)(int port, uint8_t *value) {
-  /* To be implemented by the students */
-  printf("%s is not yet implemented!\n", __func__);
+  if(value == NULL){
+    printf("NUll pointer");
+    return 1;
+  }
 
-  return 1;
+  uint32_t temp; 
+
+  if(sys_inb(port, &temp)){
+    printf("error sys_inb");
+    return 1;
+  }
+
+  *value = temp;
+
+  return 0;
 }
