@@ -5,7 +5,7 @@
 int(util_get_LSB)(uint16_t val, uint8_t *lsb) {
   /* To be implemented by the students */
   
-  if(val == NULL) {
+  if(lsb == NULL) {
     return 1;
   }
 
@@ -15,8 +15,7 @@ int(util_get_LSB)(uint16_t val, uint8_t *lsb) {
 }
 
 int(util_get_MSB)(uint16_t val, uint8_t *msb) {
-  /* To be implemented by the students */
-  if(val == NULL) {
+  if(msb == NULL) {
     return 1;
   }
 
