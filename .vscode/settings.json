@@ -20,6 +20,7 @@
         "memory": "c",
         "ratio": "c",
         "tuple": "c",
-        "vector": "c"
+        "vector": "c",
+        "lcf.h": "c"
     }
 }
