@@ -6,7 +6,7 @@
 #include "keyboard.h"
 #include "kbc.h"
 
-int hook_id;
+int kbd_hook_id;
 int pos = 0;
 bool complete = true;
 struct scan_code_stats scan_code;
@@ -38,10 +38,10 @@ void (kbc_ih)() {
 
 int (keyboard_subscribe_int)(uint8_t *bit_no) {
 
-  hook_id = KEYBOARD_IRQ;
+  kbd_hook_id = KEYBOARD_IRQ;
   *bit_no = KEYBOARD_IRQ;
 
-  if(sys_irqsetpolicy(KEYBOARD_IRQ, (IRQ_REENABLE|IRQ_EXCLUSIVE), &hook_id)){
+  if(sys_irqsetpolicy(KEYBOARD_IRQ, (IRQ_REENABLE|IRQ_EXCLUSIVE), &kbd_hook_id)){
     return 1;
   }
 
@@ -50,7 +50,7 @@ int (keyboard_subscribe_int)(uint8_t *bit_no) {
 
 int (keyboard_unsubscribe_int)() {
   
-  if(sys_irqrmpolicy(&hook_id)){
+  if(sys_irqrmpolicy(&kbd_hook_id)){
     return 1;
   }
 

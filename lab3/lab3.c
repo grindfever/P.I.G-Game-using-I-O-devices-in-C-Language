@@ -1,6 +1,7 @@
 #include <lcom/lcf.h>
 
 #include <lcom/lab3.h>
+#include <lcom/lab2.h>
 
 #include <stdbool.h>
 #include <stdint.h>
@@ -10,6 +11,7 @@
 
 extern bool complete;
 extern struct scan_code_stats scan_code;
+extern uint32_t counter;
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
@@ -96,8 +98,61 @@ int(kbd_test_poll)() {
 }
 
 int(kbd_test_timed_scan)(uint8_t n) {
-  /* To be completed by the students */
-  printf("%s is not yet implemented!\n", __func__);
+  
+  message msg;
+  int ipc_status;
+  int r;
+  uint8_t bit_no_kbd;
+  uint8_t bit_no_timer;
 
-  return 1;
+
+  if(keyboard_subscribe_int(&bit_no_kbd)){
+    return 1;
+  }
+
+  if(timer_subscribe_int(&bit_no_timer)){
+    return 1;
+  }
+
+  uint32_t irq_set_kbd = BIT(bit_no_kbd);
+  uint32_t irq_set_timer = BIT(bit_no_timer);
+
+  while(scan_code.code[scan_code.size - 1] != KBC_BREAK_ESC && counter/60 < n) { /* You may want to use a different condition */
+    /* Get a request message. */
+    if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) { 
+        printf("driver_receive failed with: %d", r);
+        continue;
+    }
+    if (is_ipc_notify(ipc_status)) { /* received notification */
+        switch (_ENDPOINT_P(msg.m_source)) {
+            case HARDWARE: /* hardware interrupt notification */		
+            // timer		
+                if (msg.m_notify.interrupts & irq_set_kbd) { /* subscribed interrupt */
+                  kbc_ih();
+                  if(complete){
+                    kbd_print_scancode(scan_code.make_break, scan_code.size, scan_code.code); 
+                    counter = 0;
+                  }
+                }
+                if (msg.m_notify.interrupts & irq_set_timer) {
+                  timer_int_handler();
+                }
+                break;
+            default:
+                break; /* no other notifications expected: do nothing */	
+        }
+    } else { /* received a standard message, not a notification */
+        /* no standard messages expected: do nothing */
+    }
+ }
+
+  if(keyboard_unsubscribe_int()){
+    return 1;
+  }
+
+  if(timer_unsubscribe_int()){
+    return 1;
+  }
+
+  return 0;
 }
