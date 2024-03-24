@@ -1,0 +1,7 @@
+.gdbinit
+lab3
+lab3.o
+timer.o
+utils.o
+output.txt
+trace.txt
