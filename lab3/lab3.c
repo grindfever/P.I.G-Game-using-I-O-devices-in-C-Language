@@ -5,7 +5,11 @@
 #include <stdbool.h>
 #include <stdint.h>
 
-extern loop; 
+#include "keyboard.h"
+#include "I8042.h"
+
+extern bool complete;
+extern struct scan_code_stats scan_code;
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
@@ -38,11 +42,13 @@ int(kbd_test_scan)() {
   int r;
   uint8_t bit_no;
 
-  keyboard_subscribe_int(&bit_no);
+  if(keyboard_subscribe_int(&bit_no)){
+    return 1;
+  }
 
   uint32_t irq_set = BIT(bit_no);
 
-  while( loop ) { /* You may want to use a different condition */
+  while( scan_code.code[scan_code.size - 1] != KBC_BREAK_ESC) { /* You may want to use a different condition */
     /* Get a request message. */
     if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) { 
         printf("driver_receive failed with: %d", r);
@@ -54,7 +60,10 @@ int(kbd_test_scan)() {
             // timer		
                 if (msg.m_notify.interrupts & irq_set) { /* subscribed interrupt */
                   kbc_ih();
-                }
+                  if(complete){
+                    kbd_print_scancode(scan_code.make_break, scan_code.size, scan_code.code); 
+                  }
+              }
                 break;
             default:
                 break; /* no other notifications expected: do nothing */	
@@ -69,14 +78,21 @@ int(kbd_test_scan)() {
   }
 
   return 0;
-  return 1;
 }
 
 int(kbd_test_poll)() {
-  /* To be completed by the students */
-  printf("%s is not yet implemented!\n", __func__);
+  while( scan_code.code[scan_code.size - 1] != KBC_BREAK_ESC) {
+    kbc_ih();
+    if(complete){
+      kbd_print_scancode(scan_code.make_break, scan_code.size, scan_code.code); 
+    }
+  }
 
-  return 1;
+  if(keyboard_enable_interrupts()){
+    return 1;
+  }
+
+  return 0;
 }
 
 int(kbd_test_timed_scan)(uint8_t n) {

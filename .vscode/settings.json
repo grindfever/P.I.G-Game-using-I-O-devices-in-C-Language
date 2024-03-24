@@ -24,6 +24,9 @@
         "lcf.h": "c",
         "stdint.h": "c",
         "i8254.h": "c",
-        "i8042.h": "c"
+        "i8042.h": "c",
+        "keyboard.h": "c",
+        "xstring": "c",
+        "string": "c"
     }
 }
