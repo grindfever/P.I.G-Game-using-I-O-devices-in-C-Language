@@ -20,26 +20,21 @@ int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
     return 1;
   }
 
-  uint8_t old_conf_lsb;
-  
-  if(util_get_LSB(old_conf, &old_conf_lsb)){
-    return 1;
-  }
-
   uint8_t port;
   uint8_t control_word;
 
+  control_word = old_conf;
+  control_word &= (BIT(1) | BIT(2) | BIT(3) | TIMER_BCD);
+  control_word |= (TIMER_LSB_MSB | (timer << 6));
+
   switch(timer){
     case 0:
-        control_word = TIMER_SEL0 | TIMER_LSB_MSB | old_conf_lsb;
         port = TIMER_0;
         break;
     case 1:
-        control_word = TIMER_SEL1 | TIMER_LSB_MSB | old_conf_lsb;
         port = TIMER_1;
         break;
     case 2:
-        control_word = TIMER_SEL2 | TIMER_LSB_MSB | old_conf_lsb;
         port = TIMER_2;
         break;
     default:
