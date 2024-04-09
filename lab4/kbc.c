@@ -36,7 +36,7 @@ int (kbc_read_return)(uint8_t *data){
         }
         
         /* loop while 8042 output buffer is empty */
-        if(status & KBC_OBF && !(status & KBC_AUX) ) {
+        if(status & KBC_OBF && (status & KBC_AUX) ) {
             if(util_sys_inb(KBC_OUT_BUF, data)){
                 return 1;
             } 

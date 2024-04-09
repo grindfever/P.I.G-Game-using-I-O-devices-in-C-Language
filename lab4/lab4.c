@@ -5,6 +5,12 @@
 #include <stdio.h>
 
 // Any header files included below this line should have been created by you
+#include "mouse.h"
+#include "I8042.h"
+
+extern bool complete;
+extern struct packet pack;
+extern uint32_t counter;
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
@@ -37,12 +43,24 @@ int (mouse_test_packet)(uint32_t cnt) {
   int ipc_status;
   int r;
   uint8_t bit_no;
+  int check;
+
+  for(int i = 0; i < 2; i++){
+    check = mouse_send_command(KBC_EN_REP);
+    if(check == 0){
+      break;
+    }
+  }
+
+  if(check){
+    return 1;
+  }
 
   if(mouse_subscribe_int(&bit_no)){
     return 1;
   }
 
-  uint32_t irq_set = BIT(bit_no);
+  uint8_t irq_set = BIT(bit_no);
 
   while( cnt > 0 ) { /* You may want to use a different condition */
     /* Get a request message. */
@@ -55,7 +73,11 @@ int (mouse_test_packet)(uint32_t cnt) {
             case HARDWARE: /* hardware interrupt notification */		
             // timer		
               if (msg.m_notify.interrupts & irq_set) { /* subscribed interrupt */
-
+                mouse_ih();
+                if (complete) {
+                  mouse_print_packet(&pack);
+                  cnt--;
+                }
               }
                 break;
             default:
@@ -70,7 +92,14 @@ int (mouse_test_packet)(uint32_t cnt) {
     return 1;
   }
 
-  return 0;
+  for(int i = 0; i < 2; i++){
+    check = mouse_send_command(KBC_DIS_REP);
+    if(check == 0){
+      break;
+    }
+  }
+
+  return check;
 }
 
 int (mouse_test_async)(uint8_t idle_time) {
@@ -79,7 +108,7 @@ int (mouse_test_async)(uint8_t idle_time) {
     return 1;
 }
 
-int (mouse_test_gesture)() {
+int (mouse_test_gesture)(uint8_t x_len, uint8_t tolerance) {
     /* To be completed */
     printf("%s: under construction\n", __func__);
     return 1;

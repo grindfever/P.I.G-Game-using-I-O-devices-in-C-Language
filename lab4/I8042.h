@@ -22,6 +22,21 @@
 #define KBC_INT BIT(0)
 #define KBC_INT2 BIT(1)
 
+//MOUSE COMMANDS -> passed as arg of command 0xD4
+#define KBC_RES_MOUSE 0xFF //Reset Mouse reset
+#define KBC_RESEND_ERR 0xFE //Resend For serial communications errors
+#define KBC_SET_DEF 0xF6 //Set Defaults Set default values
+#define KBC_DIS_REP 0xF5 //Disable (Data Reporting) In stream mode, should be sent before any other command
+#define KBC_EN_REP 0xF4 //Enable (Data Reporting) In stream mode only
+#define KBC_SET_SAMPLE 0xF3 //Set Sample Rate Sets state sampling rate
+#define KBC_SET_REMOTE 0xF0 //Set Remote Mode Send data on request only
+#define KBC_READ_DATA 0xEB //Read Data Send data packet request
+#define KBC_SET_STREAM 0xEA //Set Stream Mode Send data on events
+#define KBC_GET_CONF 0xE9 //Status Request Get mouse configuration (3 bytes)
+#define KBC_SET_RES 0xE8 //Set Resolution
+#define KBC_SET_SCAL_ACCEL 0xE7 //Set Scaling 2:1 Acceleration mode
+#define KBC_SET_SCAL_LIN 0xE6 //Set Scaling 1:1 Linear mode
+
 #define KBC_BREAK_ESC 0x81
 #define KBC_FIRST_SCAN 0xE0
 

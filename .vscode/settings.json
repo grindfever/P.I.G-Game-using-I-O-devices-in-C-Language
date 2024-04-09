@@ -27,6 +27,7 @@
         "i8042.h": "c",
         "keyboard.h": "c",
         "xstring": "c",
-        "string": "c"
+        "string": "c",
+        "typeinfo": "c"
     }
 }
