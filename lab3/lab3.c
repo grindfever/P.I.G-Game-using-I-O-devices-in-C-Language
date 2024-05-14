@@ -62,9 +62,6 @@ int(kbd_test_scan)() {
             // timer		
                 if (msg.m_notify.interrupts & irq_set) { /* subscribed interrupt */
                   kbc_ih();
-                  if(complete){
-                    kbd_print_scancode(scan_code.make_break, scan_code.size, scan_code.code); 
-                  }
               }
                 break;
             default:

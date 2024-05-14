@@ -35,7 +35,7 @@ int main(int argc, char *argv[]) {
 }
 
 int proj_main_loop(int argc, char **argv) {
-/* your main loop code here */
-return 0;
+    /* your main loop code here */
+    return 0;
 }
 
