@@ -7,8 +7,10 @@
 // Any header files included below this line should have been created by you
 #include "controller/keyboard.h"
 #include "controller/mouse.h"
-#include <lcom/lab2.h>
 //#include "controller/video_gr.h"
+
+uint8_t bit_no_kbd;
+uint8_t bit_no_timer;
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
@@ -35,7 +37,6 @@ int main(int argc, char *argv[]) {
 }
 
 int proj_main_loop(int argc, char **argv) {
-    /* your main loop code here */
-    return 0;
-}
 
+  return 0;
+}
