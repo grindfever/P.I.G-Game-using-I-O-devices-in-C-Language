@@ -10,11 +10,11 @@ typedef struct {
   int8_t solution; //1 or 0 
 } Tile;
 
-Tile *construct_tile(int16_t x, int16_t y, int8_t solution);
+Tile construct_tile(int16_t x, int16_t y, uint8_t solution);
 
-int toggle_tile(Tile *tile);
+Tile toggle_tile(Tile tile);
 
-void destroy_tile(Tile *tile);
+int is_wrong(Tile tile);
 
 /**@}*/
 

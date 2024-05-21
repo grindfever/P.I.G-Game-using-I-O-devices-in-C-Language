@@ -2,8 +2,6 @@
 
 #include "tile.h"
 
-extern uint32_t score;
-
 Tile *construct_tile(int16_t x, int16_t y, uint8_t solution) {
   Tile *tile = (Tile *) malloc(sizeof(Tile));
 
@@ -20,18 +18,17 @@ Tile *construct_tile(int16_t x, int16_t y, uint8_t solution) {
   return tile;
 }
 
-int toggle_tile(Tile *tile){
-    if(!tile){
-        printf("error toggling tile -> NULL\n");
-        return 1;
+Tile toggle_tile(Tile tile){
+    if(tile.on){
+        tile.on = 0;
     }
+    else tile.on = 1;
 
-    if(tile->on){
-        tile->on = 0;
-    }
-    else tile->on = 1;
+    return tile;
+}
 
-    return 0;
+int is_wrong(Tile tile){
+    return !(tile.on == tile.solution);
 }
 
 void destroy_tile(Tile *tile) {

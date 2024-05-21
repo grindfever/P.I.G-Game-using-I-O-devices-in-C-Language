@@ -28,6 +28,18 @@
         "keyboard.h": "c",
         "xstring": "c",
         "string": "c",
-        "typeinfo": "c"
+        "typeinfo": "c",
+        "board.h": "c",
+        "format": "c",
+        "initializer_list": "c",
+        "list": "c",
+        "xhash": "c",
+        "xtree": "c",
+        "__hash_table": "c",
+        "__split_buffer": "c",
+        "__tree": "c",
+        "map": "c",
+        "unordered_map": "c",
+        "utility": "c"
     }
 }
