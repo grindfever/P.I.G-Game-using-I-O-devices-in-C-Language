@@ -10,7 +10,7 @@ typedef struct {
   int8_t solution; //1 or 0 
 } Tile;
 
-Tile construct_tile(int16_t x, int16_t y, uint8_t solution);
+Tile construct_tile(uint16_t x, uint16_t y, uint8_t solution);
 
 Tile toggle_tile(Tile tile);
 

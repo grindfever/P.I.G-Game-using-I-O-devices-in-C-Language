@@ -2,18 +2,13 @@
 
 #include "tile.h"
 
-Tile *construct_tile(int16_t x, int16_t y, uint8_t solution) {
-  Tile *tile = (Tile *) malloc(sizeof(Tile));
+Tile construct_tile(uint16_t x, uint16_t y, uint8_t solution) {
+  Tile tile;
 
-  if (!tile) {
-    printf("error creating tile -> NULL\n");
-    return NULL;
-  }
-
-  tile->x = x;
-  tile->y = y;
-  tile->on = 0; //default 0 -> desligado
-  tile->solution = solution;
+  tile.x = x;
+  tile.y = y;
+  tile.on = 0; //default 0 -> desligado
+  tile.solution = solution;
 
   return tile;
 }

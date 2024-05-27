@@ -1,12 +1,11 @@
 // IMPORTANT: you must include the following line in all your C files
 #include <lcom/lcf.h>
 
-#include <stdint.h>
-#include <stdio.h>
-
 // Any header files included below this line should have been created by you
 #include "controller/keyboard.h"
 #include "controller/mouse.h"
+#include "model/board.h"
+#include "model/tile.h"
 //#include "controller/video_gr.h"
 
 uint32_t irq_set_kbd;
@@ -37,21 +36,6 @@ int main(int argc, char *argv[]) {
   return 0;
 }
 
-int proj_main_loop(int argc, char **argv) {
-
-  if(start()){
-    return 1;
-  }
-
-
-
-  if(end()){
-    return 1;
-  }
-
-  return 0;
-}
-
 int start(){
   uint8_t bit_no_kbd;
   uint8_t bit_no_timer;
@@ -69,13 +53,17 @@ int start(){
     return 1;
   }
 
+  /*
   if (vg_init(GAME_MODE) == NULL){
     return 1;
   }
+  */
 
   irq_set_kbd = BIT(bit_no_kbd);
   irq_set_mouse = BIT(bit_no_mouse);
   irq_set_timer = BIT(bit_no_timer);
+
+  return 0;
 }
 
 int end(){
@@ -94,6 +82,8 @@ int end(){
   if (vg_exit() != OK){
     return 1;
   }
+
+  return 0;
 }
 
 int loop(){
@@ -118,4 +108,19 @@ int loop(){
       }
     } 
   }
+}
+
+int (proj_main_loop)(int argc, char **argv) {
+
+  if(start()){
+    return 1;
+  }
+
+
+
+  if(end()){
+    return 1;
+  }
+
+  return 0;
 }

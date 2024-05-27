@@ -8,15 +8,15 @@
 
 int kbd_hook_id;
 int pos = 0;
-bool complete = true;
+bool keyboard_complete = true;
 struct scan_code_stats scan_code;
 
 void (kbc_ih)() {
     uint8_t code;
 
-    if(complete){
+    if(keyboard_complete){
       scan_code.size = 0;
-      complete = false;
+      keyboard_complete = false;
     }
 
     if(kbc_read_return_keyboard(&code)){
@@ -24,12 +24,12 @@ void (kbc_ih)() {
     }
 
     if(code == KBC_FIRST_SCAN){
-      complete = false;
+      keyboard_complete = false;
       scan_code.code[scan_code.size] = code;
       scan_code.size++;
     }
     else{
-      complete = true;
+      keyboard_complete = true;
       scan_code.code[scan_code.size] = code;
       scan_code.size++;
       scan_code.make_break = !(code & BIT(7));

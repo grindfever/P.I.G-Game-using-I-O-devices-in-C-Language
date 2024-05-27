@@ -8,15 +8,15 @@
 
 static int mouse_hook_id;
 static int counter = 0;
-bool complete = true;
+bool mouse_complete = true;
 struct packet pack;
 
 void (mouse_ih)(){
     uint8_t code;
 
-    if(complete){
+    if(mouse_complete){
         counter = 0;
-        complete = false;
+        mouse_complete = false;
     }
 
     if(kbc_read_return_mouse(&code)){
@@ -52,7 +52,7 @@ void (mouse_ih)(){
             pack.delta_y |= code;
             pack.bytes[counter] = code;
             counter++;
-            complete = true;
+            mouse_complete = true;
             break;
     }
 }
