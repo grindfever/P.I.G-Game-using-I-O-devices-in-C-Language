@@ -30,7 +30,35 @@ Board *construct_board(uint16_t x, uint16_t y, uint16_t size){
         for(int j = 0; j < size; j++){
             random_solution = rand() % 2;
 
+            if(random_solution){
+                board->h_hints[i]->count += 1;
+            } else {
+                if(board->h_hints[i]->count != 0){
+                    Hint* temp = create_hint(0);
+                    temp->next = board->h_hints[i];
+                    board->h_hints[i] = temp;
+                }
+            }
+
             board->tiles[i][j] = construct_tile(x+j,y+i, random_solution);
+        }
+    }
+
+    for(int j = 0; j < size; j++){
+        for(int i = size - 1; i >= 0; i--){
+
+            int v_solution = board->tiles[i][j].solution;
+
+            if(v_solution){
+                board->v_hints[j]->count += 1;
+            } else {
+                if(board->v_hints[j]->count != 0){
+                    Hint* temp = create_hint(0);
+                    temp->next = board->v_hints[j];
+                    board->v_hints[j] = temp;
+                }
+            }
+
         }
     }
 
@@ -66,9 +94,23 @@ int toggle_board_tile(uint16_t x, uint16_t y, Board *board){
 void print_board(Board *board){
     for(int i = 0; i < board->size; i++){
         for(int j = 0; j < board->size; j++){
-            printf("[%d]", board->tiles[i][j].on);
+            printf("[%d]", board->tiles[i][j].solution);
         }
         printf("\n");
+    }
+}
+
+void print_h_hints(Board *board) {
+    for(int i = 0; i < board->size; i++){
+        Hint* current = board->v_hints[i];
+
+        printf("Hints->%d:\n", i);
+        while (current != NULL) {
+            if(current->count != 0){
+                printf("%d\n", current->count);
+            }
+            current = current->next;
+        }
     }
 }
 

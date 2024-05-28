@@ -112,7 +112,7 @@ int loop(){
 
 int (proj_main_loop)(int argc, char **argv) {
 
-  Board* b = construct_board(0, 0, 5);
+  Board* b = construct_board(0, 0, 10);
 
   print_board(b);
 
@@ -121,6 +121,8 @@ int (proj_main_loop)(int argc, char **argv) {
   printf("---------------------------\n");
 
   printf("Check (%d)\n", check_win(b));
+
+  print_h_hints(b);
 
   destroy_board(b);
 

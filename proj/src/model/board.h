@@ -22,6 +22,8 @@ bool check_win(Board *board);
 
 int toggle_board_tile(uint16_t x, uint16_t y, Board *board);
 
+void print_h_hints(Board *board);
+
 void print_board(Board *board);
 
 void destroy_board(Board *board);
