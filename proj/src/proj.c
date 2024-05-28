@@ -4,6 +4,8 @@
 // Any header files included below this line should have been created by you
 #include "controller/keyboard.h"
 #include "controller/mouse.h"
+#include "controller/game.h"
+#include "controller/I8042.h"
 #include "model/board.h"
 #include "model/tile.h"
 //#include "controller/video_gr.h"
@@ -40,16 +42,28 @@ int start(){
   uint8_t bit_no_kbd;
   uint8_t bit_no_timer;
   uint8_t bit_no_mouse;
+  int check;
 
   if(keyboard_subscribe_int(&bit_no_kbd)){
     return 1;
   }
 
-  if(timer_subscribe_int(&bit_no_timer)){
+  for(int i = 0; i < 2; i++){
+    check = mouse_send_command(KBC_EN_REP);
+    if(check == 0){
+      break;
+    }
+  }
+
+  if(check){
     return 1;
   }
 
   if(mouse_subscribe_int(&bit_no_mouse)){
+    return 1;
+  }
+
+  if(timer_subscribe_int(&bit_no_timer)){
     return 1;
   }
 
@@ -67,15 +81,24 @@ int start(){
 }
 
 int end(){
+  int check;
+
   if(keyboard_unsubscribe_int()){
     return 1;
   }
 
-  if(timer_unsubscribe_int()){
+  if(mouse_unsubscribe_int()){
     return 1;
   }
 
-  if(mouse_unsubscribe_int()){
+  for(int i = 0; i < 2; i++){
+    check = mouse_send_command(KBC_DIS_REP);
+    if(check == 0){
+      break;
+    }
+  }
+
+  if(timer_unsubscribe_int()){
     return 1;
   }
 
@@ -86,12 +109,18 @@ int end(){
   return 0;
 }
 
+extern bool keyboard_complete;
+extern struct scan_code_stats scan_code;
+
 int loop(){
   message msg;
   int ipc_status;
   int r;
+  //int loop = 0;
 
-  while( true ) {
+  Board* b = construct_board(0,0,5);
+
+  while( scan_code.code[scan_code.size - 1] != KBC_BREAK_ESC ) {
     if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) { 
       printf("driver_receive failed with: %d", r);
       continue;
@@ -99,32 +128,34 @@ int loop(){
     if (is_ipc_notify(ipc_status)) {
       switch (_ENDPOINT_P(msg.m_source)) {
         case HARDWARE:	
-          if (msg.m_notify.interrupts & irq_set_mouse) {mouse_ih();} //antes do interrupt handler deve chamar função para lidar com lógica
-          if (msg.m_notify.interrupts & irq_set_kbd) {kbc_ih();}
-          if (msg.m_notify.interrupts & irq_set_timer) {timer_int_handler();}
+          if (msg.m_notify.interrupts & irq_set_mouse) { mouse_game_handler(b); }
+          if (msg.m_notify.interrupts & irq_set_kbd) { kbc_ih(); }
+          //if (msg.m_notify.interrupts & irq_set_timer) {timer_int_handler();}
           break;
         default:
           break;
       }
     } 
   }
+
+  destroy_board(b);
+
+  return 0;
 }
 
 int (proj_main_loop)(int argc, char **argv) {
 
-  Board* b = construct_board(0, 0, 10);
+  if(start()){
+    return 1;
+  }
 
-  print_board(b);
+  if(loop()){
+    return 1;
+  }
 
-  toggle_board_tile(1, 1, b);
-
-  printf("---------------------------\n");
-
-  printf("Check (%d)\n", check_win(b));
-
-  print_h_hints(b);
-
-  destroy_board(b);
+  if(end()){
+    return 1;
+  }
 
   return 0;
 }

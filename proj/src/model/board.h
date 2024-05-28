@@ -12,6 +12,8 @@ typedef struct Hint {
 typedef struct {
   Tile** tiles;
   int16_t size;
+  uint8_t x; 
+  uint8_t y;
   Hint** h_hints;
   Hint** v_hints;
 } Board;

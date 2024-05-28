@@ -17,6 +17,8 @@ Board *construct_board(uint16_t x, uint16_t y, uint16_t size){
     board->tiles = (Tile **) malloc(sizeof(Tile *)*size);
     board->h_hints = (Hint **) malloc(sizeof(Hint *)*size);
     board->v_hints = (Hint **) malloc(sizeof(Hint *)*size);
+    board->x = x;
+    board->y = y;
 
     for(int i = 0; i < size; i++){
         board->tiles[i] = (Tile *) malloc(sizeof(Tile)*size);
@@ -94,7 +96,7 @@ int toggle_board_tile(uint16_t x, uint16_t y, Board *board){
 void print_board(Board *board){
     for(int i = 0; i < board->size; i++){
         for(int j = 0; j < board->size; j++){
-            printf("[%d]", board->tiles[i][j].solution);
+            printf("[%d]", board->tiles[i][j].on);
         }
         printf("\n");
     }

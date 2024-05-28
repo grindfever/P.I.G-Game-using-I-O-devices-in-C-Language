@@ -40,6 +40,9 @@
         "__tree": "c",
         "map": "c",
         "unordered_map": "c",
-        "utility": "c"
+        "utility": "c",
+        "lab2.h": "c",
+        "lab3.h": "c",
+        "mouse.h": "c"
     }
 }
