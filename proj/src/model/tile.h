@@ -12,7 +12,7 @@ typedef struct {
 
 Tile construct_tile(uint16_t x, uint16_t y, uint8_t solution);
 
-Tile toggle_tile(Tile tile);
+int toggle_tile(Tile* tile);
 
 int is_wrong(Tile tile);
 

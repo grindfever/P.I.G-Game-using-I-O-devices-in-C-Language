@@ -13,13 +13,16 @@ Tile construct_tile(uint16_t x, uint16_t y, uint8_t solution) {
   return tile;
 }
 
-Tile toggle_tile(Tile tile){
-    if(tile.on){
-        tile.on = 0;
+int toggle_tile(Tile* tile) {
+    if (!tile) {
+        return 1;
     }
-    else tile.on = 1;
+    
+    printf("Toggling tile at (%d, %d): current state = %d\n", tile->x, tile->y, tile->on);
+    tile->on = !tile->on;
+    printf("Toggled tile at (%d, %d): new state = %d\n", tile->x, tile->y, tile->on);
 
-    return tile;
+    return 0;
 }
 
 int is_wrong(Tile tile){

@@ -4,9 +4,16 @@
 #include <stdint.h>
 #include "tile.h"
 
+typedef struct Hint {
+  int count;
+  struct Hint* next;
+} Hint;
+
 typedef struct {
-  Tile ** tiles;
+  Tile** tiles;
   int16_t size;
+  Hint** h_hints;
+  Hint** v_hints;
 } Board;
 
 Board *construct_board(uint16_t x, uint16_t y, uint16_t size);

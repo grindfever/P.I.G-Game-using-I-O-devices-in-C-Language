@@ -112,15 +112,17 @@ int loop(){
 
 int (proj_main_loop)(int argc, char **argv) {
 
-  if(start()){
-    return 1;
-  }
+  Board* b = construct_board(0, 0, 5);
 
+  print_board(b);
 
+  toggle_board_tile(1, 1, b);
 
-  if(end()){
-    return 1;
-  }
+  printf("---------------------------\n");
+
+  printf("Check (%d)\n", check_win(b));
+
+  destroy_board(b);
 
   return 0;
 }
