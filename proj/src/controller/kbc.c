@@ -69,7 +69,7 @@ int (kbc_read_return_keyboard)(uint8_t *data) {
 
     return 1;
 }
-l
+
 /**
  * @brief Reads data from the mouse output buffer.
  * 

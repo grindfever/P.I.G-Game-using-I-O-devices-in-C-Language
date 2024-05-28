@@ -44,14 +44,14 @@ void *(vg_init)(uint16_t mode) {
   unsigned int VramSize = XRes * YRes * bytes_per_pixel();
   MemoryRange.mr_limit = MemoryRange.mr_base + VramSize;
 
-  if ((ReturnVal = sys_privctl(SELF, SYS_PRIV_ADD_MEM, &MemoryRange)) != OK) {
+  if((ReturnVal = sys_privctl(SELF, SYS_PRIV_ADD_MEM, &MemoryRange)) != OK) {
     panic("sys_privctl (ADD_MEM) failed: %d\n", ReturnVal);
     return NULL;
   }
   
   /* map memory */
   vbe_mem = vm_map_phys(SELF, (void *)MemoryRange.mr_base, VramSize);
-  if (vbe_mem == MAP_FAILED)
+  if(vbe_mem == MAP_FAILED)
     panic("couldn't map video memory");
 
   reg86_t Reg86;
