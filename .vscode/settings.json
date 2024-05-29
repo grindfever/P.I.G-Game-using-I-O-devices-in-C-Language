@@ -43,6 +43,9 @@
         "utility": "c",
         "lab2.h": "c",
         "lab3.h": "c",
-        "mouse.h": "c"
+        "mouse.h": "c",
+        "graphics.h": "c",
+        "sprites.h": "c",
+        "kbc.h": "c"
     }
 }

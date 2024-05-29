@@ -4,21 +4,13 @@
 #include <lcom/lcf.h>
 
 #include "./controller/timer.h"
-#include "./controller/controller.h"
-
 #include "./controller/graphics.h"
 #include "./controller/info.h"
 #include "sprites.h"
 
-
-
-
-int (main_menu)();
-
+bool (keyboard_menu_handler)();
 
 int (displayMainMenu)();
-
-
 
 /**@}*/
 

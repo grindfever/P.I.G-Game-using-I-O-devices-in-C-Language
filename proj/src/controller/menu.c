@@ -3,69 +3,42 @@
 #include <stdint.h>
 
 #include "menu.h"
+#include "controller/keyboard.h"
+#include "controller/I8042.h"
 
+extern bool keyboard_complete;
+extern struct scan_code_stats scan_code;
 
+extern int irq_set_kbd;
 
-int (main_menu)() {
-    if (start()) 
-        return 1;
-        
-    int r, ipc_status;
-    message msg;
+bool (keyboard_menu_handler)() {
+    kbc_ih();
+    if (keyboard_complete) {
 
-    uint8_t key_code = 0;
-    int process = 1;
-    while (process) {
-        if (displayMainMenu())
-            return 1;
+        printf("scan %d\n", scan_code.code[scan_code.size - 1]);
 
-        /* Get a request message. */
-        if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
-            printf("driver_receive failed with: %d", r);
-            continue;
+        if(scan_code.code[scan_code.size - 1] == KBC_BREAK_ESC) {
+            printf("reached");
+            return false;
         }
-        if (is_ipc_notify(ipc_status)) { // received notification
-            switch (_ENDPOINT_P(msg.m_source)) {
-                case HARDWARE: // hardware interrupt notification
-                    if (msg.m_notify.interrupts & irq_set_kbd) { // subscribed interrupt
-                        kbc_ih();
 
-                        if (!kbc_inc_code()) {
-                            key_code = get_key_code();
+        /*
+        if (!kbc_inc_code()) {
+            key_code = get_key_code();
                             
-                            if (key_code == KEY_1) {
-                            }
-                            else if (key_code == KEY_2){
-                            }
-                            else if (key_code == KEY_0)
-                                process = 0;
-                        }
-                    }
-                    
-                    break;
-                default:
-                    break; // no other notifications expected: do nothing
+            if (key_code == KEY_1) {
             }
+            else if (key_code == KEY_2){
+            }
+            else if (key_code == KEY_0)
+                process = 0;
         }
-        if (msg.m_notify.interrupts & irq_set_mouse) { // subscribed interrupt (Mouse)
-            mouse_ih();
-            if (mouse_check_full() && !mouse_overflow()) {
+        */
 
-                  
-            }
-        }  
-        else { // received a standard message, not a notification
-            // no standard messages expected: do nothing
-        }
     }
 
-    if (end())
-        return 1;
-
-    return 0;
+    return true;
 }
-
-
 
 // ----------------------------------------------------------------------------------------
 int displayMainMenu() {
@@ -75,9 +48,6 @@ int displayMainMenu() {
     for (int i = 0; i < CONSOLE_WIDTH; ++i) {
         for (int j = 0; j < CONSOLE_HEIGHT; ++j) {
             if (generate_pixel(i, j, 3)) {
-                if (end()) {
-                    return 1;
-                }
                 return 1;
             }
         }
@@ -121,10 +91,6 @@ int displayMainMenu() {
     for (size_t i = 0; i < num_elements; ++i) {
         struct MenuElement elem = elements[i];
         if (draw_element(elem.sprite, MAIN_MENU_X_ORIGIN + elem.x_offset, MAIN_MENU_Y_ORIGIN + elem.y_offset)) {
-            if (end()) {
-                // Separate and explicit handling for leave
-                return 1;
-            }
             return 1;
         }
     }
