@@ -84,11 +84,9 @@ int start(){
     return 1;
   }
 
-  /*
   if (vg_init(GAME_MODE) == NULL){
     return 1;
   }
-  */
 
   irq_set_kbd = BIT(bit_no_kbd);
   irq_set_mouse = BIT(bit_no_mouse);
@@ -105,10 +103,9 @@ int start(){
 int end(){
   int check;
 
-  /*
   if (vg_exit() != OK){
     return 1;
-  }*/
+  }
 
   if(keyboard_unsubscribe_int()){
     return 1;
@@ -143,11 +140,9 @@ int loop(){
 
   while( continue_loop ) {
     
-    /*
     if(menu){
       if (displayMainMenu()) return 1;
     }
-    */
 
     if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) { 
       printf("driver_receive failed with: %d", r);
@@ -186,11 +181,13 @@ int (proj_main_loop)(int argc, char **argv) {
     return 1;
   }
 
-  if (loop())
+  if (loop()){
     return 1;
-  return 0;
+  }
 
   if(end()){
     return 1;
   }
+
+  return 0;
 }
