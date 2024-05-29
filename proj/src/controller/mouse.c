@@ -18,13 +18,11 @@ bool mouse_complete = true;
 /** @brief Structure to store the mouse packet */
 struct packet pack;
 
-
-uint8_t code;
-
 /**
  * @brief Mouse interrupt handler.
  */
 void (mouse_ih)() {
+    uint8_t code;
 
     if(mouse_complete) {
         counter = 0;
