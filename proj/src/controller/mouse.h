@@ -30,3 +30,18 @@ int (mouse_unsubscribe_int)();
  */
 int (mouse_send_command)(uint8_t cmd);
 
+
+/**
+ * @brief Checks if the mouse packet is full.
+ * 
+ * @return 1 if the mouse packet is full, 0 otherwise.
+ */
+int (mouse_check_full)();
+
+/**
+ * @brief Checks for mouse data overflow.
+ * 
+ * @return 1 if there is an overflow, 0 otherwise.
+ */
+int (mouse_overflow)();
+

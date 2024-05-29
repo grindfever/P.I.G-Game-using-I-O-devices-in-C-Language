@@ -3,40 +3,31 @@
 
 #include "graphics.h"
 
-/** @brief Pointer to the video memory. */
-static void *vbe_mem;
+static void *vbe_mem_buf;
+static void *video_buffer;
+static unsigned int VramSize;
+vbe_mode_info_t VModeInfo;
 
-/** @brief Horizontal resolution of the screen. */
-static uint16_t XRes;
-/** @brief Vertical resolution of the screen. */
-static uint16_t YRes;
-/** @brief Color depth (bits per pixel). */
-static uint8_t clr_depth;
+static uint16_t XResolution;
+static uint16_t YResolution;
+static uint8_t color_depth;
 
-/** @brief Size of the red mask. */
-static uint8_t RMaskSize;
-/** @brief Size of the green mask. */
-static uint8_t GMaskSize;
-/** @brief Size of the blue mask. */
-static uint8_t BMaskSize;
+static uint8_t RedMaskSize;
+static uint8_t GreenMaskSize;
+static uint8_t BlueMaskSize;
 
-/**
- * @brief Initializes the video graphics mode.
- * 
- * @param mode The video mode to be set.
- * @return Pointer to the video memory if successful, NULL otherwise.
- */
 void *(vg_init)(uint16_t mode) {
-  vbe_mode_info_t ModeInfo;
-  if (vbe_get_mode_info(mode, &ModeInfo) != OK)
+
+  if (vbe_get_mode_info(mode, &VModeInfo) != OK)
     return NULL;
 
-  clr_depth = ModeInfo.BitsPerPixel;
-  XRes = ModeInfo.XResolution;
-  YRes = ModeInfo.YResolution;
-  RMaskSize = ModeInfo.RedMaskSize;
-  GMaskSize = ModeInfo.GreenMaskSize;
-  BMaskSize = ModeInfo.BlueMaskSize;
+  color_depth = VModeInfo.BitsPerPixel;
+  XResolution = VModeInfo.XResolution;
+  YResolution = VModeInfo.YResolution;
+
+  RedMaskSize = VModeInfo.RedMaskSize;
+  GreenMaskSize = VModeInfo.GreenMaskSize;
+  BlueMaskSize = VModeInfo.BlueMaskSize;
 
   int ReturnVal;
   struct minix_mem_range MemoryRange;
@@ -44,7 +35,7 @@ void *(vg_init)(uint16_t mode) {
   VramSize = XResolution * YResolution * calculate_bytes_per_pixel();
   MemoryRange.mr_limit = MemoryRange.mr_base + VramSize;
 
-  if((ReturnVal = sys_privctl(SELF, SYS_PRIV_ADD_MEM, &MemoryRange)) != OK) {
+  if ((ReturnVal = sys_privctl(SELF, SYS_PRIV_ADD_MEM, &MemoryRange)) != OK) {
     panic("sys_privctl (ADD_MEM) failed: %d\n", ReturnVal);
     return NULL;
   }
@@ -76,121 +67,125 @@ void *(vg_init)(uint16_t mode) {
 }
 
 
-/**
- * @brief Draws a horizontal line on the screen.
- * 
- * @param x X-coordinate of the starting point.
- * @param y Y-coordinate of the starting point.
- * @param len Length of the line.
- * @param color Color of the line.
- * @return 0 upon success, non-zero otherwise.
- */
-int (vg_draw_hline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color) {
+int (map_graphics_memory)(uint16_t mode) {
+  int r;
+  struct minix_mem_range mr;
+  mr.mr_base = VModeInfo.PhysBasePtr;
+  VramSize = XResolution * YResolution * calculate_bytes_per_pixel();
+  mr.mr_limit = mr.mr_base + VramSize;
+
+  if ((r = sys_privctl(SELF, SYS_PRIV_ADD_MEM, &mr)) != OK) {
+    panic("sys_privctl (ADD_MEM) failed: %d\n", r);
+    return 1;
+  }
+  
+  /* map memory */
+  vbe_mem_buf = vm_map_phys(SELF, (void *)mr.mr_base, VramSize);
+  if(vbe_mem_buf == MAP_FAILED) {
+    panic("couldn't map video memory\n");
+    return 1;
+  }
+
+  video_buffer = malloc(VramSize);
+
+  return 0;
+}
+
+
+int (draw_horizontal_line)(uint16_t x, uint16_t y, uint16_t len, uint32_t color) {
   for (int i = 0; i < len; i++) {
     if (generate_pixel(x + i, y, color) != OK)
       return 1;
   }
+
   return 0;
 }
   
-/**
- * @brief Draws a rectangle on the screen.
- * 
- * @param x X-coordinate of the top-left corner.
- * @param y Y-coordinate of the top-left corner.
- * @param width Width of the rectangle.
- * @param height Height of the rectangle.
- * @param color Color of the rectangle.
- * @return 0 upon success, non-zero otherwise.
- */
-int (vg_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color) {
+int (draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color) {
   for (int i = 0; i < height; i++)
     if (draw_horizontal_line(x, y + i, width, color) != OK)
       return 1;
+
   return 0;
 }
 
-/**
- * @brief Gets the horizontal resolution of the screen.
- * 
- * @return The horizontal resolution.
- */
-uint16_t (get_hres)() {
-  return XRes;
+uint16_t (get_horizontal_resolution)() {
+  return XResolution;
 }
 
-/**
- * @brief Gets the vertical resolution of the screen.
- * 
- * @return The vertical resolution.
- */
-uint16_t (get_vres)() {
-  return YRes;
+uint16_t (get_vertical_resolution)() {
+  return YResolution;
 }
 
-/**
- * @brief Gets the number of bytes per pixel.
- * 
- * @return The number of bytes per pixel.
- */
-int (bytes_per_pixel)() {
-  int BitsPerPixel = (int)clr_depth;
+int (calculate_bytes_per_pixel)() {
+  int BitsPerPixel = (int)color_depth;
   int BytesPerPixel = (BitsPerPixel / 8) + ((BitsPerPixel % 8) ? 1 : 0);
   return BytesPerPixel;
 }
 
-/**
- * @brief Generates a pixel at the specified position with the given color.
- * 
- * @param posX X-coordinate of the pixel.
- * @param posY Y-coordinate of the pixel.
- * @param clr Color of the pixel.
- * @return 0 upon success, non-zero otherwise.
- */
 int (generate_pixel)(uint16_t posX, uint16_t posY, uint32_t clr) {
-  if (clr_depth == 8) { // mode 0x105
-    if (clr > UINT8_MAX) {
-      printf("invalid color\n");
-      return 1;
-    }
+  uint8_t *ptr;
+  ptr = (uint8_t *)video_buffer + (posY * XResolution + posX) * calculate_bytes_per_pixel();
+  for (int i = 0; i < calculate_bytes_per_pixel(); i++) {
+    *(ptr + i) = clr;
+    clr = clr >> 8;
+  }
 
-    uint8_t *pixelPtr;
-    pixelPtr = (uint8_t *)vbe_mem + (posY * XRes + posX) * bytes_per_pixel();
-    *pixelPtr = 0xFF & clr;  
+  return 0;
+
+}
+
+void (clear_graphics_screen)() {
+  memset(video_buffer, 0, VramSize);
+}
+
+void (draw_graphics_content)() {
+  memcpy(vbe_mem_buf, video_buffer, VramSize);
+}
+
+uint8_t *(read_pixmap)(xpm_row_t *pixmap, uint16_t *width, uint16_t *height) {
+  if (width == NULL || height == NULL) {
+    printf("null pointer\n");
+    return NULL;
   }
-  else if (clr_depth == 24) { // mode 0x115
-    uint8_t *pixelPtr;
-    pixelPtr = (uint8_t *)vbe_mem + (posY * XRes + posX) * bytes_per_pixel();
-    *(pixelPtr + 2) = 0xFF & (clr >> 16);
-    *(pixelPtr + 1) = 0xFF & (clr >> 8);
-    *pixelPtr = 0xFF & clr;
+
+  enum xpm_image_type type = XPM_INDEXED;
+  xpm_image_t img;
+  uint8_t *sprite = xpm_load((xpm_map_t)pixmap, type, &img);
+
+  if (sprite == NULL) {
+    printf("null pointer\n");
+    return NULL;
   }
+
+  *width = img.width;
+  *height = img.height;
+
+  return sprite;
+}
+
+int (draw_sprite)(uint8_t *sprite, uint16_t x, uint16_t y, uint16_t width, uint16_t height) {
+  if (sprite == NULL) {
+    printf("null pointer\n");
+    return 1;
+  }
+
+  for (uint16_t i = 0; i < width; i++)
+    for (uint16_t j = 0; j < height; j++)
+      if (generate_pixel(x + i, y + j, sprite[j * width + i]) != OK)
+        return 1;
+
   return 0;
 }
 
-/**
- * @brief Gets the color at the specified position based on a pattern.
- * 
- * @param rectangles Number of rectangles.
- * @param first_color First color.
- * @param step_size Step size.
- * @param row_index Row index.
- * @param col_index Column index.
- * @return The calculated color.
- */
-uint32_t (get_color)(uint8_t rectangles, uint32_t first_color, uint8_t step_size, uint8_t row_index, uint8_t col_index) {
-  uint32_t calculatedColor = 0;
-
-  if (clr_depth == 8) { // mode 0x105
-    uint32_t baseColor = (first_color + (row_index * rectangles + col_index) * step_size) % (1 << clr_depth);
-    calculatedColor = (baseColor << 16) | (baseColor << 8) | baseColor;
-  }
-  else if (clr_depth == 24) { // mode 0x115
-    uint32_t red = ((0xFF & (first_color >> 16)) + col_index * step_size) % (1 << RMaskSize);
-    uint32_t green = ((0xFF & (first_color >> 8)) + row_index * step_size) % (1 << GMaskSize);
-    uint32_t blue = ((0xFF & first_color) + (col_index + row_index) * step_size) % (1 << BMaskSize);
-    calculatedColor = ((0xFF & red) << 16) | ((0xFF & green) << 8) | (0xFF & blue); // color = RGB
-  }
-
-  return calculatedColor;
+int (draw_element)(xpm_row_t *pixmap, uint16_t x, uint16_t y) {
+  uint16_t width = 0, height = 0;
+  uint8_t *sprite = read_pixmap(pixmap, &width, &height);
+  if (sprite == NULL)
+    return 1;
+    
+  if (draw_sprite(sprite, x, y, width, height))
+    return 1;
+  
+  return 0;
 }

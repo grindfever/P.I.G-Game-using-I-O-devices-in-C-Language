@@ -43,3 +43,4 @@ void mouse_game_handler(Board* b){
         printf("Mouse Position: (%d, %d)\n", mouse_x, mouse_y);
     }
 }
+

@@ -1,15 +1,16 @@
+#ifndef KEYBOARD_H
+#define KEYBOARD_H
 
-
-#include <lcom/lcf.h>
 #include <stdint.h>
+#include <stdbool.h>
 
 /**
- * @brief Structure to hold the status of the scan code.
+ * @brief Structure to hold scan code statistics.
  */
 struct scan_code_stats {
-  bool make_break; /**< True if it's a make code, false if it's a break code */
-  uint8_t code[2]; /**< Array to store the scan code bytes */
-  int size;        /**< Size of the scan code */
+  bool make_break; /**< Indicates if the scan code is a make or break code. */
+  uint8_t code[2]; /**< The scan code (up to 2 bytes). */
+  int size;        /**< Size of the scan code. */
 };
 
 /**
@@ -39,4 +40,25 @@ int (keyboard_unsubscribe_int)();
  */
 int (keyboard_enable_interrupts)();
 
+/**
+ * @brief Increments the scan code index.
+ * 
+ * @return True if successfully incremented, false otherwise.
+ */
+bool (kbc_inc_code)();
 
+/**
+ * @brief Checks if the ESC break code was received.
+ * 
+ * @return 0 if ESC break code was received, 1 otherwise.
+ */
+int (kbc_esc_break)();
+
+/**
+ * @brief Gets the current key code.
+ * 
+ * @return The current key code.
+ */
+uint8_t (get_key_code)();
+
+#endif /* KEYBOARD_H */

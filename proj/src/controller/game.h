@@ -13,3 +13,4 @@
 void mouse_game_handler(Board* b);
 
 #endif // GAME_H
+

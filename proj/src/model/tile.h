@@ -47,3 +47,4 @@ int is_wrong(Tile tile);
 void destroy_tile(Tile *tile);
 
 #endif /* _TILE_H_ */
+

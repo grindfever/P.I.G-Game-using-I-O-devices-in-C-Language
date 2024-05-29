@@ -78,3 +78,4 @@ void print_board(Board *board);
 void destroy_board(Board *board);
 
 #endif /* _Board_H_ */
+
