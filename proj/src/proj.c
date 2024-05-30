@@ -127,6 +127,14 @@ int end(){
   return 0;
 }
 
+/**
+ * @brief Main event loop of the program.
+ * 
+ * This function handles the main event loop, processing messages from the system and updating the game state accordingly.
+ * It handles keyboard and mouse interrupts, updates the display, and manages the main menu and game states.
+ * 
+ * @return 0 on success, 1 on failure.
+ */
 int loop(){
   message msg;
   int ipc_status;
@@ -183,6 +191,15 @@ int loop(){
   return 0;
 }
 
+/**
+ * @brief Main function of the project, initializes and runs the main event loop.
+ * 
+ * This function initializes the system, runs the main event loop, and then performs cleanup.
+ * 
+ * @param argc Number of arguments.
+ * @param argv Array of arguments.
+ * @return 0 on success, 1 on failure.
+ */
 int (proj_main_loop)(int argc, char **argv) {
   if(start()){
     return 1;
