@@ -3,36 +3,34 @@
 
 #include "graphics.h"
 
-static void *vbe_mem_buf;
-static void *video_buffer;
-static unsigned int VramSize;
-vbe_mode_info_t VModeInfo;
+static void *vbe_mem;
 
-static uint16_t XResolution;
-static uint16_t YResolution;
-static uint8_t color_depth;
+static uint16_t XRes;
+static uint16_t YRes;
+static uint8_t clr_depth;
 
-static uint8_t RedMaskSize;
-static uint8_t GreenMaskSize;
-static uint8_t BlueMaskSize;
+static uint8_t RMaskSize;
+static uint8_t GMaskSize;
+static uint8_t BMaskSize;
 
 void *(vg_init)(uint16_t mode) {
 
-  if (vbe_get_mode_info(mode, &VModeInfo) != OK)
+  vbe_mode_info_t ModeInfo;
+  if (vbe_get_mode_info(mode, &ModeInfo) != OK)
     return NULL;
 
-  color_depth = VModeInfo.BitsPerPixel;
-  XResolution = VModeInfo.XResolution;
-  YResolution = VModeInfo.YResolution;
+  clr_depth = ModeInfo.BitsPerPixel;
+  XRes = ModeInfo.XResolution;
+  YRes = ModeInfo.YResolution;
 
-  RedMaskSize = VModeInfo.RedMaskSize;
-  GreenMaskSize = VModeInfo.GreenMaskSize;
-  BlueMaskSize = VModeInfo.BlueMaskSize;
+  RMaskSize = ModeInfo.RedMaskSize;
+  GMaskSize = ModeInfo.GreenMaskSize;
+  BMaskSize = ModeInfo.BlueMaskSize;
 
   int ReturnVal;
   struct minix_mem_range MemoryRange;
-  MemoryRange.mr_base = VModeInfo.PhysBasePtr;
-  VramSize = XResolution * YResolution * calculate_bytes_per_pixel();
+  MemoryRange.mr_base = ModeInfo.PhysBasePtr;
+  unsigned int VramSize = XRes * YRes * bytes_per_pixel();
   MemoryRange.mr_limit = MemoryRange.mr_base + VramSize;
 
   if ((ReturnVal = sys_privctl(SELF, SYS_PRIV_ADD_MEM, &MemoryRange)) != OK) {
@@ -41,13 +39,9 @@ void *(vg_init)(uint16_t mode) {
   }
   
   /* map memory */
-  vbe_mem_buf = vm_map_phys(SELF, (void *)MemoryRange.mr_base, VramSize);
-  if(vbe_mem_buf == MAP_FAILED)
+  vbe_mem = vm_map_phys(SELF, (void *)MemoryRange.mr_base, VramSize);
+  if(vbe_mem == MAP_FAILED)
     panic("couldn't map video memory");
-
-  if (map_graphics_memory(mode))
-    return NULL;
-
 
   reg86_t Reg86;
   memset(&Reg86, 0, sizeof(Reg86)); // zero the structure
@@ -63,36 +57,10 @@ void *(vg_init)(uint16_t mode) {
     return NULL;
   }
 
-  return vbe_mem_buf;
+  return vbe_mem;
 }
 
-
-int (map_graphics_memory)(uint16_t mode) {
-  int r;
-  struct minix_mem_range mr;
-  mr.mr_base = VModeInfo.PhysBasePtr;
-  VramSize = XResolution * YResolution * calculate_bytes_per_pixel();
-  mr.mr_limit = mr.mr_base + VramSize;
-
-  if ((r = sys_privctl(SELF, SYS_PRIV_ADD_MEM, &mr)) != OK) {
-    panic("sys_privctl (ADD_MEM) failed: %d\n", r);
-    return 1;
-  }
-  
-  /* map memory */
-  vbe_mem_buf = vm_map_phys(SELF, (void *)mr.mr_base, VramSize);
-  if(vbe_mem_buf == MAP_FAILED) {
-    panic("couldn't map video memory\n");
-    return 1;
-  }
-
-  video_buffer = malloc(VramSize);
-
-  return 0;
-}
-
-
-int (draw_horizontal_line)(uint16_t x, uint16_t y, uint16_t len, uint32_t color) {
+int (vg_draw_hline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color) {
   for (int i = 0; i < len; i++) {
     if (generate_pixel(x + i, y, color) != OK)
       return 1;
@@ -101,91 +69,64 @@ int (draw_horizontal_line)(uint16_t x, uint16_t y, uint16_t len, uint32_t color)
   return 0;
 }
   
-int (draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color) {
+int (vg_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color) {
   for (int i = 0; i < height; i++)
-    if (draw_horizontal_line(x, y + i, width, color) != OK)
+    if (vg_draw_hline(x, y + i, width, color) != OK)
       return 1;
 
   return 0;
 }
 
-uint16_t (get_horizontal_resolution)() {
-  return XResolution;
+uint16_t (get_hres)() {
+  return XRes;
 }
 
-uint16_t (get_vertical_resolution)() {
-  return YResolution;
+uint16_t (get_vres)() {
+  return YRes;
 }
 
-int (calculate_bytes_per_pixel)() {
-  int BitsPerPixel = (int)color_depth;
+int (bytes_per_pixel)() {
+  int BitsPerPixel = (int)clr_depth;
   int BytesPerPixel = (BitsPerPixel / 8) + ((BitsPerPixel % 8) ? 1 : 0);
   return BytesPerPixel;
 }
 
 int (generate_pixel)(uint16_t posX, uint16_t posY, uint32_t clr) {
-  uint8_t *ptr;
-  ptr = (uint8_t *)video_buffer + (posY * XResolution + posX) * calculate_bytes_per_pixel();
-  for (int i = 0; i < calculate_bytes_per_pixel(); i++) {
-    *(ptr + i) = clr;
-    clr = clr >> 8;
+  if (clr_depth == 8) { // mode 0x105
+    if (clr > UINT8_MAX) {
+      printf("invalid color\n");
+      return 1;
+    }
+
+    uint8_t *pixelPtr;
+    pixelPtr = (uint8_t *)vbe_mem + (posY * XRes + posX) * bytes_per_pixel();
+    *pixelPtr = 0xFF & clr;  
+  }
+  else if (clr_depth == 24) { // mode 0x115
+    uint8_t *pixelPtr;
+    pixelPtr = (uint8_t *)vbe_mem + (posY * XRes + posX) * bytes_per_pixel();
+    *(pixelPtr + 2) = 0xFF & (clr >> 16);
+    *(pixelPtr + 1) = 0xFF & (clr >> 8);
+    *pixelPtr = 0xFF & clr;
   }
 
   return 0;
-
 }
 
-void (clear_graphics_screen)() {
-  memset(video_buffer, 0, VramSize);
-}
+uint32_t (get_color)(uint8_t rectangles, uint32_t first_color, uint8_t step_size, uint8_t row_index, uint8_t col_index) {
+  uint32_t calculatedColor = 0;
 
-void (draw_graphics_content)() {
-  memcpy(vbe_mem_buf, video_buffer, VramSize);
-}
+  if (clr_depth == 8) { // mode 0x105
+    uint32_t baseColor = (first_color + (row_index * rectangles + col_index) * step_size) % (1 << clr_depth);
+    calculatedColor = (baseColor << 16) | (baseColor << 8) | baseColor;
+  }
+  else if (clr_depth == 24) { // mode 0x115
+    uint32_t red = ((0xFF & (first_color >> 16)) + col_index * step_size) % (1 << RMaskSize);
+    uint32_t green = ((0xFF & (first_color >> 8)) + row_index * step_size) % (1 << GMaskSize);
+    uint32_t blue = ((0xFF & first_color) + (col_index + row_index) * step_size) % (1 << BMaskSize);
 
-uint8_t *(read_pixmap)(xpm_row_t *pixmap, uint16_t *width, uint16_t *height) {
-  if (width == NULL || height == NULL) {
-    printf("null pointer\n");
-    return NULL;
+    calculatedColor = ((0xFF & red) << 16) | ((0xFF & green) << 8) | (0xFF & blue); // color = RGB
   }
 
-  enum xpm_image_type type = XPM_INDEXED;
-  xpm_image_t img;
-  uint8_t *sprite = xpm_load((xpm_map_t)pixmap, type, &img);
-
-  if (sprite == NULL) {
-    printf("null pointer\n");
-    return NULL;
-  }
-
-  *width = img.width;
-  *height = img.height;
-
-  return sprite;
-}
-
-int (draw_sprite)(uint8_t *sprite, uint16_t x, uint16_t y, uint16_t width, uint16_t height) {
-  if (sprite == NULL) {
-    printf("null pointer\n");
-    return 1;
-  }
-
-  for (uint16_t i = 0; i < width; i++)
-    for (uint16_t j = 0; j < height; j++)
-      if (generate_pixel(x + i, y + j, sprite[j * width + i]) != OK)
-        return 1;
-
-  return 0;
-}
-
-int (draw_element)(xpm_row_t *pixmap, uint16_t x, uint16_t y) {
-  uint16_t width = 0, height = 0;
-  uint8_t *sprite = read_pixmap(pixmap, &width, &height);
-  if (sprite == NULL)
-    return 1;
-    
-  if (draw_sprite(sprite, x, y, width, height))
-    return 1;
-  
-  return 0;
+  return calculatedColor;
 }

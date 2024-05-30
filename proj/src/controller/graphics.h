@@ -1,118 +1,79 @@
-#ifndef GRAPHICS_H
-#define GRAPHICS_H
 
+#include <lcom/lcf.h>
 #include <stdint.h>
 
 /**
- * @brief Initializes the graphics mode.
+ * @brief Initializes the video graphics mode.
  * 
- * @param mode Graphics mode to initialize.
- * @return Pointer to the mapped video memory or NULL on failure.
+ * @param mode The video mode to be set.
+ * @return Pointer to the video memory if successful, NULL otherwise.
  */
 void *(vg_init)(uint16_t mode);
 
 /**
- * @brief Maps the graphics memory.
+ * @brief Draws a horizontal line on the screen.
  * 
- * @param mode Graphics mode to map.
- * @return 0 on success, 1 on failure.
- */
-int (map_graphics_memory)(uint16_t mode);
-
-/**
- * @brief Draws a horizontal line.
- * 
- * @param x Starting x-coordinate.
- * @param y Starting y-coordinate.
+ * @param x X-coordinate of the starting point.
+ * @param y Y-coordinate of the starting point.
  * @param len Length of the line.
  * @param color Color of the line.
- * @return 0 on success, 1 on failure.
+ * @return 0 upon success, non-zero otherwise.
  */
-int (draw_horizontal_line)(uint16_t x, uint16_t y, uint16_t len, uint32_t color);
+int (vg_draw_hline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color);
 
 /**
- * @brief Draws a rectangle.
+ * @brief Draws a rectangle on the screen.
  * 
- * @param x Top-left x-coordinate.
- * @param y Top-left y-coordinate.
+ * @param x X-coordinate of the top-left corner.
+ * @param y Y-coordinate of the top-left corner.
  * @param width Width of the rectangle.
  * @param height Height of the rectangle.
  * @param color Color of the rectangle.
- * @return 0 on success, 1 on failure.
+ * @return 0 upon success, non-zero otherwise.
  */
-int (draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color);
+int (vg_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color);
 
 /**
- * @brief Gets the horizontal resolution.
+ * @brief Gets the horizontal resolution of the screen.
  * 
- * @return Horizontal resolution.
+ * @return The horizontal resolution.
  */
-uint16_t (get_horizontal_resolution)();
+uint16_t (get_hres)();
 
 /**
- * @brief Gets the vertical resolution.
+ * @brief Gets the vertical resolution of the screen.
  * 
- * @return Vertical resolution.
+ * @return The vertical resolution.
  */
-uint16_t (get_vertical_resolution)();
+uint16_t (get_vres)();
 
 /**
- * @brief Calculates the bytes per pixel.
+ * @brief Gets the number of bytes per pixel.
  * 
- * @return Bytes per pixel.
+ * @return The number of bytes per pixel.
  */
-int (calculate_bytes_per_pixel)();
+int (bytes_per_pixel)();
 
 /**
- * @brief Generates a pixel at a given position.
+ * @brief Generates a pixel at the specified position with the given color.
  * 
  * @param posX X-coordinate of the pixel.
  * @param posY Y-coordinate of the pixel.
  * @param clr Color of the pixel.
- * @return 0 on success, 1 on failure.
+ * @return 0 upon success, non-zero otherwise.
  */
 int (generate_pixel)(uint16_t posX, uint16_t posY, uint32_t clr);
 
 /**
- * @brief Clears the graphics screen.
- */
-void (clear_graphics_screen)();
-
-/**
- * @brief Draws the content from the buffer to the screen.
- */
-void (draw_graphics_content)();
-
-/**
- * @brief Reads a pixmap.
+ * @brief Gets the color at the specified position based on a pattern.
  * 
- * @param pixmap Pixmap to read.
- * @param width Pointer to store the width of the pixmap.
- * @param height Pointer to store the height of the pixmap.
- * @return Pointer to the pixmap data or NULL on failure.
+ * @param rectangles Number of rectangles.
+ * @param first_color First color.
+ * @param step_size Step size.
+ * @param row_index Row index.
+ * @param col_index Column index.
+ * @return The calculated color.
  */
-uint8_t *(read_pixmap)(xpm_row_t *pixmap, uint16_t *width, uint16_t *height);
+uint32_t (get_color)(uint8_t rectangles, uint32_t first_color, uint8_t step_size, uint8_t row_index, uint8_t col_index);
 
-/**
- * @brief Draws a sprite.
- * 
- * @param sprite Pointer to the sprite data.
- * @param x X-coordinate to draw the sprite.
- * @param y Y-coordinate to draw the sprite.
- * @param width Width of the sprite.
- * @param height Height of the sprite.
- * @return 0 on success, 1 on failure.
- */
-int (draw_sprite)(uint8_t *sprite, uint16_t x, uint16_t y, uint16_t width, uint16_t height);
 
-/**
- * @brief Draws an element from a pixmap.
- * 
- * @param pixmap Pixmap to draw.
- * @param x X-coordinate to draw the element.
- * @param y Y-coordinate to draw the element.
- * @return 0 on success, 1 on failure.
- */
-int (draw_element)(xpm_row_t *pixmap, uint16_t x, uint16_t y);
-
-#endif /* GRAPHICS_H */
