@@ -131,9 +131,9 @@ int loop(){
   message msg;
   int ipc_status;
   int r;
-  int menu = 1;
+  int menu = 0;
   bool continue_loop = 1;
-  b = construct_board(0,0,5);
+  b = construct_board(250,250,5);
 
   while( continue_loop ) {
     if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) { 
@@ -147,18 +147,14 @@ int loop(){
             mouse_game_handler(b);
           }
           if (msg.m_notify.interrupts & irq_set_kbd) { 
-            if(menu){ //depois pode ser um switch se tiver mais estados
-              continue_loop = keyboard_menu_handler(); 
-            }
-            else {}
+            continue_loop = keyboard_menu_handler(); 
           }
           if (msg.m_notify.interrupts & irq_set_timer) {
               if(menu){
                   if (displayMainMenu()) return 1;
               }
-
-              if(draw_game_mouse()){
-                return 1;
+              else{
+                if(draw_game_board(b)) return 1;
               }
           }
         default:

@@ -14,6 +14,8 @@ void mouse_game_handler(Board* b);
 
 int draw_game_mouse();
 
+int draw_game_board(Board* b);
+
 /**
  * @brief Displays the game timer.
  * 
