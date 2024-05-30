@@ -1287,6 +1287,36 @@ static xpm_row_t const mouse_sprite[] = {
     ".....bbbbbbbbbb..",   
 };
 
+static xpm_row_t const mouse_sprite_click[] = {
+    "17 23 3",
+    ". 3",
+    "b 0",
+    "w 15",
+    ".................",
+    ".................",
+    ".....bb..........",
+    "....bwwb.........",
+    "....bwwb.........",
+    "....bwwb.........",
+    "....bwwbbb.......",
+    "....bwwbwwbbb....",
+    "....bwwbwwbwwbb..",
+    "....bwwbwwbwwbwb.",
+    "bbb.bwwbwwbwwbwwb",
+    "bwwbbwwwwwwwwbwwb",
+    "bwwwwwwwwwwwwwwwb",
+    ".bwwwwwwwwwwwwwwb",
+    "..bwwwwwwwwwwwwwb",
+    "..bwwwwwwwwwwwwwb",
+    "...bwwwwwwwwwwwwb",
+    "...bwwwwwwwwwwwb.",
+    "....bwwwwwwwwwwb.",
+    "....bwwwwwwwwwwb.",
+    ".....bwwwwwwwwb..",
+    ".....bwwwwwwwwb..",
+    ".....bbbbbbbbbb..",   
+};
+
 /**@}*/
 
 #endif /* _SPRITES_H */

@@ -7,12 +7,12 @@
 // Any header files included below this line should have been created by you
 #include "controller/keyboard.h"
 #include "controller/mouse.h"
-#include "controller/game.h"
-#include "controller/menu.h"
 #include "controller/I8042.h"
-#include "./controller/graphics.h"
+#include "controller/graphics.h"
 #include "model/board.h"
 #include "model/tile.h"
+#include "model/game.h"
+#include "model/menu.h"
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
@@ -136,15 +136,6 @@ int loop(){
   b = construct_board(0,0,5);
 
   while( continue_loop ) {
-    
-    if(menu){
-      if (displayMainMenu()) return 1;
-    }
-
-    if(draw_game_mouse()){
-      return 1;
-    }
-
     if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) { 
       printf("driver_receive failed with: %d", r);
       continue;
@@ -161,19 +152,15 @@ int loop(){
             }
             else {}
           }
-          /*
           if (msg.m_notify.interrupts & irq_set_timer) {
-              timer_int_handler();
-              if(!menu){
-                timer_counter++;
-                if (timer_counter % 60 == 0) {
-                game_seconds++;
-                }
-                display_game_timer(game_seconds);
-            
+              if(menu){
+                  if (displayMainMenu()) return 1;
+              }
+
+              if(draw_game_mouse()){
+                return 1;
               }
           }
-          */
         default:
           break;
       }

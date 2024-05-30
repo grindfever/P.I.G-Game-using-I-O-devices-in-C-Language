@@ -2,7 +2,6 @@
 #include <stdint.h>
 
 #include "graphics.h"
-#include "sprites.h"
 
 static void *vbe_mem_buf;
 static void *video_buffer;

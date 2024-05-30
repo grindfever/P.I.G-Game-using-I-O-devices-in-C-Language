@@ -4,9 +4,9 @@
 
 #include "controller/mouse.h"
 #include "controller/I8042.h"
-#include "../model/board.h"
+#include "controller/graphics.h"
+#include "board.h"
 #include "sprites.h"
-#include "graphics.h"
 #include "info.h"
 
 extern bool mouse_complete;
@@ -14,6 +14,7 @@ extern struct packet pack;
 
 int mouse_x = 5;
 int mouse_y = 5;
+bool clicking = false;
 
 void mouse_game_handler(Board* b){
     mouse_ih();
@@ -41,14 +42,25 @@ void mouse_game_handler(Board* b){
                 toggle_board_tile(tile_pos_x, tile_pos_y, b);
                 print_board(b);
             }
+            clicking = true;
         }
-
-        printf("Mouse Position: (%d, %d)\n", mouse_x, mouse_y);
+        else {
+            clicking = false;
+        }
     }
 }
 
 int draw_game_mouse(){
-    if (draw_element(mouse_sprite, mouse_x, mouse_y)) {
+    static xpm_row_t* to_draw;
+    
+    if(clicking){
+        to_draw = mouse_sprite_click;
+    }
+    else {
+        to_draw = mouse_sprite;
+    }
+
+    if (draw_element(to_draw, mouse_x, mouse_y)) {
         return 1;
     }
 

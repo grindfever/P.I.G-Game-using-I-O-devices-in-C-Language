@@ -3,8 +3,8 @@
 #include <stdint.h>
 
 #include "menu.h"
-#include "controller/keyboard.h"
-#include "controller/I8042.h"
+#include "./controller/keyboard.h"
+#include "./controller/I8042.h"
 
 extern bool keyboard_complete;
 extern struct scan_code_stats scan_code;

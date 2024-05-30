@@ -5,7 +5,7 @@
 
 #include "./controller/timer.h"
 #include "./controller/graphics.h"
-#include "./controller/info.h"
+#include "info.h"
 #include "sprites.h"
 
 bool (keyboard_menu_handler)();
