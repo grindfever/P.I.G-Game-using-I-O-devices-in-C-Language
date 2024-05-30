@@ -2,6 +2,7 @@
 #include <stdint.h>
 
 #include "graphics.h"
+#include "sprites.h"
 
 static void *vbe_mem_buf;
 static void *video_buffer;
@@ -15,6 +16,8 @@ static uint8_t color_depth;
 static uint8_t RedMaskSize;
 static uint8_t GreenMaskSize;
 static uint8_t BlueMaskSize;
+
+static uint8_t *digit_sprites[10];
 
 void *(vg_init)(uint16_t mode) {
 
@@ -60,6 +63,12 @@ void *(vg_init)(uint16_t mode) {
  
   if (sys_int86(&Reg86) != OK) {
     printf("set_vbe_mode: sys_int86() failed\n");
+    return NULL;
+  }
+
+   // Load digit sprites
+  if (load_digit_sprites() != 0) {
+    printf("Failed to load digit sprites\n");
     return NULL;
   }
 
@@ -189,3 +198,27 @@ int (draw_element)(xpm_row_t *pixmap, uint16_t x, uint16_t y) {
   
   return 0;
 }
+//dá load á lista de sprites de numeros sprite_number_list[i] em vg_init
+int load_digit_sprites() {
+  uint16_t width, height;
+  for (int i = 0; i < 10; i++) {
+    digit_sprites[i] = read_pixmap(sprite_number_list[i], &width, &height);
+    if (digit_sprites[i] == NULL) {
+      printf("Failed to load digit %d sprite\n", i);
+      return 1;
+    }
+  }
+  return 0;
+}
+
+int draw_digit(int digit, uint16_t x, uint16_t y) {
+  uint16_t width, height;
+  if (digit < 0 || digit > 9 || digit_sprites[digit] == NULL) {
+    printf("Invalid digit or sprite not loaded: %d\n", digit);
+    return 1;
+  }
+  width = 10; // Set the width of the digit sprite (adjust as necessary)
+  height = 16; // Set the height of the digit sprite (adjust as necessary)
+  return draw_sprite(digit_sprites[digit], x, y, width, height);
+}
+

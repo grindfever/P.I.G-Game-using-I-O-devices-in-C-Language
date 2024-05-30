@@ -76,6 +76,9 @@ int start(){
   if(timer_subscribe_int(&bit_no_timer)){
     return 1;
   }
+  if (timer_set_frequency(0, 60)) {
+    return 1;
+  }
 
   if (vg_init(GAME_MODE) == NULL){
     return 1;
@@ -130,7 +133,8 @@ int loop(){
   int r;
   int menu = 1;
   bool continue_loop = 1;
-
+  int timer_counter=0;
+  int game_seconds=0;
   b = construct_board(0,0,5);
 
   while( continue_loop ) {
@@ -159,8 +163,17 @@ int loop(){
             }
             else {}
           }
-          //if (msg.m_notify.interrupts & irq_set_timer) {timer_int_handler();}
-          break;
+          if (msg.m_notify.interrupts & irq_set_timer) {
+              timer_int_handler();
+              if(!menu){
+                timer_counter++;
+                if (timer_counter % 60 == 0) {
+                game_seconds++;
+                }
+                display_game_timer(game_seconds);
+            
+              }
+          }
         default:
           break;
       }
