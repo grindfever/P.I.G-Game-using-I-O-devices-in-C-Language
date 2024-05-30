@@ -1257,8 +1257,11 @@ static xpm_row_t const main_menu_sprite_Y[] = {
     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
 };
 
-
-
+//to display countdown during game currently in game.c 
+static xpm_row_t const *sprite_number_list[] = {
+    sprite_0, sprite_1, sprite_2, sprite_3, sprite_4,
+    sprite_5, sprite_6, sprite_7, sprite_8, sprite_9
+};
 
 /**@}*/
 

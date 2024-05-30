@@ -5,6 +5,8 @@
 #include "controller/mouse.h"
 #include "controller/I8042.h"
 #include "../model/board.h"
+#include "sprites.h"
+#include "graphics.h"
 
 extern bool mouse_complete;
 extern struct packet pack;
@@ -44,3 +46,13 @@ void mouse_game_handler(Board* b){
     }
 }
 
+   void display_game_timer(int game_seconds){
+      countdown=300-game_seconds;//podemos alterar isto para nao ser sempre 5 minutos 
+      int x1=0,x2=0,x3=0;
+      while (countdown>0){
+        x1 = countdown / 100;        // Extract the hundreds place
+        x2 = (countdown / 10) % 10; // Extract the tens place
+        x3 = countdown % 10;       // Extract the units place
+
+        
+    }
