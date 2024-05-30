@@ -5,6 +5,9 @@
 #include "controller/mouse.h"
 #include "controller/I8042.h"
 #include "../model/board.h"
+#include "sprites.h"
+#include "graphics.h"
+#include "info.h"
 
 extern bool mouse_complete;
 extern struct packet pack;
@@ -44,3 +47,12 @@ void mouse_game_handler(Board* b){
     }
 }
 
+int draw_game_mouse(){
+    if (draw_element(mouse_sprite, mouse_x, mouse_y)) {
+        return 1;
+    }
+
+    draw_graphics_content();
+
+    return 0;
+}

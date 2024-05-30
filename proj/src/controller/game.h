@@ -12,5 +12,7 @@
  */
 void mouse_game_handler(Board* b);
 
+int draw_game_mouse();
+
 #endif // GAME_H
 

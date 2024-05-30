@@ -3,14 +3,6 @@
 
 #include <stdint.h>
 #include <stdio.h>
-#include "controller/keyboard.h"
-#include "controller/mouse.h"
-#include "controller/game.h"
-#include "controller/menu.h"
-#include "controller/I8042.h"
-#include "./controller/graphics.h"
-#include "model/board.h"
-#include "model/tile.h"
 
 // Any header files included below this line should have been created by you
 #include "controller/keyboard.h"
@@ -49,6 +41,7 @@ int main(int argc, char *argv[]) {
 int irq_set_timer = 0;
 int irq_set_kbd = 0;
 int irq_set_mouse = 0;
+Board* b;
 
 /**
  * @brief Initializes the system by subscribing to interrupts and setting up the video mode.
@@ -103,6 +96,8 @@ int start(){
 int end(){
   int check;
 
+  destroy_board(b);
+
   if (vg_exit() != OK){
     return 1;
   }
@@ -136,12 +131,16 @@ int loop(){
   int menu = 1;
   bool continue_loop = 1;
 
-  Board* b = construct_board(0,0,5);
+  b = construct_board(0,0,5);
 
   while( continue_loop ) {
     
     if(menu){
       if (displayMainMenu()) return 1;
+    }
+
+    if(draw_game_mouse()){
+      return 1;
     }
 
     if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) { 
@@ -152,10 +151,7 @@ int loop(){
       switch (_ENDPOINT_P(msg.m_source)) {
         case HARDWARE:	
           if (msg.m_notify.interrupts & irq_set_mouse) {
-            if(menu){}
-            else {
-              mouse_game_handler(b); 
-            }
+            mouse_game_handler(b);
           }
           if (msg.m_notify.interrupts & irq_set_kbd) { 
             if(menu){ //depois pode ser um switch se tiver mais estados
@@ -171,8 +167,6 @@ int loop(){
     } 
   }
 
-  destroy_board(b);
-
   return 0;
 }
 
@@ -182,6 +176,9 @@ int (proj_main_loop)(int argc, char **argv) {
   }
 
   if (loop()){
+    if(end()){
+      return 1;
+    }
     return 1;
   }
 
@@ -191,3 +188,4 @@ int (proj_main_loop)(int argc, char **argv) {
 
   return 0;
 }
+

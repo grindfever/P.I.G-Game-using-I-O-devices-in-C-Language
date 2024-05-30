@@ -46,6 +46,8 @@
         "mouse.h": "c",
         "graphics.h": "c",
         "sprites.h": "c",
-        "kbc.h": "c"
+        "kbc.h": "c",
+        "info.h": "c",
+        "timer.h": "c"
     }
 }

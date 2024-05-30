@@ -5,7 +5,7 @@ PROG=proj
 .PATH: ${.CURDIR}/controller
 
 # source code files to be compiled
-SRCS = proj.c board.c tile.c timer.c mouse.c keyboard.c graphics.c utils.c kbc.c menu.c
+SRCS = proj.c board.c tile.c timer.c mouse.c keyboard.c graphics.c utils.c kbc.c menu.c game.c
 
 
 # additional compilation flags
