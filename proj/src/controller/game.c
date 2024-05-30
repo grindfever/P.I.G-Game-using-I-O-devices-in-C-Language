@@ -47,12 +47,31 @@ void mouse_game_handler(Board* b){
 }
 
    void display_game_timer(int game_seconds){
-      countdown=300-game_seconds;//podemos alterar isto para nao ser sempre 5 minutos 
-      int x1=0,x2=0,x3=0;
-      while (countdown>0){
+        countdown=300-game_seconds;//podemos alterar isto para nao ser sempre 5 minutos
+        int x1=0,x2=0,x3=0;        //podemos passar como argumento a dificuldade ou assim 
+
+        if (countdown <= 0) {
+                // Set all digits to 0 if countdown has ended
+                draw_digit(0, 10, 10);  
+                draw_digit(0, 30, 10);  
+                draw_digit(0, 50, 10);  
+            } else {
+
         x1 = countdown / 100;        // Extract the hundreds place
         x2 = (countdown / 10) % 10; // Extract the tens place
         x3 = countdown % 10;       // Extract the units place
+        
+        // Define positions for the digits (adjust based on your screen layout)
+        uint16_t x_position = 10; // Starting x position for the first digit
+        uint16_t y_position = 10; // Starting y position for the digits
 
+        // Draw the digits
+        draw_digit(x1, x_position, y_position);
+        draw_digit(x2, x_position + 20, y_position); 
+        draw_digit(x3, x_position + 40, y_position); 
+
+        // Refresh the graphics content
+        draw_graphics_content();
         
     }
+   }
