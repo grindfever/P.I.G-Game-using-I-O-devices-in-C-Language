@@ -66,12 +66,6 @@ void *(vg_init)(uint16_t mode) {
     return NULL;
   }
 
-   // Load digit sprites
-  if (load_digit_sprites() != 0) {
-    printf("Failed to load digit sprites\n");
-    return NULL;
-  }
-
   return vbe_mem_buf;
 }
 
@@ -196,18 +190,6 @@ int (draw_element)(xpm_row_t *pixmap, uint16_t x, uint16_t y) {
   if (draw_sprite(sprite, x, y, width, height))
     return 1;
   
-  return 0;
-}
-//dá load á lista de sprites de numeros sprite_number_list[i] em vg_init
-int load_digit_sprites() {
-  uint16_t width, height;
-  for (int i = 0; i < 10; i++) {
-    digit_sprites[i] = read_pixmap(sprite_number_list[i], &width, &height);
-    if (digit_sprites[i] == NULL) {
-      printf("Failed to load digit %d sprite\n", i);
-      return 1;
-    }
-  }
   return 0;
 }
 

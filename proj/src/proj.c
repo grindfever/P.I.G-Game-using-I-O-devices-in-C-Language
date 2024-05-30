@@ -133,8 +133,6 @@ int loop(){
   int r;
   int menu = 1;
   bool continue_loop = 1;
-  int timer_counter=0;
-  int game_seconds=0;
   b = construct_board(0,0,5);
 
   while( continue_loop ) {
@@ -163,6 +161,7 @@ int loop(){
             }
             else {}
           }
+          /*
           if (msg.m_notify.interrupts & irq_set_timer) {
               timer_int_handler();
               if(!menu){
@@ -174,6 +173,7 @@ int loop(){
             
               }
           }
+          */
         default:
           break;
       }
