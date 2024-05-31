@@ -42,6 +42,8 @@ int irq_set_timer = 0;
 int irq_set_kbd = 0;
 int irq_set_mouse = 0;
 Board* b;
+int menu = 1;
+int rules = 0;
 
 /**
  * @brief Initializes the system by subscribing to interrupts and setting up the video mode.
@@ -139,7 +141,6 @@ int loop(){
   message msg;
   int ipc_status;
   int r;
-  int menu = 1;
   bool continue_loop = 1;
   b = construct_board(250,250,5);
 
@@ -161,9 +162,14 @@ int loop(){
               if(menu){
                 if (displayMainMenu()) return 1;
               }
+              else if(rules){
+                if (displayRules()) return 1; 
+              }
+              /*
               else{
                 if(draw_game_board(b)) return 1;
               }
+              */
           }
         default:
           break;

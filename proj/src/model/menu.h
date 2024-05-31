@@ -26,6 +26,15 @@ bool (keyboard_menu_handler)();
  */
 int (displayMainMenu)();
 
+/**
+ * @brief Displays the rules menu.
+ *
+ * This function clears the screen, draws the main menu background and elements, and refreshes the graphics content.
+ *
+ * @return Returns 0 on success, and 1 on failure.
+ */
+int (displayRules)();
+
 /**@}*/
 
 #endif /* _MENU_H */
