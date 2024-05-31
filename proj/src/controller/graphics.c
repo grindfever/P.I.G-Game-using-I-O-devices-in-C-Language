@@ -169,7 +169,7 @@ void (draw_graphics_content)() {
 
 
 
-int (draw_sprite)(uint8_t *sprite, uint16_t x, uint16_t y, uint16_t width, uint16_t height) {
+int (draw_sprite)(uint8_t *sprite, uint16_t posX, uint16_t posY, uint16_t width, uint16_t height) {
     if (sprite == NULL) {
         printf("Null pointer\n");
         return 1;
@@ -179,7 +179,7 @@ int (draw_sprite)(uint8_t *sprite, uint16_t x, uint16_t y, uint16_t width, uint1
         for (uint16_t i = 0; i < width; i++) {
             uint8_t *pixel = sprite + (j * width + i) * 3; // 3 bytes per pixel (RGB)
             uint32_t color = (pixel[2] << 16) | (pixel[1] << 8) | pixel[0]; // Convert RGB to 32-bit color
-            if (generate_pixel(x + i, y + j, color) != 0) {
+            if (generate_pixel(posX + i, posY + j, color) != 0) {
                 printf("Failed to draw pixel\n");
                 return 1;
             }
@@ -189,13 +189,13 @@ int (draw_sprite)(uint8_t *sprite, uint16_t x, uint16_t y, uint16_t width, uint1
     return 0;
 }
 
-int (draw_element)(xpm_row_t *pixmap, uint16_t x, uint16_t y) {
+int (draw_element)(xpm_row_t *pixmap, uint16_t posX, uint16_t posY) {
   uint16_t width = 0, height = 0;
   uint8_t *sprite = read_pixmap(pixmap, &width, &height);
   if (sprite == NULL)
     return 1;
     
-  if (draw_sprite(sprite, x, y, width, height))
+  if (draw_sprite(sprite, posX, posY, width, height))
     return 1;
   
   return 0;

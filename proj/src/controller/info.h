@@ -18,8 +18,8 @@
 
 #define GAME_HEIGHT 28
 
-#define MAIN_MENU_X_ORIGIN 400 /**< @brief Starting x position for the menu */
-#define MAIN_MENU_Y_ORIGIN 250 /**< @brief Starting y position for the menu */
+#define MAIN_MENU_X_ORIGIN 350 /**< @brief Starting x position for the menu */
+#define MAIN_MENU_Y_ORIGIN 150 /**< @brief Starting y position for the menu */
 
 
 #define KEY_2 0x83 /**< @brief Scancode make byte for key '2' */
@@ -39,10 +39,6 @@
 #define COLOR_BLACK 0x000000
 #define COLOR_YELLOW 0xFFFF00
 
-
-extern int irq_set_kbd; 
-extern int irq_set_kbd;
-extern int irq_set_mouse;
 
 
 /**@}*/
