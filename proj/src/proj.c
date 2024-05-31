@@ -42,7 +42,7 @@ int irq_set_timer = 0;
 int irq_set_kbd = 0;
 int irq_set_mouse = 0;
 Board* b;
-int menu = 1;
+int menu = 0;
 int rules = 0;
 
 /**
@@ -165,11 +165,9 @@ int loop(){
               else if(rules){
                 if (displayRules()) return 1; 
               }
-              /*
               else{
                 if(draw_game_board(b)) return 1;
               }
-              */
           }
         default:
           break;

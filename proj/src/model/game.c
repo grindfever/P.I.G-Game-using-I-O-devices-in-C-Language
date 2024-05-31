@@ -71,8 +71,8 @@ int draw_game_board(Board* b) {
     clear_graphics_screen();
 
     // Draw background pixels
-    for (int i = 0; i < CONSOLE_WIDTH; ++i) {
-        for (int j = 0; j < CONSOLE_HEIGHT; ++j) {
+    for (int i = 0; i < CONSOLE_WIDTH_115; ++i) {
+        for (int j = 0; j < CONSOLE_HEIGHT_115; ++j) {
             if (generate_pixel(i, j, COLOR_BLUE)) {
                 return 1;
             }
@@ -95,7 +95,6 @@ int draw_game_board(Board* b) {
             }
         }
     }
-
 
     if(draw_game_mouse()){
         return 1;
