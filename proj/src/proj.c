@@ -139,7 +139,7 @@ int loop(){
   message msg;
   int ipc_status;
   int r;
-  int menu = 0;
+  int menu = 1;
   bool continue_loop = 1;
   b = construct_board(250,250,5);
 
@@ -159,7 +159,7 @@ int loop(){
           }
           if (msg.m_notify.interrupts & irq_set_timer) {
               if(menu){
-                  if (displayMainMenu()) return 1;
+                if (displayMainMenu()) return 1;
               }
               else{
                 if(draw_game_board(b)) return 1;

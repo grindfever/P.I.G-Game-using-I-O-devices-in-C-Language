@@ -130,6 +130,9 @@ int (calculate_bytes_per_pixel)() {
 
 int (generate_pixel)(uint16_t posX, uint16_t posY, uint32_t clr) {
   uint8_t *pixelPtr;
+
+  if(clr == CHROMA_KEY_GREEN_888) return 0; //don't draw transparent color
+
   pixelPtr = (uint8_t *)video_buf + (posY * XResolution + posX) * calculate_bytes_per_pixel();
   *(pixelPtr + 2) = 0xFF & (clr >> 16);
   *(pixelPtr + 1) = 0xFF & (clr >> 8);
@@ -200,19 +203,3 @@ int (draw_element)(xpm_row_t *pixmap, uint16_t posX, uint16_t posY) {
   
   return 0;
 }
-
-/*
-int draw_digit(int digit, uint16_t x, uint16_t y) {
-  uint16_t width, height;
-  if (digit < 0 || digit > 9 || digit_sprites[digit] == NULL) {
-    printf("Invalid digit or sprite not loaded: %d\n", digit);
-    return 1;
-  }
-  width = 10; // Set the width of the digit sprite (adjust as necessary)
-  height = 16; // Set the height of the digit sprite (adjust as necessary)
-  return draw_sprite(digit_sprites[digit], x, y, width, height);
-}
-
-*/
-
-

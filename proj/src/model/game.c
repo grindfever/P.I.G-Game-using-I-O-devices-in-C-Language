@@ -73,7 +73,7 @@ int draw_game_board(Board* b) {
     // Draw background pixels
     for (int i = 0; i < CONSOLE_WIDTH; ++i) {
         for (int j = 0; j < CONSOLE_HEIGHT; ++j) {
-            if (generate_pixel(i, j, 3)) {
+            if (generate_pixel(i, j, COLOR_BLUE)) {
                 return 1;
             }
         }

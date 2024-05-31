@@ -39,8 +39,6 @@
 #define COLOR_BLACK 0x000000
 #define COLOR_YELLOW 0xFFFF00
 
-
-
 /**@}*/
 
 #endif /* _INFO_H */
