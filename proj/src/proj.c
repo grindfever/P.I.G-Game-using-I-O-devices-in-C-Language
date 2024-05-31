@@ -142,7 +142,7 @@ int loop(){
   int ipc_status;
   int r;
   bool continue_loop = 1;
-  b = construct_board(250,250,5);
+  b = construct_board(200,200,3);
 
   while( continue_loop ) {
     if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) { 
@@ -172,7 +172,11 @@ int loop(){
         default:
           break;
       }
-    } 
+    }
+
+    if(check_win(b)){
+      menu = 1;
+    }
   }
 
   return 0;

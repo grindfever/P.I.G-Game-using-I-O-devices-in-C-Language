@@ -48,12 +48,12 @@ Board *construct_board(uint16_t x, uint16_t y, uint16_t size){
         for(int j = 0; j < size; j++){
             random_solution = rand() % 2;
             if(random_solution){
-                board->h_hints[i]->count += 1;
+                board->v_hints[i]->count += 1;
             } else {
-                if(board->h_hints[i]->count != 0){
+                if(board->v_hints[i]->count != 0){
                     Hint* temp = create_hint(0);
-                    temp->next = board->h_hints[i];
-                    board->h_hints[i] = temp;
+                    temp->next = board->v_hints[i];
+                    board->v_hints[i] = temp;
                 }
             }
             board->tiles[i][j] = construct_tile(x + j, y + i, random_solution);
@@ -64,12 +64,12 @@ Board *construct_board(uint16_t x, uint16_t y, uint16_t size){
         for(int i = size - 1; i >= 0; i--){
             int v_solution = board->tiles[i][j].solution;
             if(v_solution){
-                board->v_hints[j]->count += 1;
+                board->h_hints[j]->count += 1;
             } else {
-                if(board->v_hints[j]->count != 0){
+                if(board->h_hints[j]->count != 0){
                     Hint* temp = create_hint(0);
-                    temp->next = board->v_hints[j];
-                    board->v_hints[j] = temp;
+                    temp->next = board->h_hints[j];
+                    board->h_hints[j] = temp;
                 }
             }
         }

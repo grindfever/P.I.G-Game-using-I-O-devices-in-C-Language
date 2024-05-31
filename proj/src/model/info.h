@@ -39,6 +39,8 @@
 #define COLOR_BLACK 0x000000
 #define COLOR_YELLOW 0xFFFF00
 
+#define TILE_SIZE 40
+
 /**@}*/
 
 #endif /* _INFO_H */

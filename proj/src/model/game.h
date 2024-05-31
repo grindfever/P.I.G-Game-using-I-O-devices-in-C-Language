@@ -9,6 +9,7 @@
  * Reads mouse input and updates the game state accordingly.
  * 
  * @param b Pointer to the game board.
+ * @return Returns 0 on success, and 1 on failure.
  */
 void mouse_game_handler(Board* b);
 
@@ -24,6 +25,10 @@ void mouse_game_handler(Board* b);
 int draw_game_mouse();
 
 int draw_game_board(Board* b);
+
+int draw_game_tiles(Board* b);
+
+int draw_game_hints(Board* b);
 
 /**
  * @brief Displays the game timer.
