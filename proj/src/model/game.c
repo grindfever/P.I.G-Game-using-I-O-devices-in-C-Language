@@ -96,7 +96,7 @@ int draw_game_hints(Board* b){
 
         while (current_h != NULL) {
             if(current_h->count != 0){
-                if(draw_element(number_sprites[current_h->count], b->x - counter*TILE_SIZE, b->y + i*TILE_SIZE + 5)){
+                if(draw_element(number_sprites[current_h->count], b->x - counter*TILE_SIZE + 7, b->y + i*TILE_SIZE + 5)){
                     return 1;
                 }
                 counter += 1;
@@ -112,7 +112,7 @@ int draw_game_hints(Board* b){
 
         while (current_v != NULL) {
             if(current_v->count != 0){
-                if(draw_element(number_sprites[current_v->count], b->x + i*TILE_SIZE + 5, b->y - counter*TILE_SIZE)){
+                if(draw_element(number_sprites[current_v->count], b->x + i*TILE_SIZE + 5, b->y - counter*TILE_SIZE + 7)){
                     return 1;
                 }
                 counter += 1;

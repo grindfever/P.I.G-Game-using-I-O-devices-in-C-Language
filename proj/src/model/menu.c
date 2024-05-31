@@ -35,20 +35,6 @@ bool (keyboard_menu_handler)() {
             rules = 1;
             return 1;
         }
-
-        /*
-        if (!kbc_inc_code()) {
-            key_code = get_key_code();
-                            
-            if (key_code == KEY_1) {
-            }
-            else if (key_code == KEY_2){
-            }
-            else if (key_code == KEY_0)
-                process = 0;
-        }
-        */
-
     }
 
     return true;
@@ -88,7 +74,7 @@ int displayMainMenu() {
         {main_menu_sprite_L, 50, 50},
         {main_menu_sprite_A, 100, 50},
         {main_menu_sprite_Y, 150, 50},
-        {main_menu_sprite_2, -80, 150},
+        {sprite_2, -80, 150},
         {main_menu_sprite_R, 0, 150},
         {main_menu_sprite_U, 50, 150},
         {main_menu_sprite_L, 100, 150},
