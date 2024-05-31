@@ -13,6 +13,8 @@
  */
 void mouse_game_handler(Board* b);
 
+void timer_game_handler();
+
 /**
  * @brief Draws the game mouse on the screen.
  * 
@@ -23,6 +25,8 @@ void mouse_game_handler(Board* b);
  * @return Returns 0 on success, and 1 on failure.
  */
 int draw_game_mouse();
+
+int draw_game_timer(int x, int y);
 
 int draw_game_board(Board* b);
 

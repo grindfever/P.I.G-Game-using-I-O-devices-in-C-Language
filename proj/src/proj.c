@@ -142,7 +142,7 @@ int loop(){
   int ipc_status;
   int r;
   bool continue_loop = 1;
-  b = construct_board(200,300,3);
+  b = construct_board(200,200,3);
 
   while( continue_loop ) {
     if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) { 
@@ -166,6 +166,7 @@ int loop(){
                 if (displayRules()) return 1; 
               }
               else{
+                timer_game_handler();
                 if(draw_game_board(b)) return 1;
               }
           }

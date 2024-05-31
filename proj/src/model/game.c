@@ -14,6 +14,9 @@ extern struct packet pack;
 
 int mouse_x = 5;
 int mouse_y = 5;
+int minutes = 0;
+int seconds = 0;
+int time_counter = 0;
 bool clicking = false;
 
 static xpm_row_t* number_sprites[10] = {sprite_0, sprite_1, sprite_2, sprite_3, sprite_4, sprite_5, sprite_6, sprite_7, sprite_8, sprite_9};
@@ -49,6 +52,54 @@ void mouse_game_handler(Board* b){
             clicking = false;
         }
     }
+}
+
+void timer_game_handler(){
+    if(minutes == 60){
+        return;
+    }
+
+    time_counter++;
+
+    if(time_counter % 60 == 0){
+        time_counter = 0;
+        seconds += 1;
+        if(seconds % 60 == 0){
+            seconds = 0;
+            minutes += 1;
+        }
+    }
+}
+
+int draw_game_timer(int x, int y){
+    int temp_s = seconds;
+    int temp_m = minutes;
+
+    int pos = 0;
+
+    for(int i = 0; i < 2; i++){
+        if (draw_element(number_sprites[temp_s%10], x+124-pos*31 , y)) {
+            return 1;
+        }
+        temp_s /= 10;
+        pos += 1;
+    }
+
+    if (draw_element(sprite_double_dot, x+124-pos*31 , y)) {
+        return 1;
+    }
+
+    pos += 1;
+
+    for(int i = 0; i < 2; i++){
+        if (draw_element(number_sprites[temp_m%10], x+124-pos*31 , y)) {
+            return 1;
+        }
+        temp_m /= 10;
+        pos += 1;
+    }
+
+    return 0;
 }
 
 int draw_game_mouse(){
@@ -134,6 +185,10 @@ int draw_game_board(Board* b) {
                 return 1;
             }
         }
+    }
+
+    if(draw_game_timer(0, 0)){
+        return 1;
     }
 
     if(draw_game_tiles(b)){
