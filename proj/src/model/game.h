@@ -12,6 +12,15 @@
  */
 void mouse_game_handler(Board* b);
 
+/**
+ * @brief Draws the game mouse on the screen.
+ * 
+ * This function draws the game mouse at its current position on the screen
+ * using the specified mouse sprite. It updates the graphics content after
+ * drawing the mouse.
+ * 
+ * @return Returns 0 on success, and 1 on failure.
+ */
 int draw_game_mouse();
 
 int draw_game_board(Board* b);

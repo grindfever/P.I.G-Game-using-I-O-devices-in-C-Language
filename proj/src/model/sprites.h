@@ -270,7 +270,7 @@ static xpm_row_t const sprite_4[] = {
 };
 
 static xpm_row_t const sprite_3[] = {
-    "40 31 2",
+    "40 31 2 1",
     ". 0",
     "x 1",
     "..xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...",
@@ -345,9 +345,9 @@ static xpm_row_t const sprite_2[] = {
 
 
 static xpm_row_t const main_menu_sprite_2[] = {
-    "40 31 2",
-    ". 3",
-    "x 8",
+    "40 31 2 1",
+    ". c #ADD8E6",
+    "x c #FFFF00",
     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
@@ -420,9 +420,9 @@ static xpm_row_t const sprite_1[] = {
 
 
 static xpm_row_t const main_menu_sprite_1[] = {
-    "40 31 2",
-    ". 3",
-    "x 8",
+    "40 31 2 1",
+    ". c #ADD8E6",
+    "x c #FFFF00",
     "......................xxxxxxx...........",
     "..................xxxxxxxxxxx...........",
     "...............xxxxxxxxxxxxxx...........",
@@ -495,35 +495,35 @@ static xpm_row_t const sprite_0[] = {
 
 
 static xpm_row_t const main_menu_sprite_0[] = {
-    "40 31 2",
-    "  3",
-    "x 8",
+    "40 31 2 1",
+    ". c #ADD8E6",
+    "x c #FFFF00",
     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-    "xxxxxxxxxx             xxxxxxxxxxxxxxxxx",
-    "xxxxxxxxxx            xxxxxxx xxxxxxxxxx",
-    "xxxxxxxxxx           xxxxxxx  xxxxxxxxxx",
-    "xxxxxxxxxx           xxxxxxx  xxxxxxxxxx",
-    "xxxxxxxxxx          xxxxxxx   xxxxxxxxxx",
-    "xxxxxxxxxx         xxxxxxx    xxxxxxxxxx",
-    "xxxxxxxxxx         xxxxxxx    xxxxxxxxxx",
-    "xxxxxxxxxx        xxxxxxx     xxxxxxxxxx",
-    "xxxxxxxxxx       xxxxxxx      xxxxxxxxxx",
-    "xxxxxxxxxx       xxxxxxx      xxxxxxxxxx",
-    "xxxxxxxxxx       xxxxxxx      xxxxxxxxxx",
-    "xxxxxxxxxx       xxxxxxx      xxxxxxxxxx",
-    "xxxxxxxxxx       xxxxxxx      xxxxxxxxxx",
-    "xxxxxxxxxx       xxxxxxx      xxxxxxxxxx",
-    "xxxxxxxxxx      xxxxxxx       xxxxxxxxxx",
-    "xxxxxxxxxx     xxxxxxx        xxxxxxxxxx",
-    "xxxxxxxxxx    xxxxxxx         xxxxxxxxxx",
-    "xxxxxxxxxx   xxxxxxx          xxxxxxxxxx",
-    "xxxxxxxxxx  xxxxxxx           xxxxxxxxxx",
-    "xxxxxxxxxx xxxxxxx            xxxxxxxxxx",
-    "xxxxxxxxxxxxxxxxx             xxxxxxxxxx",
+    "xxxxxxxxxx.............xxxxxxxxxxxxxxxxx",
+    "xxxxxxxxxx............xxxxxxx.xxxxxxxxxx",
+    "xxxxxxxxxx...........xxxxxxx..xxxxxxxxxx",
+    "xxxxxxxxxx...........xxxxxxx..xxxxxxxxxx",
+    "xxxxxxxxxx..........xxxxxxx...xxxxxxxxxx",
+    "xxxxxxxxxx.........xxxxxxx....xxxxxxxxxx",
+    "xxxxxxxxxx.........xxxxxxx....xxxxxxxxxx",
+    "xxxxxxxxxx........xxxxxxx.....xxxxxxxxxx",
+    "xxxxxxxxxx.......xxxxxxx......xxxxxxxxxx",
+    "xxxxxxxxxx.......xxxxxxx......xxxxxxxxxx",
+    "xxxxxxxxxx.......xxxxxxx......xxxxxxxxxx",
+    "xxxxxxxxxx.......xxxxxxx......xxxxxxxxxx",
+    "xxxxxxxxxx.......xxxxxxx......xxxxxxxxxx",
+    "xxxxxxxxxx.......xxxxxxx......xxxxxxxxxx",
+    "xxxxxxxxxx......xxxxxxx.......xxxxxxxxxx",
+    "xxxxxxxxxx.....xxxxxxx........xxxxxxxxxx",
+    "xxxxxxxxxx....xxxxxxx.........xxxxxxxxxx",
+    "xxxxxxxxxx...xxxxxxx..........xxxxxxxxxx",
+    "xxxxxxxxxx..xxxxxxx...........xxxxxxxxxx",
+    "xxxxxxxxxx.xxxxxxx............xxxxxxxxxx",
+    "xxxxxxxxxxxxxxxxx.............xxxxxxxxxx",
     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
@@ -534,9 +534,9 @@ static xpm_row_t const main_menu_sprite_0[] = {
 
 
 static xpm_row_t const main_menu_sprite_A[] = {
-    "40 31 2",
-    ". 3",
-    "x 6",
+    "40 31 2 1",
+    ". c #ADD8E6",
+    "x c #FFFF00",
     "..xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx..",
     ".xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.",
     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
@@ -573,9 +573,9 @@ static xpm_row_t const main_menu_sprite_A[] = {
 
 
 static xpm_row_t const main_menu_sprite_B[] = {
-    "40 31 2",
-    ". 3",
-    "x 6",
+    "40 31 2 1",
+    ". c #ADD8E6",
+    "x c #FFFF00",
     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.....",
     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...",
     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx..",
@@ -611,9 +611,9 @@ static xpm_row_t const main_menu_sprite_B[] = {
 };
 
 static xpm_row_t const main_menu_sprite_C[] = {
-    "40 31 2",
-    ". 3",
-    "x 6",
+    "40 31 2 1",
+    ". c #ADD8E6",
+    "x c #FFFF00",
     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
@@ -650,9 +650,9 @@ static xpm_row_t const main_menu_sprite_C[] = {
 
 
 static xpm_row_t const main_menu_sprite_E[] = {
-    "40 31 2",
-    ". 3",
-    "x 6",
+    "40 31 2 1",
+    ". c #ADD8E6",
+    "x c #FFFF00",
     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
@@ -688,9 +688,9 @@ static xpm_row_t const main_menu_sprite_E[] = {
 };
 
 static xpm_row_t const main_menu_sprite_F[] = {
-    "40 31 2",
-    ". 3",
-    "x 6",
+    "40 31 2 1",
+    ". c #ADD8E6",
+    "x c #FFFF00",
     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
@@ -726,9 +726,9 @@ static xpm_row_t const main_menu_sprite_F[] = {
 };
 
 static xpm_row_t const main_menu_sprite_H[] = {
-  "40 31 2",
-  ". 3",
-  "x 6",
+  "40 31 2 1",
+  ". c #ADD8E6",
+  "x c #FFFF00",
   "xxxxxxxxxxxxx..............xxxxxxxxxxxxx",
   "xxxxxxxxxxxxx..............xxxxxxxxxxxxx",
   "xxxxxxxxxxxxx..............xxxxxxxxxxxxx",
@@ -763,9 +763,9 @@ static xpm_row_t const main_menu_sprite_H[] = {
 };
 
 static xpm_row_t const main_menu_sprite_I[] = {
-    "40 31 2",
-    ". 3",
-    "x 6",
+    "40 31 2 1",
+    ". c #ADD8E6",
+    "x c #FFFF00",
     "...xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...",
     "...xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...",
     "...xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...",
@@ -801,9 +801,9 @@ static xpm_row_t const main_menu_sprite_I[] = {
 
 
 static xpm_row_t const main_menu_sprite_K[] = {
-    "40 31 2",
-    ". 3",
-    "x 6",
+    "40 31 2 1",
+    ". c #ADD8E6",
+    "x c #FFFF00",
     "xxxxxxxxxxxxxxxxx.........xxxxxxxxxxxxxx",
     "xxxxxxxxxxxxxxxxx.........xxxxxxxxxxxxxx",
     "xxxxxxxxxxxxxxxxx........xxxxxxxxxxxxxxx",
@@ -839,9 +839,9 @@ static xpm_row_t const main_menu_sprite_K[] = {
 
 
 static xpm_row_t const main_menu_sprite_L[] = {
-    "40 31 2",
-    ". 3",
-    "x 6",
+    "40 31 2 1",
+    ". c #ADD8E6",
+    "x c #FFFF00",
     "xxxxxxxxxxxxx...........................",
     "xxxxxxxxxxxxx...........................",
     "xxxxxxxxxxxxx...........................",
@@ -877,9 +877,9 @@ static xpm_row_t const main_menu_sprite_L[] = {
 
 
 static xpm_row_t const main_menu_sprite_N[] = {
-    "40 31 2",
-    ". 3",
-    "x 6",
+    "40 31 2 1",
+    ". c #ADD8E6",
+    "x c #FFFF00",
     "xxxxxxxxxxxxxxxx..........xxxxxxxxxxxxxx",
     "xxxxxxxxxxxxxxxx..........xxxxxxxxxxxxxx",
     "xxxxxxxxxxxxxxxx..........xxxxxxxxxxxxxx",
@@ -915,47 +915,47 @@ static xpm_row_t const main_menu_sprite_N[] = {
 
 
 static xpm_row_t const main_menu_sprite_O[] = {
-    "40 31 2",
-    "  3",
-    "x 6",
-    "   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx   ",
-    "  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  ",
-    " xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx ",
+    "40 31 2 1",
+    ". c #ADD8E6",
+    "x c #FFFF00",
+    "...xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...",
+    "..xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx..",
+    ".xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.",
     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-    "xxxxxxxxxxx                  xxxxxxxxxxx",
-    "xxxxxxxxxx                    xxxxxxxxxx",
-    "xxxxxxxxxx                    xxxxxxxxxx",
-    "xxxxxxxxxx                    xxxxxxxxxx",
-    "xxxxxxxxxx                    xxxxxxxxxx",
-    "xxxxxxxxxx                    xxxxxxxxxx",
-    "xxxxxxxxxx                    xxxxxxxxxx",
-    "xxxxxxxxxx                    xxxxxxxxxx",
-    "xxxxxxxxxx                    xxxxxxxxxx",
-    "xxxxxxxxxx                    xxxxxxxxxx",
-    "xxxxxxxxxx                    xxxxxxxxxx",
-    "xxxxxxxxxx                    xxxxxxxxxx",
-    "xxxxxxxxxx                    xxxxxxxxxx",
-    "xxxxxxxxxx                    xxxxxxxxxx",
-    "xxxxxxxxxx                    xxxxxxxxxx",
-    "xxxxxxxxxx                    xxxxxxxxxx",
-    "xxxxxxxxxx                    xxxxxxxxxx",
-    "xxxxxxxxxx                    xxxxxxxxxx",
-    "xxxxxxxxxx                    xxxxxxxxxx",
-    "xxxxxxxxxx                    xxxxxxxxxx",
-    "xxxxxxxxxxx                  xxxxxxxxxxx",
+    "xxxxxxxxxxx..................xxxxxxxxxxx",
+    "xxxxxxxxxx....................xxxxxxxxxx",
+    "xxxxxxxxxx....................xxxxxxxxxx",
+    "xxxxxxxxxx....................xxxxxxxxxx",
+    "xxxxxxxxxx....................xxxxxxxxxx",
+    "xxxxxxxxxx....................xxxxxxxxxx",
+    "xxxxxxxxxx....................xxxxxxxxxx",
+    "xxxxxxxxxx....................xxxxxxxxxx",
+    "xxxxxxxxxx....................xxxxxxxxxx",
+    "xxxxxxxxxx....................xxxxxxxxxx",
+    "xxxxxxxxxx....................xxxxxxxxxx",
+    "xxxxxxxxxx....................xxxxxxxxxx",
+    "xxxxxxxxxx....................xxxxxxxxxx",
+    "xxxxxxxxxx....................xxxxxxxxxx",
+    "xxxxxxxxxx....................xxxxxxxxxx",
+    "xxxxxxxxxx....................xxxxxxxxxx",
+    "xxxxxxxxxx....................xxxxxxxxxx",
+    "xxxxxxxxxx....................xxxxxxxxxx",
+    "xxxxxxxxxx....................xxxxxxxxxx",
+    "xxxxxxxxxx....................xxxxxxxxxx",
+    "xxxxxxxxxxx..................xxxxxxxxxxx",
     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-    " xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx ",
-    "  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  ",
-    "   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx   ",
+    ".xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.",
+    "..xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx..",
+    "...xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...",
 };
 
 
 static xpm_row_t const main_menu_sprite_P[] = {
-    "40 31 2",
-    ". 3",
-    "x 6",
+    "40 31 2 1",
+    ". c #ADD8E6",
+    "x c #FFFF00",
     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
@@ -992,9 +992,9 @@ static xpm_row_t const main_menu_sprite_P[] = {
 
 
 static xpm_row_t const main_menu_sprite_R[] = {
-    "40 31 2",
-    ". 3",
-    "x 6",
+    "40 31 2 1",
+    ". c #ADD8E6",
+    "x c #FFFF00",
     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx..",
     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.",
     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
@@ -1030,9 +1030,9 @@ static xpm_row_t const main_menu_sprite_R[] = {
 };
 
 static xpm_row_t const main_menu_sprite_S[] = {
-    "40 31 2",
-    ". 3",
-    "x 6",
+    "40 31 2 1",
+    ". c #ADD8E6",
+    "x c #FFFF00",
     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
@@ -1068,9 +1068,9 @@ static xpm_row_t const main_menu_sprite_S[] = {
 
 
 static xpm_row_t const main_menu_sprite_T[] = {
-    "40 31 2",
-    ". 3",
-    "x 6",
+    "40 31 2 1",
+    ". c #ADD8E6",
+    "x c #FFFF00",
     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
@@ -1106,47 +1106,47 @@ static xpm_row_t const main_menu_sprite_T[] = {
 
 
 static xpm_row_t const main_menu_sprite_U[] = {
-    "40 31 2",
-    "  3",
-    "x 6",
-    "xxxxxxxxxx                    xxxxxxxxxx",
-    "xxxxxxxxxx                    xxxxxxxxxx",
-    "xxxxxxxxxx                    xxxxxxxxxx",
-    "xxxxxxxxxx                    xxxxxxxxxx",
-    "xxxxxxxxxx                    xxxxxxxxxx",
-    "xxxxxxxxxx                    xxxxxxxxxx",
-    "xxxxxxxxxx                    xxxxxxxxxx",
-    "xxxxxxxxxx                    xxxxxxxxxx",
-    "xxxxxxxxxx                    xxxxxxxxxx",
-    "xxxxxxxxxx                    xxxxxxxxxx",
-    "xxxxxxxxxx                    xxxxxxxxxx",
-    "xxxxxxxxxx                    xxxxxxxxxx",
-    "xxxxxxxxxx                    xxxxxxxxxx",
-    "xxxxxxxxxx                    xxxxxxxxxx",
-    "xxxxxxxxxx                    xxxxxxxxxx",
-    "xxxxxxxxxx                    xxxxxxxxxx",
-    "xxxxxxxxxx                    xxxxxxxxxx",
-    "xxxxxxxxxx                    xxxxxxxxxx",
-    "xxxxxxxxxx                    xxxxxxxxxx",
-    "xxxxxxxxxx                    xxxxxxxxxx",
-    "xxxxxxxxxx                    xxxxxxxxxx",
-    "xxxxxxxxxx                    xxxxxxxxxx",
-    "xxxxxxxxxx                    xxxxxxxxxx",
-    "xxxxxxxxxx                    xxxxxxxxxx",
-    "xxxxxxxxxx                    xxxxxxxxxx",
-    "xxxxxxxxxxx                  xxxxxxxxxxx",
+    "40 31 2 1",
+    ". c #ADD8E6",
+    "x c #FFFF00",
+    "xxxxxxxxxx....................xxxxxxxxxx",
+    "xxxxxxxxxx....................xxxxxxxxxx",
+    "xxxxxxxxxx....................xxxxxxxxxx",
+    "xxxxxxxxxx....................xxxxxxxxxx",
+    "xxxxxxxxxx....................xxxxxxxxxx",
+    "xxxxxxxxxx....................xxxxxxxxxx",
+    "xxxxxxxxxx....................xxxxxxxxxx",
+    "xxxxxxxxxx....................xxxxxxxxxx",
+    "xxxxxxxxxx....................xxxxxxxxxx",
+    "xxxxxxxxxx....................xxxxxxxxxx",
+    "xxxxxxxxxx....................xxxxxxxxxx",
+    "xxxxxxxxxx....................xxxxxxxxxx",
+    "xxxxxxxxxx....................xxxxxxxxxx",
+    "xxxxxxxxxx....................xxxxxxxxxx",
+    "xxxxxxxxxx....................xxxxxxxxxx",
+    "xxxxxxxxxx....................xxxxxxxxxx",
+    "xxxxxxxxxx....................xxxxxxxxxx",
+    "xxxxxxxxxx....................xxxxxxxxxx",
+    "xxxxxxxxxx....................xxxxxxxxxx",
+    "xxxxxxxxxx....................xxxxxxxxxx",
+    "xxxxxxxxxx....................xxxxxxxxxx",
+    "xxxxxxxxxx....................xxxxxxxxxx",
+    "xxxxxxxxxx....................xxxxxxxxxx",
+    "xxxxxxxxxx....................xxxxxxxxxx",
+    "xxxxxxxxxx....................xxxxxxxxxx",
+    "xxxxxxxxxxx..................xxxxxxxxxxx",
     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-    " xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx ",
-    "  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  ",
-    "   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx   ",
+    ".xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.",
+    "..xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx..",
+    "...xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...",
 };
 
 
 static xpm_row_t const main_menu_sprite_W[] = {
-  "40 31 2",
-  "  3",
-  "x 6",
+  "40 31 2 1",
+  " c #ADD8E6",
+  "x c #FFFF00",
   "xxxxxx                            xxxxxx",
   "xxxxxx                            xxxxxx",
   "xxxxxx                            xxxxxx",
@@ -1182,9 +1182,9 @@ static xpm_row_t const main_menu_sprite_W[] = {
 
 
 static xpm_row_t const main_menu_sprite_X[] = {
-    "40 31 2",
-    ". 3",
-    "x 6",
+    "40 31 2 1",
+    ". c #ADD8E6",
+    "x c #FFFF00",
     "xxxxxxxxxxxxx.............xxxxxxxxxxxxxx",
     "xxxxxxxxxxxxx.............xxxxxxxxxxxxxx",
     "xxxxxxxxxxxxxx...........xxxxxxxxxxxxxxx",
@@ -1221,9 +1221,9 @@ static xpm_row_t const main_menu_sprite_X[] = {
 
 
 static xpm_row_t const main_menu_sprite_Y[] = {
-    "40 31 2",
-    ". 3",
-    "x 6",
+    "40 31 2 1",
+    ". c #ADD8E6",
+    "x c #FFFF00",
     "xxxxxxxxxxxx................xxxxxxxxxxxx",
     "xxxxxxxxxxxx................xxxxxxxxxxxx",
     "xxxxxxxxxxxx................xxxxxxxxxxxx",
@@ -1258,10 +1258,10 @@ static xpm_row_t const main_menu_sprite_Y[] = {
 };
 
 static xpm_row_t const mouse_sprite[] = {
-    "17 23 3",
-    ". 3",
-    "b 0",
-    "w 15",
+    "17 23 3 1",
+    ". c #ADD8FF",
+    "b c #000000",
+    "w c #FFFFFF",
     ".....bb..........",
     "....bwwb.........",
     "....bwwb.........",

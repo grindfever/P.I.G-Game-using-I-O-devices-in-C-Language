@@ -97,23 +97,23 @@ uint8_t *(read_pixmap)(xpm_row_t *pixmap, uint16_t *width, uint16_t *height);
  * @brief Draws a sprite.
  * 
  * @param sprite Pointer to the sprite data.
- * @param x X-coordinate to draw the sprite.
- * @param y Y-coordinate to draw the sprite.
+ * @param posX X-coordinate to draw the sprite.
+ * @param posY Y-coordinate to draw the sprite.
  * @param width Width of the sprite.
  * @param height Height of the sprite.
  * @return 0 on success, 1 on failure.
  */
-int (draw_sprite)(uint8_t *sprite, uint16_t x, uint16_t y, uint16_t width, uint16_t height);
+int (draw_sprite)(uint8_t *sprite, uint16_t posX, uint16_t posY, uint16_t width, uint16_t height);
 
 /**
  * @brief Draws an element from a pixmap.
  * 
  * @param pixmap Pixmap to draw.
- * @param x X-coordinate to draw the element.
- * @param y Y-coordinate to draw the element.
+ * @param posX X-coordinate to draw the element.
+ * @param posY Y-coordinate to draw the element.
  * @return 0 on success, 1 on failure.
  */
-int (draw_element)(xpm_row_t *pixmap, uint16_t x, uint16_t y);
+int (draw_element)(xpm_row_t *pixmap, uint16_t posX, uint16_t posY);
 
 /**
  * @brief Loads the digit sprites into memory.

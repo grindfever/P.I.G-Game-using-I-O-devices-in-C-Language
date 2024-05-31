@@ -45,13 +45,14 @@ int displayMainMenu() {
     clear_graphics_screen();
 
     // Draw background pixels
-    for (int i = 0; i < CONSOLE_WIDTH; ++i) {
-        for (int j = 0; j < CONSOLE_HEIGHT; ++j) {
-            if (generate_pixel(i, j, 3)) {
+    for (int i = 0; i < CONSOLE_WIDTH_115; ++i) {
+        for (int j = 0; j < CONSOLE_HEIGHT_115; ++j) {
+            if (generate_pixel(i, j, COLOR_BLUE)) {
                 return 1;
             }
         }
     }
+
 
     // Define menu elements with their respective positions using a struct tag
     struct MenuElement {
@@ -61,29 +62,29 @@ int displayMainMenu() {
     };
 
     struct MenuElement elements[] = {
-        {main_menu_sprite_P, -100, -180},
-        {main_menu_sprite_I, -50, -180},
-        {main_menu_sprite_C, 0, -180},
-        {main_menu_sprite_R, 50, -180},
-        {main_menu_sprite_O, 100, -180},
-        {main_menu_sprite_S, 150, -180},
-        {main_menu_sprite_S, 200, -180},
-        {main_menu_sprite_1, -80, 0},
-        {main_menu_sprite_P, 0, 0},
-        {main_menu_sprite_L, 50, 0},
-        {main_menu_sprite_A, 100, 0},
-        {main_menu_sprite_Y, 150, 0},
-        {main_menu_sprite_2, -80, 100},
-        {main_menu_sprite_R, 0, 100},
-        {main_menu_sprite_U, 50, 100},
-        {main_menu_sprite_L, 100, 100},
-        {main_menu_sprite_E, 150, 100},
-        {main_menu_sprite_S, 200, 100},
-        {main_menu_sprite_0, -80, 200},
-        {main_menu_sprite_E, 0, 200},
-        {main_menu_sprite_X, 50, 200},
-        {main_menu_sprite_I, 100, 200},
-        {main_menu_sprite_T, 150, 200}
+        {main_menu_sprite_P, -100, -50},
+        {main_menu_sprite_I, -50, -50},
+        {main_menu_sprite_C, 0, -50},
+        {main_menu_sprite_R, 50, -50},
+        {main_menu_sprite_O, 100, -50},
+        {main_menu_sprite_S, 150, -50},
+        {main_menu_sprite_S, 200, -50},
+        {main_menu_sprite_1, -80, 50},
+        {main_menu_sprite_P, 0, 50},
+        {main_menu_sprite_L, 50, 50},
+        {main_menu_sprite_A, 100, 50},
+        {main_menu_sprite_Y, 150, 50},
+        {main_menu_sprite_2, -80, 150},
+        {main_menu_sprite_R, 0, 150},
+        {main_menu_sprite_U, 50, 150},
+        {main_menu_sprite_L, 100, 150},
+        {main_menu_sprite_E, 150, 150},
+        {main_menu_sprite_S, 200, 150},
+        {main_menu_sprite_0, -80, 250},
+        {main_menu_sprite_E, 0, 250},
+        {main_menu_sprite_X, 50, 250},
+        {main_menu_sprite_I, 100, 250},
+        {main_menu_sprite_T, 150, 250}
     };
 
     // Draw all menu elements
