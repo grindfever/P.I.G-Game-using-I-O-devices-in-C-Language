@@ -9,7 +9,6 @@
 extern bool keyboard_complete;
 extern struct scan_code_stats scan_code;
 
-extern int irq_set_kbd;
 extern MenuState menu_state;
 extern Board* b;
 
@@ -20,10 +19,6 @@ void (keyboard_menu_handler)() {
             case KBC_BREAK_ESC:
                 switch(menu_state){
                     case RULES:
-                        menu_state = MENU;
-                        return;
-                        break;
-                    case CHOOSE_GAME:
                         menu_state = MENU;
                         return;
                         break;
@@ -43,32 +38,17 @@ void (keyboard_menu_handler)() {
                     menu_state = CHOOSE_GAME;
                     return;
                 }
-                else if(menu_state == CHOOSE_GAME){
-                    menu_state = GAME;
-                    b = construct_board(250,250,3);
-                }
                 break;
             case KEY_2:
                 if(menu_state == MENU){
                     menu_state = RULES;
                     return;
                 }
-                else if(menu_state == CHOOSE_GAME){
-                    menu_state = GAME;
-                    b = construct_board(250,150,5);
-                }
-                break;
-            case KEY_3:
-                if(menu_state == CHOOSE_GAME){
-                    menu_state = GAME;
-                    b = construct_board(300,200,7);
-                }
                 break;
         }
     }
 }
 
-// ----------------------------------------------------------------------------------------
 int displayMainMenu() {
     clear_graphics_screen();
 
@@ -159,51 +139,6 @@ int displayRules() {
         {main_menu_sprite_L, 100, -50},
         {main_menu_sprite_A, 150, -50},
         {main_menu_sprite_Y, 200, -50}
-    };
-
-    // Draw all menu elements
-    size_t num_elements = sizeof(elements) / sizeof(elements[0]);
-    for (size_t i = 0; i < num_elements; ++i) {
-        struct MenuElement elem = elements[i];
-        if (draw_element(elem.sprite, MAIN_MENU_X_ORIGIN + elem.x_offset, MAIN_MENU_Y_ORIGIN + elem.y_offset)) {
-            return 1;
-        }
-    }
-
-    draw_graphics_content();
-
-    return 0;
-}
-
-
-int displayChooseGame() {
-    clear_graphics_screen();
-
-    // Draw background pixels
-    for (int i = 0; i < CONSOLE_WIDTH_115; ++i) {
-        for (int j = 0; j < CONSOLE_HEIGHT_115; ++j) {
-            if (generate_pixel(i, j, COLOR_BLUE)) {
-                return 1;
-            }
-        }
-    }
-
-
-    // Define menu elements with their respective positions using a struct tag
-    struct MenuElement {
-        const xpm_row_t* sprite;
-        int x_offset;
-        int y_offset;
-    };
-
-    struct MenuElement elements[] = {
-        {sprite_1, -50, -50},
-        {main_menu_sprite_esc, 50, -50},
-        {sprite_2, -50, 50},
-        {main_menu_sprite_esc, 50, 50},
-        {sprite_3, -50, 150},
-        {main_menu_sprite_esc, 50, 150}
-        
     };
 
     // Draw all menu elements

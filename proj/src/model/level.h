@@ -1,5 +1,5 @@
-#ifndef _MENU_H_
-#define _MENU_H_
+#ifndef _LEVEL_H_
+#define _LEVEL_H_
 
 #include <lcom/lcf.h>
 
@@ -16,27 +16,18 @@
  * This function processes keyboard input for the menu and determines whether to continue or exit the menu.
  *
  */
-void (keyboard_menu_handler)();
+void (keyboard_level_handler)();
 
 /**
- * @brief Displays the main menu.
+ * @brief Displays the choose game menu.
  *
  * This function clears the screen, draws the main menu background and elements, and refreshes the graphics content.
  *
  * @return Returns 0 on success, and 1 on failure.
  */
-int (displayMainMenu)();
+int (displayChooseGame)();
 
-/**
- * @brief Displays the rules menu.
- *
- * This function clears the screen, draws the main menu background and elements, and refreshes the graphics content.
- *
- * @return Returns 0 on success, and 1 on failure.
- */
-int (displayRules)();
 
 /**@}*/
 
-#endif /* _MENU_H */
-
+#endif /* _LEVEL_H */

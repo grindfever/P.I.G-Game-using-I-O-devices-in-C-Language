@@ -12,6 +12,7 @@
 #include "model/board.h"
 #include "model/tile.h"
 #include "model/game.h"
+#include "model/level.h"
 #include "model/menu.h"
 
 int main(int argc, char *argv[]) {
@@ -154,22 +155,40 @@ int loop(){
             mouse_game_handler(b);
           }
           if (msg.m_notify.interrupts & irq_set_kbd) { 
-            keyboard_menu_handler(); 
+            switch(menu_state){
+              case MENU:
+                keyboard_menu_handler();
+                break;
+              case RULES:
+                keyboard_menu_handler();
+                break;
+              case CHOOSE_GAME:
+                keyboard_level_handler();
+              case GAME:
+                keyboard_menu_handler();
+                break;
+              default:
+                break;
+            } 
           }
           if (msg.m_notify.interrupts & irq_set_timer) {
-              if(menu_state == MENU){
-                if (displayMainMenu()) return 1;
-              }
-              else if(menu_state == RULES){
+            switch(menu_state){
+              case MENU:
+                if (displayMainMenu()) return 1; 
+                break;
+              case RULES:
                 if (displayRules()) return 1; 
-              }
-              else if(menu_state == CHOOSE_GAME){
+                break;
+              case CHOOSE_GAME:
                 if (displayChooseGame()) return 1; 
-              }
-              else if(menu_state == GAME){
+                break;
+              case GAME:
                 timer_game_handler();
                 if(draw_game_board(b)) return 1;
-              }
+                break;
+              default:
+                break;
+            } 
           }
         default:
           break;
