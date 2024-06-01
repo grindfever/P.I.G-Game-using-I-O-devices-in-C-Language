@@ -20,7 +20,6 @@ void (keyboard_menu_handler)() {
                 switch(menu_state){
                     case RULES:
                         menu_state = MENU;
-                        return;
                         break;
                     case MENU:
                         menu_state = LEAVE;
@@ -36,13 +35,11 @@ void (keyboard_menu_handler)() {
             case KEY_1:
                 if(menu_state == MENU){
                     menu_state = CHOOSE_GAME;
-                    return;
                 }
                 break;
             case KEY_2:
                 if(menu_state == MENU){
                     menu_state = RULES;
-                    return;
                 }
                 break;
         }

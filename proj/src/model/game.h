@@ -13,6 +13,8 @@
  */
 void mouse_game_handler(Board* b);
 
+void (keyboard_game_handler)(Board* b);
+
 void timer_game_handler();
 
 /**

@@ -152,7 +152,9 @@ int loop(){
       switch (_ENDPOINT_P(msg.m_source)) {
         case HARDWARE:	
           if (msg.m_notify.interrupts & irq_set_mouse) {
-            mouse_game_handler(b);
+            if(menu_state == GAME){
+              mouse_game_handler(b);
+            }
           }
           if (msg.m_notify.interrupts & irq_set_kbd) { 
             switch(menu_state){
@@ -165,7 +167,7 @@ int loop(){
               case CHOOSE_GAME:
                 keyboard_level_handler();
               case GAME:
-                keyboard_menu_handler();
+                keyboard_game_handler(b);
                 break;
               default:
                 break;
@@ -193,10 +195,6 @@ int loop(){
         default:
           break;
       }
-    }
-
-    if(check_win(b)){
-      menu_state = MENU;
     }
   }
 

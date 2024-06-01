@@ -3,6 +3,7 @@
 #include <stdint.h>
 
 #include "controller/mouse.h"
+#include "controller/keyboard.h"
 #include "controller/I8042.h"
 #include "controller/graphics.h"
 #include "board.h"
@@ -11,6 +12,8 @@
 
 extern bool mouse_complete;
 extern struct packet pack;
+extern bool keyboard_complete;
+extern struct scan_code_stats scan_code;
 extern MenuState menu_state;
 
 int mouse_x = 5;
@@ -20,7 +23,18 @@ int seconds = 0;
 int time_counter = 0;
 bool clicking = false;
 
+
 static xpm_row_t* number_sprites[10] = {sprite_0, sprite_1, sprite_2, sprite_3, sprite_4, sprite_5, sprite_6, sprite_7, sprite_8, sprite_9};
+
+void (keyboard_game_handler)(Board* b) {
+    kbc_ih();
+    if (keyboard_complete) {
+        if(scan_code.code[scan_code.size - 1] == KBC_BREAK_ESC){
+            menu_state = CHOOSE_GAME;
+            destroy_board(b);
+        }
+    }
+}
 
 void mouse_game_handler(Board* b){
     mouse_ih();
