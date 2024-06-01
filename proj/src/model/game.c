@@ -11,6 +11,7 @@
 
 extern bool mouse_complete;
 extern struct packet pack;
+extern MenuState menu_state;
 
 int mouse_x = 5;
 int mouse_y = 5;

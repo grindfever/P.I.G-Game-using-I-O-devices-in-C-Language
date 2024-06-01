@@ -10,22 +10,13 @@
 #include "board.h"
 #include "game.h"
 
-
-typedef enum {
-    MENU,
-    RULES,
-    CHOOSE_GAME,
-    GAME
-} MenuState;
-
 /**
  * @brief Handles keyboard input for the menu.
  *
  * This function processes keyboard input for the menu and determines whether to continue or exit the menu.
  *
- * @return Returns true to continue processing, and false to exit the menu.
  */
-bool (keyboard_menu_handler)();
+void (keyboard_menu_handler)();
 
 /**
  * @brief Displays the main menu.

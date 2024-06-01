@@ -43,8 +43,6 @@ int irq_set_kbd = 0;
 int irq_set_mouse = 0;
 Board* b;
 
-
-
 MenuState menu_state = MENU;
 
 /**
@@ -143,9 +141,8 @@ int loop(){
   message msg;
   int ipc_status;
   int r;
-  bool continue_loop = 1;
 
-  while( continue_loop ) {
+  while( menu_state != LEAVE ) {
     if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) { 
       printf("driver_receive failed with: %d", r);
       continue;
@@ -157,7 +154,7 @@ int loop(){
             mouse_game_handler(b);
           }
           if (msg.m_notify.interrupts & irq_set_kbd) { 
-            continue_loop = keyboard_menu_handler(); 
+            keyboard_menu_handler(); 
           }
           if (msg.m_notify.interrupts & irq_set_timer) {
               if(menu_state == MENU){
@@ -214,4 +211,3 @@ int (proj_main_loop)(int argc, char **argv) {
 
   return 0;
 }
-

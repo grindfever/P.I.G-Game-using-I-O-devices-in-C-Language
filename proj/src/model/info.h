@@ -43,6 +43,14 @@
 #define MOUSE_WIDTH 17
 #define MOUSE_HEIGHT 23
 
+typedef enum {
+    MENU,
+    RULES,
+    CHOOSE_GAME,
+    GAME,
+    LEAVE
+} MenuState;
+
 /**@}*/
 
 #endif /* _INFO_H */

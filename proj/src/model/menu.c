@@ -13,77 +13,59 @@ extern int irq_set_kbd;
 extern MenuState menu_state;
 extern Board* b;
 
-bool (keyboard_menu_handler)() {
+void (keyboard_menu_handler)() {
     kbc_ih();
     if (keyboard_complete) {
-
-        printf("scan %d\n", scan_code.code[scan_code.size - 1]);
-
-        if(scan_code.code[scan_code.size - 1] == KBC_BREAK_ESC) {
-            if(menu_state == RULES){
-                menu_state = MENU;
-                return 1;
-            }
-            else if(menu_state == CHOOSE_GAME){
-                menu_state = MENU;
-                return 1;
-            }
-            else if(menu_state == MENU){
-                return false;
-            }
-            else if(menu_state == GAME){
-                menu_state = CHOOSE_GAME;
-            }
+        switch(scan_code.code[scan_code.size - 1]){
+            case KBC_BREAK_ESC:
+                switch(menu_state){
+                    case RULES:
+                        menu_state = MENU;
+                        return;
+                        break;
+                    case CHOOSE_GAME:
+                        menu_state = MENU;
+                        return;
+                        break;
+                    case MENU:
+                        menu_state = LEAVE;
+                        break;
+                    case GAME:
+                        menu_state = CHOOSE_GAME;
+                        destroy_board(b);
+                        break;
+                    default:
+                        break;
+                }
+                break;
+            case KEY_1:
+                if(menu_state == MENU){
+                    menu_state = CHOOSE_GAME;
+                    return;
+                }
+                else if(menu_state == CHOOSE_GAME){
+                    menu_state = GAME;
+                    b = construct_board(250,250,3);
+                }
+                break;
+            case KEY_2:
+                if(menu_state == MENU){
+                    menu_state = RULES;
+                    return;
+                }
+                else if(menu_state == CHOOSE_GAME){
+                    menu_state = GAME;
+                    b = construct_board(250,150,5);
+                }
+                break;
+            case KEY_3:
+                if(menu_state == CHOOSE_GAME){
+                    menu_state = GAME;
+                    b = construct_board(300,200,7);
+                }
+                break;
         }
-
-        else if (scan_code.code[scan_code.size - 1] == KEY_1) {
-            if(menu_state == MENU){
-                menu_state = CHOOSE_GAME;
-                return 1;
-            }
-            else if(menu_state == CHOOSE_GAME){
-                menu_state = GAME;
-                b = construct_board(250,250,3);
-            }
-        }
-
-        else if (scan_code.code[scan_code.size - 1] == KEY_2) {
-            if(menu_state == MENU){
-                menu_state = RULES;
-                return 1;
-            }
-            else if(menu_state == CHOOSE_GAME){
-                menu_state = GAME;
-                b = construct_board(250,150,5);
-            }
-
-        }
-
-
-         else if (scan_code.code[scan_code.size - 1] == KEY_3) {
-            if(menu_state == CHOOSE_GAME){
-                menu_state = GAME;
-                b = construct_board(300,200,7);
-            }
-
-        }
-
-        /*
-        if (!kbc_inc_code()) {
-            key_code = get_key_code();
-                            
-            if (key_code == KEY_1) {
-            }
-            else if (key_code == KEY_2){
-            }
-            else if (key_code == KEY_0)
-                process = 0;
-        }
-        */
-
     }
-
-    return true;
 }
 
 // ----------------------------------------------------------------------------------------
@@ -237,8 +219,3 @@ int displayChooseGame() {
 
     return 0;
 }
-
-
-
-
-

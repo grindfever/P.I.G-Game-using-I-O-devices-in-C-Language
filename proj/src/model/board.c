@@ -89,7 +89,6 @@ Board *construct_board(uint16_t x, uint16_t y, uint16_t size){
  */
 bool check_win(Board *board){
     if(!board){
-        printf("error toggling tile -> NULL\n");
         return false;
     }
 
