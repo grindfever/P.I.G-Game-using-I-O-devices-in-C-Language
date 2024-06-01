@@ -144,6 +144,11 @@ int loop(){
   int r;
 
   while( menu_state != LEAVE ) {
+    
+    if(menu_state == GAME){
+      check_game_win(b);
+    }
+
     if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) { 
       printf("driver_receive failed with: %d", r);
       continue;
@@ -152,8 +157,13 @@ int loop(){
       switch (_ENDPOINT_P(msg.m_source)) {
         case HARDWARE:	
           if (msg.m_notify.interrupts & irq_set_mouse) {
-            if(menu_state == GAME){
-              mouse_game_handler(b);
+            switch(menu_state){
+              case GAME:
+                mouse_game_handler(b);
+                break;
+              default:
+                mouse_default_handler();
+                break;
             }
           }
           if (msg.m_notify.interrupts & irq_set_kbd) { 
@@ -185,7 +195,7 @@ int loop(){
                 if (displayChooseGame()) return 1; 
                 break;
               case GAME:
-                timer_game_handler();
+                timer_game_handler(b);
                 if(draw_game_board(b)) return 1;
                 break;
               default:

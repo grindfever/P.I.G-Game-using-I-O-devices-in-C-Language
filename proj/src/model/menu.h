@@ -18,6 +18,8 @@
  */
 void (keyboard_menu_handler)();
 
+void mouse_default_handler();
+
 /**
  * @brief Displays the main menu.
  *

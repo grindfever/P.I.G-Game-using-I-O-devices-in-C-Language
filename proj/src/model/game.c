@@ -23,16 +23,27 @@ int seconds = 0;
 int time_counter = 0;
 bool clicking = false;
 
-
 static xpm_row_t* number_sprites[10] = {sprite_0, sprite_1, sprite_2, sprite_3, sprite_4, sprite_5, sprite_6, sprite_7, sprite_8, sprite_9};
 
 void (keyboard_game_handler)(Board* b) {
     kbc_ih();
+
     if (keyboard_complete) {
         if(scan_code.code[scan_code.size - 1] == KBC_BREAK_ESC){
-            menu_state = CHOOSE_GAME;
+            menu_state = MENU;
             destroy_board(b);
+            minutes = 0;
+            seconds = 0;
         }
+    }
+}
+
+void check_game_win(Board* b){
+    if(check_win(b)){
+      menu_state = CHOOSE_GAME;
+      destroy_board(b);
+      minutes = 0;
+      seconds = 0;
     }
 }
 
@@ -60,7 +71,6 @@ void mouse_game_handler(Board* b){
             }
         }
 
-        //if left pressed, change board (currently on position (0,0) and tile size 10)
         if (pack.lb) {
             clicking = true;
         }
@@ -75,7 +85,7 @@ void mouse_game_handler(Board* b){
     }
 }
 
-void timer_game_handler(){
+void timer_game_handler(Board* b){
     if(minutes == 60){
         return;
     }

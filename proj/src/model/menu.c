@@ -3,14 +3,23 @@
 #include <stdint.h>
 
 #include "menu.h"
-#include "./controller/keyboard.h"
-#include "./controller/I8042.h"
+#include "controller/mouse.h"
+#include "controller/keyboard.h"
+#include "controller/I8042.h"
 
 extern bool keyboard_complete;
 extern struct scan_code_stats scan_code;
+extern bool mouse_complete;
+extern struct packet pack;
 
 extern MenuState menu_state;
-extern Board* b;
+
+void mouse_default_handler(){
+    mouse_ih();
+    if(mouse_complete){
+        return;
+    }
+}
 
 void (keyboard_menu_handler)() {
     kbc_ih();
@@ -134,7 +143,6 @@ int displayRules() {
         {main_menu_sprite_Y, 200, -50}
     };
 
-    // Draw all menu elements
     size_t num_elements = sizeof(elements) / sizeof(elements[0]);
     for (size_t i = 0; i < num_elements; ++i) {
         struct MenuElement elem = elements[i];
