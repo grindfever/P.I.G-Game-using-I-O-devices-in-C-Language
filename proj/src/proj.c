@@ -42,8 +42,10 @@ int irq_set_timer = 0;
 int irq_set_kbd = 0;
 int irq_set_mouse = 0;
 Board* b;
-int menu = 1;
-int rules = 0;
+
+
+
+MenuState menu_state = MENU;
 
 /**
  * @brief Initializes the system by subscribing to interrupts and setting up the video mode.
@@ -142,7 +144,6 @@ int loop(){
   int ipc_status;
   int r;
   bool continue_loop = 1;
-  b = construct_board(500,200,3);
 
   while( continue_loop ) {
     if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) { 
@@ -159,13 +160,16 @@ int loop(){
             continue_loop = keyboard_menu_handler(); 
           }
           if (msg.m_notify.interrupts & irq_set_timer) {
-              if(menu){
+              if(menu_state == MENU){
                 if (displayMainMenu()) return 1;
               }
-              else if(rules){
+              else if(menu_state == RULES){
                 if (displayRules()) return 1; 
               }
-              else{
+              else if(menu_state == CHOOSE_GAME){
+                if (displayChooseGame()) return 1; 
+              }
+              else if(menu_state == GAME){
                 timer_game_handler();
                 if(draw_game_board(b)) return 1;
               }
@@ -176,7 +180,7 @@ int loop(){
     }
 
     if(check_win(b)){
-      menu = 1;
+      menu_state = MENU;
     }
   }
 

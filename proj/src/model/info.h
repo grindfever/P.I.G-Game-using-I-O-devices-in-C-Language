@@ -21,7 +21,7 @@
 #define MAIN_MENU_X_ORIGIN 350 /**< @brief Starting x position for the menu */
 #define MAIN_MENU_Y_ORIGIN 150 /**< @brief Starting y position for the menu */
 
-
+#define KEY_3 0x84 /**< @brief Scancode make byte for key '3' */
 #define KEY_2 0x83 /**< @brief Scancode make byte for key '2' */
 #define KEY_1 0x82 /**< @brief Scancode break byte for key '1' */
 #define KEY_0 0x8b /**< @brief Scancode break byte for key '0' */

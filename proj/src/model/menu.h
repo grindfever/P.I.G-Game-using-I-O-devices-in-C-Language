@@ -7,6 +7,16 @@
 #include "./controller/graphics.h"
 #include "info.h"
 #include "sprites.h"
+#include "board.h"
+#include "game.h"
+
+
+typedef enum {
+    MENU,
+    RULES,
+    CHOOSE_GAME,
+    GAME
+} MenuState;
 
 /**
  * @brief Handles keyboard input for the menu.
@@ -34,6 +44,15 @@ int (displayMainMenu)();
  * @return Returns 0 on success, and 1 on failure.
  */
 int (displayRules)();
+
+/**
+ * @brief Displays the choose game menu.
+ *
+ * This function clears the screen, draws the main menu background and elements, and refreshes the graphics content.
+ *
+ * @return Returns 0 on success, and 1 on failure.
+ */
+int (displayChooseGame)();
 
 /**@}*/
 
