@@ -42,7 +42,7 @@ int irq_set_timer = 0;
 int irq_set_kbd = 0;
 int irq_set_mouse = 0;
 Board* b;
-int menu = 0;
+int menu = 1;
 int rules = 0;
 
 /**
@@ -142,7 +142,7 @@ int loop(){
   int ipc_status;
   int r;
   bool continue_loop = 1;
-  b = construct_board(200,200,3);
+  b = construct_board(500,200,3);
 
   while( continue_loop ) {
     if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) { 

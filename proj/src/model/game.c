@@ -31,11 +31,17 @@ void mouse_game_handler(Board* b){
             if(mouse_x < 0){
                 mouse_x = 0;
             }
+            if(mouse_x > CONSOLE_WIDTH_115 - MOUSE_WIDTH){
+                mouse_x = CONSOLE_WIDTH_115 - MOUSE_WIDTH;
+            }
         }
         if (!pack.y_ov) {
             mouse_y -= pack.delta_y; 
             if(mouse_y < 0){
                 mouse_y = 0;
+            }
+            if(mouse_y > CONSOLE_HEIGHT_115 - MOUSE_HEIGHT){
+                mouse_y = CONSOLE_HEIGHT_115 - MOUSE_HEIGHT;
             }
         }
 
@@ -44,7 +50,7 @@ void mouse_game_handler(Board* b){
             clicking = true;
         }
         else {
-            if(mouse_x > b->x && mouse_x < b->x + b->size*TILE_SIZE && mouse_y > b->y && mouse_y < b->y + b->size*TILE_SIZE && clicking){
+            if(mouse_x+4 > b->x && mouse_x+4 < b->x + b->size*TILE_SIZE && mouse_y > b->y && mouse_y < b->y + b->size*TILE_SIZE && clicking){
                 uint8_t tile_pos_x = (mouse_x - b->x)/ TILE_SIZE;
                 uint8_t tile_pos_y = (mouse_y - b->y)/ TILE_SIZE;
                 toggle_board_tile(tile_pos_x, tile_pos_y, b);
@@ -178,7 +184,6 @@ int draw_game_hints(Board* b){
 int draw_game_board(Board* b) {
     clear_graphics_screen();
 
-    // Draw background pixels
     for (int i = 0; i < CONSOLE_WIDTH_115; ++i) {
         for (int j = 0; j < CONSOLE_HEIGHT_115; ++j) {
             if (generate_pixel(i, j, COLOR_BLUE)) {
@@ -187,7 +192,11 @@ int draw_game_board(Board* b) {
         }
     }
 
-    if(draw_game_timer(0, 0)){
+    if(draw_game_timer(CONSOLE_WIDTH_115-155-10, 10)){ //155 -> 5*31(width of number sprite)
+        return 1;
+    }
+
+    if(draw_element(main_menu_sprite_esc, 10, 10)){
         return 1;
     }
 

@@ -40,6 +40,8 @@
 #define COLOR_YELLOW 0xFFFF00
 
 #define TILE_SIZE 45
+#define MOUSE_WIDTH 17
+#define MOUSE_HEIGHT 23
 
 /**@}*/
 
