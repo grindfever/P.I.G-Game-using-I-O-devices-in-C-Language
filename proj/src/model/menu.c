@@ -24,10 +24,6 @@ void (keyboard_menu_handler)() {
                     case MENU:
                         menu_state = LEAVE;
                         break;
-                    case GAME:
-                        menu_state = CHOOSE_GAME;
-                        destroy_board(b);
-                        break;
                     default:
                         break;
                 }
