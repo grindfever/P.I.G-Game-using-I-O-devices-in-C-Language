@@ -3,54 +3,87 @@
 
 #include "../model/board.h"
 
+
 /**
- * @brief Handles mouse input for the game.
- * 
- * Reads mouse input and updates the game state accordingly.
- * 
- * @param b Pointer to the game board.
- * @return Returns 0 on success, and 1 on failure.
+ * @brief Handles mouse input during the game.
+ *
+ * @param b The game board.
  */
 void mouse_game_handler(Board* b);
 
-void (keyboard_game_handler)(Board* b);
-
-void timer_game_handler(Board* b);
-
-void check_game_win(Board* b);
-
-
-int (draw_game_win)(Board* b);
-
+/**
+ * @brief Handles keyboard input during the game.
+ *
+ * @param b The game board.
+ */
+void keyboard_game_handler(Board* b);
 
 /**
- * @brief Draws the game mouse on the screen.
- * 
- * This function draws the game mouse at its current position on the screen
- * using the specified mouse sprite. It updates the graphics content after
- * drawing the mouse.
- * 
- * @return Returns 0 on success, and 1 on failure.
+ * @brief Handles the game timer logic.
+ *
+ * @param b The game board.
+ */
+void timer_game_handler(Board* b);
+
+/**
+ * @brief Checks if the player has won the game.
+ *
+ * @param b The game board.
+ */
+void check_game_win(Board* b);
+
+/**
+ * @brief Draws the game window when the player wins.
+ *
+ * @param b The game board.
+ * @return 0 on success, 1 on failure.
+ */
+int draw_game_win(Board* b);
+
+/**
+ * @brief Draws the mouse cursor for the game.
+ *
+ * @return 0 on success, 1 on failure.
  */
 int draw_game_mouse();
 
+/**
+ * @brief Draws the game timer on the screen.
+ *
+ * @param x The x-coordinate of the timer.
+ * @param y The y-coordinate of the timer.
+ * @return 0 on success, 1 on failure.
+ */
 int draw_game_timer(int x, int y);
 
+/**
+ * @brief Draws the game board on the screen.
+ *
+ * @param b The game board.
+ * @return 0 on success, 1 on failure.
+ */
 int draw_game_board(Board* b);
 
+/**
+ * @brief Draws the game tiles on the screen.
+ *
+ * @param b The game board.
+ * @return 0 on success, 1 on failure.
+ */
 int draw_game_tiles(Board* b);
 
+/**
+ * @brief Draws the game hints on the screen.
+ *
+ * @param b The game board.
+ * @return 0 on success, 1 on failure.
+ */
 int draw_game_hints(Board* b);
 
 /**
- * @brief Displays the game timer.
- * 
- * This function displays the game timer on the screen. It takes the current game
- * time in seconds as input and converts it into a format suitable for display.
- * The game timer is drawn using digit sprites, with each digit representing
- * a different place value (hundreds, tens, units).
- * 
- * @param game_seconds The current game time in seconds.
+ * @brief Displays the game timer on the screen.
+ *
+ * @param game_seconds The elapsed game time in seconds.
  */
 void display_game_timer(int game_seconds);
 

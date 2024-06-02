@@ -6,14 +6,7 @@
 #include <lcom/lcf.h>
 #include "tile.h"
 
-/**
- * @brief Constructs a tile with the given coordinates and solution state.
- * 
- * @param x The x-coordinate of the tile.
- * @param y The y-coordinate of the tile.
- * @param solution The solution state of the tile (1 or 0).
- * @return The constructed Tile.
- */
+
 Tile construct_tile(uint16_t x, uint16_t y, uint8_t solution) {
   Tile tile;
   tile.x = x;
@@ -23,12 +16,7 @@ Tile construct_tile(uint16_t x, uint16_t y, uint8_t solution) {
   return tile;
 }
 
-/**
- * @brief Toggles the state of a tile.
- * 
- * @param tile The tile to toggle.
- * @return 0 on success, 1 if the tile pointer is NULL.
- */
+
 int toggle_tile(Tile* tile) {
     if (!tile) {
         return 1;
@@ -41,21 +29,12 @@ int toggle_tile(Tile* tile) {
     return 0;
 }
 
-/**
- * @brief Checks if the tile is in the wrong state.
- * 
- * @param tile The tile to check.
- * @return 1 if the tile is in the wrong state, 0 otherwise.
- */
+
 int is_wrong(Tile tile){
     return !(tile.on == tile.solution);
 }
 
-/**
- * @brief Destroys a tile and frees allocated memory.
- * 
- * @param tile The tile to destroy.
- */
+
 void destroy_tile(Tile *tile) {
   if (tile)
     free(tile);

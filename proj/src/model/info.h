@@ -46,13 +46,16 @@
 #define MOUSE_WIDTH 17
 #define MOUSE_HEIGHT 23
 
+/**
+ * @brief Enumeration representing the possible states of the game menu.
+ */
 typedef enum {
-    MENU,
-    RULES,
-    CHOOSE_GAME,
-    GAME,
-    LEAVE,
-    GAME_WIN
+    MENU,           /**< The main menu state. */
+    RULES,          /**< The rules menu state. */
+    CHOOSE_GAME,    /**< The state for choosing the game. */
+    GAME,           /**< The state representing the gameplay. */
+    LEAVE,          /**< The state for leaving the game. */
+    GAME_WIN        /**< The state representing the game win condition. */
 } MenuState;
 
 /**@}*/

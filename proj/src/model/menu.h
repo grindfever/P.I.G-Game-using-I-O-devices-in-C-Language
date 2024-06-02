@@ -11,34 +11,33 @@
 #include "game.h"
 
 /**
- * @brief Handles keyboard input for the menu.
- *
- * This function processes keyboard input for the menu and determines whether to continue or exit the menu.
- *
+ * @brief Handles keyboard input during the main menu.
  */
-void (keyboard_menu_handler)();
+void keyboard_menu_handler();
 
-void (keyboard_default_handler)();
+/**
+ * @brief Handles keyboard input for default actions in menus.
+ */
+void keyboard_default_handler();
 
+/**
+ * @brief Handles default mouse events.
+ */
 void mouse_default_handler();
 
 /**
  * @brief Displays the main menu.
  *
- * This function clears the screen, draws the main menu background and elements, and refreshes the graphics content.
- *
- * @return Returns 0 on success, and 1 on failure.
+ * @return 0 on success, 1 on failure.
  */
-int (displayMainMenu)();
+int displayMainMenu();
 
 /**
  * @brief Displays the rules menu.
  *
- * This function clears the screen, draws the main menu background and elements, and refreshes the graphics content.
- *
- * @return Returns 0 on success, and 1 on failure.
+ * @return 0 on success, 1 on failure.
  */
-int (displayRules)();
+int displayRules();
 
 /**@}*/
 

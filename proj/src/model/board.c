@@ -7,10 +7,10 @@
 #include "board.h"
 
 /**
- * @brief Creates a new hint with the specified count.
- * 
- * @param count The count for the hint.
- * @return Pointer to the created hint.
+ * @brief Creates a new Hint structure.
+ *
+ * @param count The count value for the hint.
+ * @return A pointer to the newly created Hint structure.
  */
 struct Hint* create_hint(int count) {
     struct Hint* hint = (struct Hint*) malloc(sizeof(Hint));
@@ -20,14 +20,12 @@ struct Hint* create_hint(int count) {
 }
 
 /**
- * @brief Constructs a new board.
- * 
- * Initializes the board with random solutions and calculates horizontal and vertical hints.
- * 
- * @param x The X coordinate of the board's position.
- * @param y The Y coordinate of the board's position.
+ * @brief Constructs a new Board.
+ *
+ * @param x The x-coordinate of the board.
+ * @param y The y-coordinate of the board.
  * @param size The size of the board.
- * @return Pointer to the constructed board.
+ * @return A pointer to the newly constructed Board.
  */
 Board *construct_board(uint16_t x, uint16_t y, uint16_t size){
     Board *board = (Board *) malloc(sizeof(Board));
@@ -80,12 +78,10 @@ Board *construct_board(uint16_t x, uint16_t y, uint16_t size){
 }
 
 /**
- * @brief Checks if the board is in a winning state.
- * 
- * Verifies that all tiles are in the correct state.
- * 
- * @param board Pointer to the board.
- * @return True if the board is in a winning state, false otherwise.
+ * @brief Checks if the player has won the game.
+ *
+ * @param board The game board.
+ * @return True if the player has won, false otherwise.
  */
 bool check_win(Board *board){
     if(!board){
@@ -105,11 +101,11 @@ bool check_win(Board *board){
 
 /**
  * @brief Toggles the state of a tile on the board.
- * 
- * @param x The X coordinate of the tile.
- * @param y The Y coordinate of the tile.
- * @param board Pointer to the board.
- * @return 0 upon success, non-zero otherwise.
+ *
+ * @param x The x-coordinate of the tile.
+ * @param y The y-coordinate of the tile.
+ * @param board The game board.
+ * @return 1 if the tile coordinates are out of bounds, 0 otherwise.
  */
 int toggle_board_tile(uint16_t x, uint16_t y, Board *board){
     if(x >= board->size || y >= board->size){
@@ -120,11 +116,9 @@ int toggle_board_tile(uint16_t x, uint16_t y, Board *board){
 }
 
 /**
- * @brief Prints the board to the console.
- * 
- * Displays the current state of the board tiles.
- * 
- * @param board Pointer to the board.
+ * @brief Prints the game board to the console.
+ *
+ * @param board The game board.
  */
 void print_board(Board *board){
     for(int i = 0; i < board->size; i++){
@@ -136,9 +130,9 @@ void print_board(Board *board){
 }
 
 /**
- * @brief Prints the horizontal hints of the board.
- * 
- * @param board Pointer to the board.
+ * @brief Prints the horizontal hints of the board to the console.
+ *
+ * @param board The game board.
  */
 void print_h_hints(Board *board) {
     for(int i = 0; i < board->size; i++){
@@ -153,13 +147,10 @@ void print_h_hints(Board *board) {
         }
     }
 }
-
 /**
- * @brief Destroys the hint linked list.
- * 
- * Frees the memory allocated for the hints.
- * 
- * @param first Pointer to the first hint in the list.
+ * @brief Destroys a linked list of hints.
+ *
+ * @param first The first hint in the linked list.
  */
 void destroy_hints(struct Hint* first) {
     struct Hint* temp;
@@ -171,9 +162,9 @@ void destroy_hints(struct Hint* first) {
 }
 
 /**
- * @brief Destroys the board and frees allocated memory.
- * 
- * @param board Pointer to the board.
+ * @brief Destroys the game board and frees memory.
+ *
+ * @param board The game board to destroy.
  */
 void destroy_board(Board *board){
     if(!board){
