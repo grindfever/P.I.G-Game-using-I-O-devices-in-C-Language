@@ -179,6 +179,9 @@ int loop(){
               case GAME:
                 keyboard_game_handler(b);
                 break;
+              case GAME_WIN:
+                keyboard_game_handler(b);
+                break;
               default:
                 break;
             } 
@@ -197,6 +200,9 @@ int loop(){
               case GAME:
                 timer_game_handler(b);
                 if(draw_game_board(b)) return 1;
+                break;
+              case GAME_WIN:
+                if(draw_game_win(b)) return 1;
                 break;
               default:
                 break;

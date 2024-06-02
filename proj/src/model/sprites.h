@@ -1568,6 +1568,37 @@ static xpm_row_t const mouse_sprite[] = {
     ".....bbbbbbbbbb..",   
 };
 
+
+static xpm_row_t const rules_mouse_sprite[] = {
+    "17 23 3 1",
+    ". c #00b140",
+    "b c #FFFFFF",
+    "w c #000000",
+    ".....bb..........",
+    "....bwwb.........",
+    "....bwwb.........",
+    "....bwwb.........",
+    "....bwwb.........",
+    "....bwwb.........",
+    "....bwwbbb.......",
+    "....bwwbwwbbb....",
+    "....bwwbwwbwwbb..",
+    "....bwwbwwbwwbwb.",
+    "bbb.bwwbwwbwwbwwb",
+    "bwwbbwwwwwwwwbwwb",
+    "bwwwwwwwwwwwwwwwb",
+    ".bwwwwwwwwwwwwwwb",
+    "..bwwwwwwwwwwwwwb",
+    "..bwwwwwwwwwwwwwb",
+    "...bwwwwwwwwwwwwb",
+    "...bwwwwwwwwwwwb.",
+    "....bwwwwwwwwwwb.",
+    "....bwwwwwwwwwwb.",
+    ".....bwwwwwwwwb..",
+    ".....bwwwwwwwwb..",
+    ".....bbbbbbbbbb..",   
+};
+
 static xpm_row_t const mouse_sprite_click[] = {
     "17 23 3 1",
     ". c #00b140",
@@ -1703,7 +1734,7 @@ static xpm_row_t const tile_sprite_on[] = {
 static xpm_row_t const sprite_spacebar[] = {
   "103 15 2 1",
   ". c #ADD8E6",
-  "x c #FFFF00",
+  "x c #000000",
   ".......................................................................................................",
   ".......................................................................................................",
   "xxxxxxxxxxx.................................................................................xxxxxxxxxxx",
@@ -1721,6 +1752,9 @@ static xpm_row_t const sprite_spacebar[] = {
   "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
 
 };
+
+
+
 
 
 static xpm_row_t const main_menu_sprite_esc[] = {

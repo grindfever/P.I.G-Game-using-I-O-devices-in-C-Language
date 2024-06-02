@@ -40,10 +40,7 @@ void (keyboard_game_handler)(Board* b) {
 
 void check_game_win(Board* b){
     if(check_win(b)){
-      menu_state = CHOOSE_GAME;
-      destroy_board(b);
-      minutes = 0;
-      seconds = 0;
+      menu_state = GAME_WIN;
     }
 }
 
@@ -234,6 +231,58 @@ int draw_game_board(Board* b) {
     }
 
     if(draw_game_mouse()){
+        return 1;
+    }
+
+    draw_graphics_content();
+
+    return 0;
+}
+
+
+int draw_game_win(Board* b) {
+    clear_graphics_screen();
+
+    for (int i = 0; i < CONSOLE_WIDTH_115; ++i) {
+        for (int j = 0; j < CONSOLE_HEIGHT_115; ++j) {
+            if (generate_pixel(i, j, COLOR_BLUE)) {
+                return 1;
+            }
+        }
+    }
+
+    if(draw_game_timer(320, 80)){ //155 -> 5*31(width of number sprite)
+        return 1;
+    }
+
+    if(draw_element(main_menu_sprite_esc, 10, 10)){
+        return 1;
+    }
+
+    if(draw_element(sprite_Y, 220, 20)){
+        return 1;
+    }
+    if(draw_element(sprite_O, 270, 20)){
+        return 1;
+    }
+    if(draw_element(sprite_U, 320, 20)){
+        return 1;
+    }
+    if(draw_element(sprite_W, 420, 20)){
+        return 1;
+    }
+    if(draw_element(sprite_O, 470, 20)){
+        return 1;
+    }
+    if(draw_element(sprite_N, 520, 20)){
+        return 1;
+    }
+
+    if(draw_game_tiles(b)){
+        return 1;
+    }
+
+    if(draw_game_hints(b)){
         return 1;
     }
 

@@ -51,7 +51,8 @@ typedef enum {
     RULES,
     CHOOSE_GAME,
     GAME,
-    LEAVE
+    LEAVE,
+    GAME_WIN
 } MenuState;
 
 /**@}*/

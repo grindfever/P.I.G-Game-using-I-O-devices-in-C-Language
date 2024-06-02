@@ -19,6 +19,10 @@ void timer_game_handler(Board* b);
 
 void check_game_win(Board* b);
 
+
+int (draw_game_win)(Board* b);
+
+
 /**
  * @brief Draws the game mouse on the screen.
  * 

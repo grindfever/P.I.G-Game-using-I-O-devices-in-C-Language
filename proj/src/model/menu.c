@@ -159,7 +159,7 @@ int displayRules() {
         {sprite_L, 175, -50},
         {sprite_A, 225, -50},
         {sprite_Y, 275, -50},
-        {sprite_spacebar, -300, 100},
+        {rules_mouse_sprite, -300, 100},
         {sprite_double_dot, -200, 100},
         {sprite_G, -150, 100},
         {sprite_U, -100, 100},
@@ -170,31 +170,35 @@ int displayRules() {
         {sprite_I, 200, 100},
         {sprite_N, 250, 100},
         {sprite_T, 300, 100},
-        {sprite_W, -300, 200}, // change for an W
-        {sprite_A, -250, 200},
-        {sprite_S, -200, 200}, 
-        {sprite_D, -150, 200},   // change for an D
-        {sprite_double_dot, -100, 200},
-        {sprite_M, -50, 200},  // change for an M
-        {sprite_O, 0, 200},
-        {sprite_V, 50, 200}, // change for an V
-        {sprite_E, 100, 200},
-        {sprite_T, 200, 200},
-        {sprite_I, 250, 200},
-        {sprite_L, 300, 200},
-        {sprite_E, 350, 200},
-        {sprite_spacebar, -300, 300},
-        {sprite_double_dot, -200, 300}, 
-        {sprite_S, -150, 300},
-        {sprite_E, -100, 300}, 
-        {sprite_L, -50, 300},   
-        {sprite_E, 0, 300},
-        {sprite_C, 50, 300},  
-        {sprite_T, 100, 300},
-        {sprite_T, 200, 300},
-        {sprite_I, 250, 300},
-        {sprite_L, 300, 300},
-        {sprite_E, 350, 300}
+        {sprite_W, -330, 200}, // change for an W
+        {sprite_S, -280, 200},
+        {sprite_double_dot, -250, 200},
+        {sprite_C, -200, 200},  // change for an M
+        {sprite_H, -150, 200},
+        {sprite_A, -100, 200}, // change for an V
+        {sprite_N, -50, 200},
+        {sprite_G, 0, 200},
+        {sprite_E, 50, 200},
+        {sprite_O, 150, 200},
+        {sprite_P, 200, 200},
+        {sprite_T, 250, 200},
+        {sprite_I, 300, 200},
+        {sprite_O, 350, 200},
+        {sprite_N, 400, 200},
+        {sprite_spacebar, -345, 300},
+        {sprite_double_dot, -230, 300}, 
+        {sprite_S, -200, 300},
+        {sprite_E, -150, 300}, 
+        {sprite_L, -100, 300},   
+        {sprite_E, -50, 300},
+        {sprite_C, 0, 300},  
+        {sprite_T, 50, 300},
+        {sprite_O, 150, 300},
+        {sprite_P, 200, 300},
+        {sprite_T, 250, 300},
+        {sprite_I, 300, 300},
+        {sprite_O, 350, 300},
+        {sprite_N, 400, 300}
     };
 
     size_t num_elements = sizeof(elements) / sizeof(elements[0]);
