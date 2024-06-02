@@ -16,8 +16,8 @@ extern bool keyboard_complete;
 extern struct scan_code_stats scan_code;
 extern MenuState menu_state;
 
-int mouse_x = 5;
-int mouse_y = 5;
+int mouse_x = 200;
+int mouse_y = 200;
 int minutes = 0;
 int seconds = 0;
 int time_counter = 0;
@@ -30,10 +30,13 @@ void (keyboard_game_handler)(Board* b) {
 
     if (keyboard_complete) {
         if(scan_code.code[scan_code.size - 1] == KBC_BREAK_ESC){
-            menu_state = MENU;
+            menu_state = CHOOSE_GAME;
             destroy_board(b);
             minutes = 0;
             seconds = 0;
+            clicking = false;
+            mouse_x = 200;
+            mouse_y = 200;
         }
     }
 }
@@ -41,6 +44,9 @@ void (keyboard_game_handler)(Board* b) {
 void check_game_win(Board* b){
     if(check_win(b)){
       menu_state = GAME_WIN;
+      destroy_board(b);
+      minutes = 0;
+      seconds = 0;
     }
 }
 
@@ -87,7 +93,7 @@ void timer_game_handler(Board* b){
         return;
     }
 
-    time_counter++;
+    time_counter += 2;
 
     if(time_counter % 60 == 0){
         time_counter = 0;

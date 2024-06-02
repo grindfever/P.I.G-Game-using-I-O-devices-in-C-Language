@@ -61,7 +61,7 @@ Board *construct_board(uint16_t x, uint16_t y, uint16_t size){
     }
 
     for(int j = 0; j < size; j++){
-        for(int i = size - 1; i >= 0; i--){
+        for(int i = 0; i < size; i++){
             int v_solution = board->tiles[i][j].solution;
             if(v_solution){
                 board->h_hints[j]->count += 1;
@@ -180,20 +180,26 @@ void destroy_board(Board *board){
         return;
     }
 
-    for(int i = 0; i < board->size; i++){
-        free(board->tiles[i]);
-
-        if(board->h_hints){
-            destroy_hints(board->h_hints[i]);
+    if(board->tiles){
+        for(int i = 0; i < board->size; i++){
+            free(board->tiles[i]);
         }
-
-        if(board->v_hints){
-            destroy_hints(board->v_hints[i]);
-        }
+        free(board->tiles);
     }
 
-    free(board->tiles);
-    free(board->h_hints);
-    free(board->v_hints);
+    if(board->h_hints){
+        for(int i = 0; i < board->size; i++){
+            destroy_hints(board->h_hints[i]);
+        }
+        free(board->h_hints);
+    }
+
+    if(board->v_hints){
+        for(int i = 0; i < board->size; i++){
+            destroy_hints(board->v_hints[i]);
+        }
+        free(board->v_hints);
+    }
+
     free(board);
 }
