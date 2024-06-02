@@ -44,9 +44,6 @@ void (keyboard_game_handler)(Board* b) {
 void check_game_win(Board* b){
     if(check_win(b)){
       menu_state = GAME_WIN;
-      destroy_board(b);
-      minutes = 0;
-      seconds = 0;
     }
 }
 
