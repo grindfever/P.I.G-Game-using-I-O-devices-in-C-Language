@@ -172,7 +172,7 @@ int loop(){
                 keyboard_menu_handler();
                 break;
               case RULES:
-                keyboard_menu_handler();
+                keyboard_default_handler();
                 break;
               case CHOOSE_GAME:
                 keyboard_level_handler();

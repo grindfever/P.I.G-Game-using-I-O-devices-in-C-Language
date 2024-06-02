@@ -18,6 +18,8 @@
  */
 void (keyboard_menu_handler)();
 
+void (keyboard_default_handler)();
+
 void mouse_default_handler();
 
 /**

@@ -14,6 +14,9 @@ extern struct packet pack;
 
 extern MenuState menu_state;
 
+int selected = 0;
+int buttons = 2;
+
 void mouse_default_handler(){
     mouse_ih();
     if(mouse_complete){
@@ -26,26 +29,41 @@ void (keyboard_menu_handler)() {
     if (keyboard_complete) {
         switch(scan_code.code[scan_code.size - 1]){
             case KBC_BREAK_ESC:
-                switch(menu_state){
-                    case RULES:
-                        menu_state = MENU;
-                        break;
-                    case MENU:
-                        menu_state = LEAVE;
-                        break;
-                    default:
-                        break;
+                menu_state = LEAVE;
+                break;
+            case KEY_S:
+                selected += 1;
+                if(selected >= buttons){
+                    selected = 0;
                 }
                 break;
-            case KEY_1:
-                if(menu_state == MENU){
-                    menu_state = CHOOSE_GAME;
+            case KEY_W:
+                selected -= 1;
+                if(selected < 0){
+                    selected = buttons - 1;
                 }
                 break;
-            case KEY_2:
-                if(menu_state == MENU){
-                    menu_state = RULES;
+            case KEY_SPACE:
+                switch (selected){
+                    case 0:
+                        menu_state = CHOOSE_GAME;
+                        break;
+                    case 1:
+                        menu_state = RULES;
+                        break;
+
                 }
+                break;
+        }
+    }
+}
+
+void keyboard_default_handler(){
+    kbc_ih();
+    if (keyboard_complete) {
+        switch(scan_code.code[scan_code.size - 1]){
+            case KBC_BREAK_ESC:
+                menu_state = MENU;
                 break;
         }
     }
@@ -54,7 +72,6 @@ void (keyboard_menu_handler)() {
 int displayMainMenu() {
     clear_graphics_screen();
 
-    // Draw background pixels
     for (int i = 0; i < CONSOLE_WIDTH_115; ++i) {
         for (int j = 0; j < CONSOLE_HEIGHT_115; ++j) {
             if (generate_pixel(i, j, COLOR_BLUE)) {
@@ -63,45 +80,45 @@ int displayMainMenu() {
         }
     }
 
-
-    // Define menu elements with their respective positions using a struct tag
     struct MenuElement {
         const xpm_row_t* sprite;
         int x_offset;
         int y_offset;
     };
 
+    const xpm_row_t* button1 = button_back_off_sprite;
+    const xpm_row_t* button2 = button_back_off_sprite;
+
+    switch(selected){
+        case 0:
+            button1 = button_back_on_sprite;
+            break;
+        case 1:
+            button2 = button_back_on_sprite;
+            break;
+        default:
+            break;
+    }
+
     struct MenuElement elements[] = {
-        {main_menu_sprite_P, -100, -50},
-        {main_menu_sprite_I, -50, -50},
-        {main_menu_sprite_C, 0, -50},
-        {main_menu_sprite_R, 50, -50},
-        {main_menu_sprite_O, 100, -50},
-        {main_menu_sprite_S, 150, -50},
-        {main_menu_sprite_S, 200, -50},
-        {sprite_1, -80, 50},
-        {main_menu_sprite_P, 0, 50},
-        {main_menu_sprite_L, 50, 50},
-        {main_menu_sprite_A, 100, 50},
-        {main_menu_sprite_Y, 150, 50},
-        {sprite_2, -80, 150},
-        {main_menu_sprite_R, 0, 150},
-        {main_menu_sprite_U, 50, 150},
-        {main_menu_sprite_L, 100, 150},
-        {main_menu_sprite_E, 150, 150},
-        {main_menu_sprite_S, 200, 150},
-        {sprite_0, -80, 250},
-        {main_menu_sprite_E, 0, 250},
-        {main_menu_sprite_X, 50, 250},
-        {main_menu_sprite_I, 100, 250},
-        {main_menu_sprite_T, 150, 250}
+        {sprite_logo, 200, 100},
+        {button1, 263, 300},
+        {sprite_P, 323, 320},
+        {sprite_L, 363, 320},
+        {sprite_A, 403, 320},
+        {sprite_Y, 443, 320},
+        {button2, 263, 400},
+        {sprite_R, 303, 420},
+        {sprite_U, 343, 420},
+        {sprite_L, 383, 420},
+        {sprite_E, 423, 420},
+        {sprite_S, 463, 420},
     };
 
-    // Draw all menu elements
     size_t num_elements = sizeof(elements) / sizeof(elements[0]);
     for (size_t i = 0; i < num_elements; ++i) {
         struct MenuElement elem = elements[i];
-        if (draw_element(elem.sprite, MAIN_MENU_X_ORIGIN + elem.x_offset, MAIN_MENU_Y_ORIGIN + elem.y_offset)) {
+        if (draw_element(elem.sprite, elem.x_offset, elem.y_offset)) {
             return 1;
         }
     }
@@ -133,14 +150,14 @@ int displayRules() {
     };
 
     struct MenuElement elements[] = {
-        {main_menu_sprite_H, -200, -50},
-        {main_menu_sprite_O, -150, -50},
-        {main_menu_sprite_T, -50, -50},
-        {main_menu_sprite_O, 0, -50},
-        {main_menu_sprite_P, 50, -50},
-        {main_menu_sprite_L, 100, -50},
-        {main_menu_sprite_A, 150, -50},
-        {main_menu_sprite_Y, 200, -50}
+        {sprite_H, -200, -50},
+        {sprite_O, -150, -50},
+        {sprite_T, -50, -50},
+        {sprite_O, 0, -50},
+        {sprite_P, 50, -50},
+        {sprite_L, 100, -50},
+        {sprite_A, 150, -50},
+        {sprite_Y, 200, -50}
     };
 
     size_t num_elements = sizeof(elements) / sizeof(elements[0]);

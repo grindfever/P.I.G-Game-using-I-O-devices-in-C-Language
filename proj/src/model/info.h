@@ -21,13 +21,16 @@
 #define MAIN_MENU_X_ORIGIN 350 /**< @brief Starting x position for the menu */
 #define MAIN_MENU_Y_ORIGIN 150 /**< @brief Starting y position for the menu */
 
+
+#define KEY_W 0x91 /**< @brief Scancode break byte for key 'w' */
+#define KEY_S 0x9f /**< @brief Scancode break byte for key 's' */
+#define KEY_SPACE 0xB9 /**< @brief Scancode break byte for key 'space' */
 #define KEY_3 0x84 /**< @brief Scancode make byte for key '3' */
 #define KEY_2 0x83 /**< @brief Scancode make byte for key '2' */
 #define KEY_1 0x82 /**< @brief Scancode break byte for key '1' */
 #define KEY_0 0x8b /**< @brief Scancode break byte for key '0' */
 
 #define KEY_ESC 0x01 /**< @brief Scancode make byte for key 'ESC' */
-#define KEY_SPACE 0x39 
 
 
 #define NUMBER_WIDTH 40 /**< @brief Horizontal pixels of an number */
