@@ -79,7 +79,7 @@ int start(){
   if(timer_subscribe_int(&bit_no_timer)){
     return 1;
   }
-  if (timer_set_frequency(0, 60)) {
+  if (timer_set_frequency(0, 30)) {
     return 1;
   }
 
@@ -101,8 +101,6 @@ int start(){
  */
 int end(){
   int check;
-
-  destroy_board(b);
 
   if (vg_exit() != OK){
     return 1;
