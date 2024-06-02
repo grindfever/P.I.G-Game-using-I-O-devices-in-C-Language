@@ -1,0 +1,7 @@
+<map id="draw_sprite" name="draw_sprite">
+<area shape="rect" id="Node000001" title="Draws a sprite." alt="" coords="5,13,93,40"/>
+<area shape="rect" id="Node000002" href="$graphics_8c.html#ae907e670d59453c138dcca7b2830cc50" title="Generates a pixel at a given position." alt="" coords="141,13,246,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,24,125,24,125,29,93,29"/>
+<area shape="rect" id="Node000003" href="$graphics_8c.html#a460fcb0d7ccc8d32ff90ae711a9b9c5c" title="Calculates the bytes per pixel." alt="" coords="294,5,431,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="246,24,278,24,278,29,246,29"/>
+</map>

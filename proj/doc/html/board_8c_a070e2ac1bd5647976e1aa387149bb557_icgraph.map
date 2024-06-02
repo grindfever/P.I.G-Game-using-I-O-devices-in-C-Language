@@ -1,0 +1,11 @@
+<map id="create_hint" name="create_hint">
+<area shape="rect" id="Node000001" title="Creates a new Hint structure." alt="" coords="621,5,706,32"/>
+<area shape="rect" id="Node000002" href="$board_8c.html#a070545227dbea425f6e9c3669856ff07" title="Constructs a new Board." alt="" coords="458,5,573,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="605,21,573,21,573,16,605,16"/>
+<area shape="rect" id="Node000003" href="$level_8c.html#a9a3789ce78b0e2352f16abf90b4e5527" title="Handles keyboard input during level selection." alt="" coords="255,5,410,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="443,21,411,21,411,16,443,16"/>
+<area shape="rect" id="Node000004" href="$proj_8c.html#abc3e3d6009223609dc366720373a7d94" title="Main event loop of the program." alt="" coords="162,5,207,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="239,21,208,21,208,16,239,16"/>
+<area shape="rect" id="Node000005" href="$proj_8c.html#af244d65e69677cf312af1950452ec256" title="Main function of the project, initializes and runs the main event loop." alt="" coords="5,5,114,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="146,21,114,21,114,16,146,16"/>
+</map>

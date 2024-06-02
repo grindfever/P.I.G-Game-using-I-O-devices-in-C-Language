@@ -1,0 +1,9 @@
+<map id="keyboard_menu_handler" name="keyboard_menu_handler">
+<area shape="rect" id="Node000001" title="Handles keyboard input during the main menu." alt="" coords="5,5,168,32"/>
+<area shape="rect" id="Node000002" href="$keyboard_8c.html#ab9e6ed7960d60aa4834f2038247d4536" title="Keyboard interrupt handler." alt="" coords="216,5,275,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="168,16,200,16,200,21,168,21"/>
+<area shape="rect" id="Node000003" href="$kbc_8c.html#a8a6e0380c885eb5575aa54ab8aa71874" title="Reads data from the keyboard output buffer." alt="" coords="323,5,497,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="276,16,307,16,307,21,276,21"/>
+<area shape="rect" id="Node000004" href="$utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Reads a byte from the specified I/O port." alt="" coords="545,5,636,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="498,16,530,16,530,21,498,21"/>
+</map>

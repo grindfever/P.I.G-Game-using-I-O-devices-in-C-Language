@@ -1,0 +1,238 @@
+\doxysection{model/menu.c File Reference}
+\hypertarget{menu_8c}{}\label{menu_8c}\index{model/menu.c@{model/menu.c}}
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include "{}menu.\+h"{}}\newline
+{\ttfamily \#include "{}controller/mouse.\+h"{}}\newline
+{\ttfamily \#include "{}controller/keyboard.\+h"{}}\newline
+{\ttfamily \#include "{}controller/\+I8042.\+h"{}}\newline
+Include dependency graph for menu.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{menu_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{menu_8c_a6a7b0653d58a19b4cdc4c2b86943e0d7}{mouse\+\_\+default\+\_\+handler}} ()
+\begin{DoxyCompactList}\small\item\em Handles default mouse events. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8c_abc694d3389743fa19a930e0d176934c3}{keyboard\+\_\+menu\+\_\+handler}} ()
+\begin{DoxyCompactList}\small\item\em Handles keyboard input during the main menu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8c_a6eb418097083cd54ffc6e1b26ac32c24}{keyboard\+\_\+default\+\_\+handler}} ()
+\begin{DoxyCompactList}\small\item\em Handles keyboard input for default actions in menus. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{menu_8c_a0b0ea4c87033d1565aa0bae1fff7152c}{display\+Main\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em Displays the main menu. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{menu_8c_a91caae411b6b58b35662611e9c174099}{display\+Rules}} ()
+\begin{DoxyCompactList}\small\item\em Displays the rules menu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{menu_8c_aa994ce97f850c47d514fa292e7b5e632}{keyboard\+\_\+complete}}
+\item 
+struct \mbox{\hyperlink{structscan__code__stats}{scan\+\_\+code\+\_\+stats}} \mbox{\hyperlink{menu_8c_ade98e68e2c7eefdec9f0c803b5ccc002}{scan\+\_\+code}}
+\item 
+bool \mbox{\hyperlink{menu_8c_a7eec329ad5d40098bd0e6a05d8f533b5}{mouse\+\_\+complete}}
+\begin{DoxyCompactList}\small\item\em Flag to indicate if a complete packet has been read. \end{DoxyCompactList}\item 
+struct packet \mbox{\hyperlink{menu_8c_ae818888612d45a261720e4f82f67bcf9}{pack}}
+\begin{DoxyCompactList}\small\item\em Structure to store the mouse packet. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__info_gaa3041ae4242c0dd57a126d17505443b2}{Menu\+State}} \mbox{\hyperlink{menu_8c_a7aa13957f2040b70e6f5a5413a2b620f}{menu\+\_\+state}}
+\item 
+int \mbox{\hyperlink{menu_8c_adab4da51ba40d5a492becdceccccbfcd}{selected}} = 0
+\item 
+int \mbox{\hyperlink{menu_8c_ab25f60de6d1c5f370231402aa1097c95}{buttons}} = 2
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{menu_8c_a0b0ea4c87033d1565aa0bae1fff7152c}\index{menu.c@{menu.c}!displayMainMenu@{displayMainMenu}}
+\index{displayMainMenu@{displayMainMenu}!menu.c@{menu.c}}
+\doxysubsubsection{\texorpdfstring{displayMainMenu()}{displayMainMenu()}}
+{\footnotesize\ttfamily \label{menu_8c_a0b0ea4c87033d1565aa0bae1fff7152c} 
+int display\+Main\+Menu (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Displays the main menu. 
+
+\begin{DoxyReturn}{Returns}
+0 on success, 1 on failure. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{menu_8c_a0b0ea4c87033d1565aa0bae1fff7152c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{menu_8c_a0b0ea4c87033d1565aa0bae1fff7152c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{menu_8c_a91caae411b6b58b35662611e9c174099}\index{menu.c@{menu.c}!displayRules@{displayRules}}
+\index{displayRules@{displayRules}!menu.c@{menu.c}}
+\doxysubsubsection{\texorpdfstring{displayRules()}{displayRules()}}
+{\footnotesize\ttfamily \label{menu_8c_a91caae411b6b58b35662611e9c174099} 
+int display\+Rules (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Displays the rules menu. 
+
+\begin{DoxyReturn}{Returns}
+0 on success, 1 on failure. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{menu_8c_a91caae411b6b58b35662611e9c174099_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{menu_8c_a91caae411b6b58b35662611e9c174099_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{menu_8c_a6eb418097083cd54ffc6e1b26ac32c24}\index{menu.c@{menu.c}!keyboard\_default\_handler@{keyboard\_default\_handler}}
+\index{keyboard\_default\_handler@{keyboard\_default\_handler}!menu.c@{menu.c}}
+\doxysubsubsection{\texorpdfstring{keyboard\_default\_handler()}{keyboard\_default\_handler()}}
+{\footnotesize\ttfamily \label{menu_8c_a6eb418097083cd54ffc6e1b26ac32c24} 
+void keyboard\+\_\+default\+\_\+handler (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Handles keyboard input for default actions in menus. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{menu_8c_a6eb418097083cd54ffc6e1b26ac32c24_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{menu_8c_a6eb418097083cd54ffc6e1b26ac32c24_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{menu_8c_abc694d3389743fa19a930e0d176934c3}\index{menu.c@{menu.c}!keyboard\_menu\_handler@{keyboard\_menu\_handler}}
+\index{keyboard\_menu\_handler@{keyboard\_menu\_handler}!menu.c@{menu.c}}
+\doxysubsubsection{\texorpdfstring{keyboard\_menu\_handler()}{keyboard\_menu\_handler()}}
+{\footnotesize\ttfamily \label{menu_8c_abc694d3389743fa19a930e0d176934c3} 
+void keyboard\+\_\+menu\+\_\+handler (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Handles keyboard input during the main menu. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{menu_8c_abc694d3389743fa19a930e0d176934c3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{menu_8c_abc694d3389743fa19a930e0d176934c3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{menu_8c_a6a7b0653d58a19b4cdc4c2b86943e0d7}\index{menu.c@{menu.c}!mouse\_default\_handler@{mouse\_default\_handler}}
+\index{mouse\_default\_handler@{mouse\_default\_handler}!menu.c@{menu.c}}
+\doxysubsubsection{\texorpdfstring{mouse\_default\_handler()}{mouse\_default\_handler()}}
+{\footnotesize\ttfamily \label{menu_8c_a6a7b0653d58a19b4cdc4c2b86943e0d7} 
+void mouse\+\_\+default\+\_\+handler (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Handles default mouse events. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{menu_8c_a6a7b0653d58a19b4cdc4c2b86943e0d7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{menu_8c_a6a7b0653d58a19b4cdc4c2b86943e0d7_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{menu_8c_ab25f60de6d1c5f370231402aa1097c95}\index{menu.c@{menu.c}!buttons@{buttons}}
+\index{buttons@{buttons}!menu.c@{menu.c}}
+\doxysubsubsection{\texorpdfstring{buttons}{buttons}}
+{\footnotesize\ttfamily \label{menu_8c_ab25f60de6d1c5f370231402aa1097c95} 
+int buttons = 2}
+
+\Hypertarget{menu_8c_aa994ce97f850c47d514fa292e7b5e632}\index{menu.c@{menu.c}!keyboard\_complete@{keyboard\_complete}}
+\index{keyboard\_complete@{keyboard\_complete}!menu.c@{menu.c}}
+\doxysubsubsection{\texorpdfstring{keyboard\_complete}{keyboard\_complete}}
+{\footnotesize\ttfamily \label{menu_8c_aa994ce97f850c47d514fa292e7b5e632} 
+bool keyboard\+\_\+complete\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{menu_8c_a7aa13957f2040b70e6f5a5413a2b620f}\index{menu.c@{menu.c}!menu\_state@{menu\_state}}
+\index{menu\_state@{menu\_state}!menu.c@{menu.c}}
+\doxysubsubsection{\texorpdfstring{menu\_state}{menu\_state}}
+{\footnotesize\ttfamily \label{menu_8c_a7aa13957f2040b70e6f5a5413a2b620f} 
+\mbox{\hyperlink{group__info_gaa3041ae4242c0dd57a126d17505443b2}{Menu\+State}} menu\+\_\+state\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{menu_8c_a7eec329ad5d40098bd0e6a05d8f533b5}\index{menu.c@{menu.c}!mouse\_complete@{mouse\_complete}}
+\index{mouse\_complete@{mouse\_complete}!menu.c@{menu.c}}
+\doxysubsubsection{\texorpdfstring{mouse\_complete}{mouse\_complete}}
+{\footnotesize\ttfamily \label{menu_8c_a7eec329ad5d40098bd0e6a05d8f533b5} 
+bool mouse\+\_\+complete\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Flag to indicate if a complete packet has been read. 
+
+\Hypertarget{menu_8c_ae818888612d45a261720e4f82f67bcf9}\index{menu.c@{menu.c}!pack@{pack}}
+\index{pack@{pack}!menu.c@{menu.c}}
+\doxysubsubsection{\texorpdfstring{pack}{pack}}
+{\footnotesize\ttfamily \label{menu_8c_ae818888612d45a261720e4f82f67bcf9} 
+struct packet pack\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Structure to store the mouse packet. 
+
+\Hypertarget{menu_8c_ade98e68e2c7eefdec9f0c803b5ccc002}\index{menu.c@{menu.c}!scan\_code@{scan\_code}}
+\index{scan\_code@{scan\_code}!menu.c@{menu.c}}
+\doxysubsubsection{\texorpdfstring{scan\_code}{scan\_code}}
+{\footnotesize\ttfamily \label{menu_8c_ade98e68e2c7eefdec9f0c803b5ccc002} 
+struct \mbox{\hyperlink{structscan__code__stats}{scan\+\_\+code\+\_\+stats}} scan\+\_\+code\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{menu_8c_adab4da51ba40d5a492becdceccccbfcd}\index{menu.c@{menu.c}!selected@{selected}}
+\index{selected@{selected}!menu.c@{menu.c}}
+\doxysubsubsection{\texorpdfstring{selected}{selected}}
+{\footnotesize\ttfamily \label{menu_8c_adab4da51ba40d5a492becdceccccbfcd} 
+int selected = 0}
+

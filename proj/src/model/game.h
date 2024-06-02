@@ -80,12 +80,6 @@ int draw_game_tiles(Board* b);
  */
 int draw_game_hints(Board* b);
 
-/**
- * @brief Displays the game timer on the screen.
- *
- * @param game_seconds The elapsed game time in seconds.
- */
-void display_game_timer(int game_seconds);
 
 #endif // GAME_H
 

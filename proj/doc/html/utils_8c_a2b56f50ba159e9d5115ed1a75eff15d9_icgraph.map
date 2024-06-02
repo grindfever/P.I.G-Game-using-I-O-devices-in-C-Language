@@ -1,0 +1,57 @@
+<map id="util_sys_inb" name="util_sys_inb">
+<area shape="rect" id="Node000001" title="Reads a byte from the specified I/O port." alt="" coords="896,347,986,373"/>
+<area shape="rect" id="Node000002" href="$kbc_8c.html#a8a6e0380c885eb5575aa54ab8aa71874" title="Reads data from the keyboard output buffer." alt="" coords="674,259,848,285"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="902,341,847,312,795,288,797,284,849,307,904,336"/>
+<area shape="rect" id="Node000011" href="$kbc_8c.html#adf98cd9774ec792744d8983ef532acf4" title="Reads data from the mouse output buffer." alt="" coords="681,372,841,399"/>
+<area shape="poly" id="edge13_Node000001_Node000011" title=" " alt="" coords="881,371,842,377,841,371,880,366"/>
+<area shape="rect" id="Node000018" href="$kbc_8c.html#aa4c58a11cd49c54cc0eb02a79010a9cc" title="Reads the status from the KBC." alt="" coords="702,321,820,348"/>
+<area shape="poly" id="edge24_Node000001_Node000018" title=" " alt="" coords="880,354,820,346,820,340,881,349"/>
+<area shape="rect" id="Node000021" href="$timer_8c.html#afafc1891c876602d55b894103b1841a7" title="Gets the configuration of the specified timer." alt="" coords="708,448,814,475"/>
+<area shape="poly" id="edge31_Node000001_Node000021" title=" " alt="" coords="904,384,788,450,785,445,901,379"/>
+<area shape="rect" id="Node000003" href="$keyboard_8c.html#ab9e6ed7960d60aa4834f2038247d4536" title="Keyboard interrupt handler." alt="" coords="526,107,585,133"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="727,251,573,136,577,131,731,247"/>
+<area shape="rect" id="Node000010" href="$keyboard_8c.html#a1944fd3a1e8c15001ab35dc85ea5c745" title="Enables keyboard interrupts." alt="" coords="257,309,437,336"/>
+<area shape="poly" id="edge12_Node000002_Node000010" title=" " alt="" coords="659,282,486,300,418,311,417,306,485,295,658,276"/>
+<area shape="rect" id="Node000004" href="$menu_8c.html#a6eb418097083cd54ffc6e1b26ac32c24" title="Handles keyboard input for default actions in menus." alt="" coords="263,107,431,133"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="511,123,432,123,432,117,511,117"/>
+<area shape="rect" id="Node000007" href="$game_8c.html#af289f12ffb9bf16e86333e7d11c42147" title="Handles keyboard input during the game." alt="" coords="266,157,428,184"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="512,133,406,159,405,154,510,128"/>
+<area shape="rect" id="Node000008" href="$level_8c.html#a9a3789ce78b0e2352f16abf90b4e5527" title="Handles keyboard input during level selection." alt="" coords="270,5,425,32"/>
+<area shape="poly" id="edge8_Node000003_Node000008" title=" " alt="" coords="523,99,483,72,436,46,406,35,408,30,438,42,485,67,526,95"/>
+<area shape="rect" id="Node000009" href="$menu_8c.html#abc694d3389743fa19a930e0d176934c3" title="Handles keyboard input during the main menu." alt="" coords="266,56,428,83"/>
+<area shape="poly" id="edge10_Node000003_Node000009" title=" " alt="" coords="510,112,405,86,406,81,512,107"/>
+<area shape="rect" id="Node000005" href="$proj_8c.html#abc3e3d6009223609dc366720373a7d94" title="Main event loop of the program." alt="" coords="163,157,208,184"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="281,141,258,148,209,165,207,160,256,143,280,135"/>
+<area shape="rect" id="Node000006" href="$proj_8c.html#af244d65e69677cf312af1950452ec256" title="Main function of the project, initializes and runs the main event loop." alt="" coords="5,335,114,361"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="168,199,73,336,68,333,163,196"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="251,173,209,173,209,168,251,168"/>
+<area shape="poly" id="edge9_Node000008_Node000005" title=" " alt="" coords="265,42,259,46,234,72,215,103,193,158,188,156,210,101,230,69,255,42,262,37"/>
+<area shape="poly" id="edge11_Node000009_Node000005" title=" " alt="" coords="268,91,259,97,223,127,198,158,194,155,219,123,255,92,266,87"/>
+<area shape="rect" id="Node000012" href="$mouse_8c.html#a834b6d7efe311484d6da234db333cb97" title="Mouse interrupt handler." alt="" coords="517,208,594,235"/>
+<area shape="poly" id="edge14_Node000011_Node000012" title=" " alt="" coords="680,367,672,362,655,347,645,333,624,299,568,237,572,233,628,296,649,330,659,344,675,358,683,363"/>
+<area shape="rect" id="Node000015" href="$mouse_8c.html#a99cf8d768d25662a7332b0796b66afd1" title="Sends a command to the mouse." alt="" coords="268,360,427,387"/>
+<area shape="poly" id="edge19_Node000011_Node000015" title=" " alt="" coords="665,399,578,404,485,401,410,390,411,385,486,396,578,399,665,394"/>
+<area shape="rect" id="Node000013" href="$menu_8c.html#a6a7b0653d58a19b4cdc4c2b86943e0d7" title="Handles default mouse events." alt="" coords="270,259,424,285"/>
+<area shape="poly" id="edge15_Node000012_Node000013" title=" " alt="" coords="502,237,406,261,404,255,501,232"/>
+<area shape="rect" id="Node000014" href="$game_8c.html#a7668bf8e066efaeeb42ba35db29c01d8" title="Handles mouse input during the game." alt="" coords="273,208,421,235"/>
+<area shape="poly" id="edge17_Node000012_Node000014" title=" " alt="" coords="501,224,422,224,422,219,501,219"/>
+<area shape="poly" id="edge16_Node000013_Node000005" title=" " alt="" coords="266,255,255,249,219,218,194,186,198,183,223,214,259,244,268,250"/>
+<area shape="poly" id="edge18_Node000014_Node000005" title=" " alt="" coords="280,206,256,199,207,181,209,176,258,193,281,201"/>
+<area shape="rect" id="Node000016" href="$proj_8c.html#a882067407682fbb5472b9ebaed581708" title="Cleans up the system by unsubscribing from interrupts and exiting the video mode." alt="" coords="164,335,207,361"/>
+<area shape="poly" id="edge20_Node000015_Node000016" title=" " alt="" coords="252,361,207,354,208,349,253,356"/>
+<area shape="rect" id="Node000017" href="$proj_8c.html#ac92d3b835636641550b12b0f93daf21d" title="Initializes the system by subscribing to interrupts and setting up the video mode." alt="" coords="162,385,209,412"/>
+<area shape="poly" id="edge22_Node000015_Node000017" title=" " alt="" coords="253,391,210,398,209,392,252,386"/>
+<area shape="poly" id="edge21_Node000016_Node000006" title=" " alt="" coords="149,351,114,351,114,345,149,345"/>
+<area shape="poly" id="edge23_Node000017_Node000006" title=" " alt="" coords="147,386,93,364,95,359,149,381"/>
+<area shape="rect" id="Node000019" href="$kbc_8c.html#afddf9c7199a712735b93a7fe94343272" title="Writes an argument to the KBC." alt="" coords="487,309,624,336"/>
+<area shape="poly" id="edge25_Node000018_Node000019" title=" " alt="" coords="687,333,624,329,625,324,687,328"/>
+<area shape="rect" id="Node000020" href="$kbc_8c.html#a270b74b960c1dbb8abf3ef95fcafb2b0" title="Writes a command to the KBC." alt="" coords="485,360,626,387"/>
+<area shape="poly" id="edge28_Node000018_Node000020" title=" " alt="" coords="688,351,627,363,626,358,687,346"/>
+<area shape="poly" id="edge26_Node000019_Node000010" title=" " alt="" coords="471,325,438,325,438,320,471,320"/>
+<area shape="poly" id="edge27_Node000019_Node000015" title=" " alt="" coords="483,343,406,362,404,357,482,338"/>
+<area shape="poly" id="edge29_Node000020_Node000010" title=" " alt="" coords="482,358,404,339,406,334,483,353"/>
+<area shape="poly" id="edge30_Node000020_Node000015" title=" " alt="" coords="470,376,427,376,427,371,470,371"/>
+<area shape="rect" id="Node000022" href="$timer_8c.html#aca1506be74dfc71c6f90772ca269c619" title="Sets the frequency of the specified timer." alt="" coords="486,461,625,488"/>
+<area shape="poly" id="edge32_Node000021_Node000022" title=" " alt="" coords="692,468,625,473,625,468,692,463"/>
+<area shape="poly" id="edge33_Node000022_Node000017" title=" " alt="" coords="471,460,209,406,210,401,473,455"/>
+</map>

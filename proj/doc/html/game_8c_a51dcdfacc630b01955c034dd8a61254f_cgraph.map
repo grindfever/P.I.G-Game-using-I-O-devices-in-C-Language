@@ -1,0 +1,30 @@
+<map id="draw_game_board" name="draw_game_board">
+<area shape="rect" id="Node000001" title="Draws the game board on the screen." alt="" coords="5,183,132,209"/>
+<area shape="rect" id="Node000002" href="$graphics_8c.html#a3d417295448da946ebd81af96d7b9bb9" title="Clears the graphics screen." alt="" coords="181,5,333,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="75,181,114,118,143,81,178,49,197,37,200,41,181,53,147,85,118,122,79,183"/>
+<area shape="rect" id="Node000003" href="$graphics_8c.html#a6dacc40d20c596753095d0dab84bd84e" title="Draws an element from a pixmap." alt="" coords="382,183,483,209"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="77,180,117,134,146,110,179,92,221,78,257,73,293,77,335,92,361,107,383,127,417,168,413,171,380,130,358,111,333,97,292,82,257,78,222,83,181,97,149,115,121,138,81,184"/>
+<area shape="rect" id="Node000005" href="$graphics_8c.html#ae907e670d59453c138dcca7b2830cc50" title="Generates a pixel at a given position." alt="" coords="675,259,780,285"/>
+<area shape="poly" id="edge16_Node000001_Node000005" title=" " alt="" coords="81,208,121,254,149,277,181,295,245,314,312,325,380,328,447,326,570,309,666,287,667,293,571,315,447,331,380,334,311,330,244,319,179,300,146,282,117,258,77,212"/>
+<area shape="rect" id="Node000008" href="$game_8c.html#ac03fc2e4c79f07406644a8e39eff2c32" title="Draws the game hints on the screen." alt="" coords="196,107,318,133"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="97,180,179,143,196,136,198,141,181,148,99,184"/>
+<area shape="rect" id="Node000009" href="$game_8c.html#ad7584f40abf0fafdc93e603fb66a9793" title="Draws the mouse cursor for the game." alt="" coords="190,157,324,184"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="132,185,175,179,175,184,133,190"/>
+<area shape="rect" id="Node000010" href="$game_8c.html#a3057df7e804f648302437b2423e963c7" title="Draws the game tiles on the screen." alt="" coords="198,208,316,235"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="133,202,183,209,182,214,132,207"/>
+<area shape="rect" id="Node000011" href="$game_8c.html#a84121cdec44718ea1d96d1b3a3d83f2c" title="Draws the game timer on the screen." alt="" coords="195,259,319,285"/>
+<area shape="poly" id="edge13_Node000001_Node000011" title=" " alt="" coords="99,208,181,244,198,251,196,256,179,249,97,212"/>
+<area shape="rect" id="Node000012" href="$graphics_8c.html#ad3116adb629249602eb2c3c5265985f1" title="Draws the content from the buffer to the screen." alt="" coords="180,360,334,387"/>
+<area shape="poly" id="edge15_Node000001_Node000012" title=" " alt="" coords="79,209,118,270,147,307,181,339,200,351,197,355,178,343,143,311,114,274,75,211"/>
+<area shape="rect" id="Node000004" href="$graphics_8c.html#a1199cbef3b31c4563b9faa89a4b7c717" title="Draws a sprite." alt="" coords="535,183,623,209"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="484,193,520,193,520,199,484,199"/>
+<area shape="rect" id="Node000007" href="$graphics_8c.html#a6bf3e0b95804bf911b0489b7ba9cb4f5" title="Reads a pixmap." alt="" coords="531,233,627,260"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="475,207,525,225,523,230,473,212"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="608,208,687,249,685,253,606,212"/>
+<area shape="rect" id="Node000006" href="$graphics_8c.html#a460fcb0d7ccc8d32ff90ae711a9b9c5c" title="Calculates the bytes per pixel." alt="" coords="828,251,965,293"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="780,269,812,269,812,275,780,275"/>
+<area shape="poly" id="edge8_Node000008_Node000003" title=" " alt="" coords="305,131,335,143,395,172,393,177,333,148,303,136"/>
+<area shape="poly" id="edge10_Node000009_Node000003" title=" " alt="" coords="325,178,367,184,367,189,324,183"/>
+<area shape="poly" id="edge12_Node000010_Node000003" title=" " alt="" coords="316,210,367,203,367,208,317,215"/>
+<area shape="poly" id="edge14_Node000011_Node000003" title=" " alt="" coords="303,256,333,244,393,215,395,220,335,249,305,261"/>
+</map>

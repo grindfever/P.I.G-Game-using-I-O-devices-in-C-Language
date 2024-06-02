@@ -1,0 +1,362 @@
+\doxysection{model/game.h File Reference}
+\hypertarget{game_8h}{}\label{game_8h}\index{model/game.h@{model/game.h}}
+{\ttfamily \#include "{}../model/board.\+h"{}}\newline
+Include dependency graph for game.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=167pt]{game_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{game_8h_a7668bf8e066efaeeb42ba35db29c01d8}{mouse\+\_\+game\+\_\+handler}} (\mbox{\hyperlink{struct_board}{Board}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{level_8c_a650c1b72f570d3a1c728419467a69336}{b}})
+\begin{DoxyCompactList}\small\item\em Handles mouse input during the game. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game_8h_af289f12ffb9bf16e86333e7d11c42147}{keyboard\+\_\+game\+\_\+handler}} (\mbox{\hyperlink{struct_board}{Board}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{level_8c_a650c1b72f570d3a1c728419467a69336}{b}})
+\begin{DoxyCompactList}\small\item\em Handles keyboard input during the game. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game_8h_a5c4c10253565d0360ee922cd11af0025}{timer\+\_\+game\+\_\+handler}} (\mbox{\hyperlink{struct_board}{Board}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{level_8c_a650c1b72f570d3a1c728419467a69336}{b}})
+\begin{DoxyCompactList}\small\item\em Handles the game timer logic. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game_8h_a3cdd245dd7b77fac9264c0f71a78627f}{check\+\_\+game\+\_\+win}} (\mbox{\hyperlink{struct_board}{Board}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{level_8c_a650c1b72f570d3a1c728419467a69336}{b}})
+\begin{DoxyCompactList}\small\item\em Checks if the player has won the game. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{game_8h_ad06c7427b8dd527c51a0f1b102093e83}{draw\+\_\+game\+\_\+win}} (\mbox{\hyperlink{struct_board}{Board}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{level_8c_a650c1b72f570d3a1c728419467a69336}{b}})
+\begin{DoxyCompactList}\small\item\em Draws the game window when the player wins. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{game_8h_ad7584f40abf0fafdc93e603fb66a9793}{draw\+\_\+game\+\_\+mouse}} ()
+\begin{DoxyCompactList}\small\item\em Draws the mouse cursor for the game. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{game_8h_a84121cdec44718ea1d96d1b3a3d83f2c}{draw\+\_\+game\+\_\+timer}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Draws the game timer on the screen. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{game_8h_a51dcdfacc630b01955c034dd8a61254f}{draw\+\_\+game\+\_\+board}} (\mbox{\hyperlink{struct_board}{Board}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{level_8c_a650c1b72f570d3a1c728419467a69336}{b}})
+\begin{DoxyCompactList}\small\item\em Draws the game board on the screen. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{game_8h_a3057df7e804f648302437b2423e963c7}{draw\+\_\+game\+\_\+tiles}} (\mbox{\hyperlink{struct_board}{Board}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{level_8c_a650c1b72f570d3a1c728419467a69336}{b}})
+\begin{DoxyCompactList}\small\item\em Draws the game tiles on the screen. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{game_8h_ac03fc2e4c79f07406644a8e39eff2c32}{draw\+\_\+game\+\_\+hints}} (\mbox{\hyperlink{struct_board}{Board}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{level_8c_a650c1b72f570d3a1c728419467a69336}{b}})
+\begin{DoxyCompactList}\small\item\em Draws the game hints on the screen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{game_8h_a3cdd245dd7b77fac9264c0f71a78627f}\index{game.h@{game.h}!check\_game\_win@{check\_game\_win}}
+\index{check\_game\_win@{check\_game\_win}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{check\_game\_win()}{check\_game\_win()}}
+{\footnotesize\ttfamily \label{game_8h_a3cdd245dd7b77fac9264c0f71a78627f} 
+void check\+\_\+game\+\_\+win (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_board}{Board}} \texorpdfstring{$\ast$}{*}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Checks if the player has won the game. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & The game board. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8h_a3cdd245dd7b77fac9264c0f71a78627f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8h_a3cdd245dd7b77fac9264c0f71a78627f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{game_8h_a51dcdfacc630b01955c034dd8a61254f}\index{game.h@{game.h}!draw\_game\_board@{draw\_game\_board}}
+\index{draw\_game\_board@{draw\_game\_board}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{draw\_game\_board()}{draw\_game\_board()}}
+{\footnotesize\ttfamily \label{game_8h_a51dcdfacc630b01955c034dd8a61254f} 
+int draw\+\_\+game\+\_\+board (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_board}{Board}} \texorpdfstring{$\ast$}{*}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Draws the game board on the screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & The game board. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, 1 on failure. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8h_a51dcdfacc630b01955c034dd8a61254f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8h_a51dcdfacc630b01955c034dd8a61254f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{game_8h_ac03fc2e4c79f07406644a8e39eff2c32}\index{game.h@{game.h}!draw\_game\_hints@{draw\_game\_hints}}
+\index{draw\_game\_hints@{draw\_game\_hints}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{draw\_game\_hints()}{draw\_game\_hints()}}
+{\footnotesize\ttfamily \label{game_8h_ac03fc2e4c79f07406644a8e39eff2c32} 
+int draw\+\_\+game\+\_\+hints (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_board}{Board}} \texorpdfstring{$\ast$}{*}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Draws the game hints on the screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & The game board. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, 1 on failure. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8h_ac03fc2e4c79f07406644a8e39eff2c32_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8h_ac03fc2e4c79f07406644a8e39eff2c32_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{game_8h_ad7584f40abf0fafdc93e603fb66a9793}\index{game.h@{game.h}!draw\_game\_mouse@{draw\_game\_mouse}}
+\index{draw\_game\_mouse@{draw\_game\_mouse}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{draw\_game\_mouse()}{draw\_game\_mouse()}}
+{\footnotesize\ttfamily \label{game_8h_ad7584f40abf0fafdc93e603fb66a9793} 
+int draw\+\_\+game\+\_\+mouse (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Draws the mouse cursor for the game. 
+
+\begin{DoxyReturn}{Returns}
+0 on success, 1 on failure. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8h_ad7584f40abf0fafdc93e603fb66a9793_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8h_ad7584f40abf0fafdc93e603fb66a9793_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{game_8h_a3057df7e804f648302437b2423e963c7}\index{game.h@{game.h}!draw\_game\_tiles@{draw\_game\_tiles}}
+\index{draw\_game\_tiles@{draw\_game\_tiles}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{draw\_game\_tiles()}{draw\_game\_tiles()}}
+{\footnotesize\ttfamily \label{game_8h_a3057df7e804f648302437b2423e963c7} 
+int draw\+\_\+game\+\_\+tiles (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_board}{Board}} \texorpdfstring{$\ast$}{*}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Draws the game tiles on the screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & The game board. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, 1 on failure. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8h_a3057df7e804f648302437b2423e963c7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8h_a3057df7e804f648302437b2423e963c7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{game_8h_a84121cdec44718ea1d96d1b3a3d83f2c}\index{game.h@{game.h}!draw\_game\_timer@{draw\_game\_timer}}
+\index{draw\_game\_timer@{draw\_game\_timer}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{draw\_game\_timer()}{draw\_game\_timer()}}
+{\footnotesize\ttfamily \label{game_8h_a84121cdec44718ea1d96d1b3a3d83f2c} 
+int draw\+\_\+game\+\_\+timer (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})}
+
+
+
+Draws the game timer on the screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x-\/coordinate of the timer. \\
+\hline
+{\em y} & The y-\/coordinate of the timer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, 1 on failure. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8h_a84121cdec44718ea1d96d1b3a3d83f2c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8h_a84121cdec44718ea1d96d1b3a3d83f2c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{game_8h_ad06c7427b8dd527c51a0f1b102093e83}\index{game.h@{game.h}!draw\_game\_win@{draw\_game\_win}}
+\index{draw\_game\_win@{draw\_game\_win}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{draw\_game\_win()}{draw\_game\_win()}}
+{\footnotesize\ttfamily \label{game_8h_ad06c7427b8dd527c51a0f1b102093e83} 
+int draw\+\_\+game\+\_\+win (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_board}{Board}} \texorpdfstring{$\ast$}{*}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Draws the game window when the player wins. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & The game board. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, 1 on failure. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8h_ad06c7427b8dd527c51a0f1b102093e83_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8h_ad06c7427b8dd527c51a0f1b102093e83_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{game_8h_af289f12ffb9bf16e86333e7d11c42147}\index{game.h@{game.h}!keyboard\_game\_handler@{keyboard\_game\_handler}}
+\index{keyboard\_game\_handler@{keyboard\_game\_handler}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{keyboard\_game\_handler()}{keyboard\_game\_handler()}}
+{\footnotesize\ttfamily \label{game_8h_af289f12ffb9bf16e86333e7d11c42147} 
+void keyboard\+\_\+game\+\_\+handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_board}{Board}} \texorpdfstring{$\ast$}{*}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Handles keyboard input during the game. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & The game board. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8h_af289f12ffb9bf16e86333e7d11c42147_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8h_af289f12ffb9bf16e86333e7d11c42147_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{game_8h_a7668bf8e066efaeeb42ba35db29c01d8}\index{game.h@{game.h}!mouse\_game\_handler@{mouse\_game\_handler}}
+\index{mouse\_game\_handler@{mouse\_game\_handler}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{mouse\_game\_handler()}{mouse\_game\_handler()}}
+{\footnotesize\ttfamily \label{game_8h_a7668bf8e066efaeeb42ba35db29c01d8} 
+void mouse\+\_\+game\+\_\+handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_board}{Board}} \texorpdfstring{$\ast$}{*}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Handles mouse input during the game. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & The game board. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8h_a7668bf8e066efaeeb42ba35db29c01d8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8h_a7668bf8e066efaeeb42ba35db29c01d8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{game_8h_a5c4c10253565d0360ee922cd11af0025}\index{game.h@{game.h}!timer\_game\_handler@{timer\_game\_handler}}
+\index{timer\_game\_handler@{timer\_game\_handler}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{timer\_game\_handler()}{timer\_game\_handler()}}
+{\footnotesize\ttfamily \label{game_8h_a5c4c10253565d0360ee922cd11af0025} 
+void timer\+\_\+game\+\_\+handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_board}{Board}} \texorpdfstring{$\ast$}{*}}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Handles the game timer logic. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & The game board. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8h_a5c4c10253565d0360ee922cd11af0025_icgraph}
+\end{center}
+\end{figure}

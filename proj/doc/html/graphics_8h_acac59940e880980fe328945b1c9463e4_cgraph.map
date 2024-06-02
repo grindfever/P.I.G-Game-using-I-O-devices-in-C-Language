@@ -1,0 +1,9 @@
+<map id="draw_rectangle" name="draw_rectangle">
+<area shape="rect" id="Node000001" title="Draws a rectangle." alt="" coords="5,13,114,40"/>
+<area shape="rect" id="Node000002" href="$graphics_8c.html#a7a0255d65c3ac9feabd9f8b96dfc9a31" title="Draws a horizontal line." alt="" coords="162,13,300,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="114,24,146,24,146,29,114,29"/>
+<area shape="rect" id="Node000003" href="$graphics_8c.html#ae907e670d59453c138dcca7b2830cc50" title="Generates a pixel at a given position." alt="" coords="348,13,453,40"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="301,24,333,24,333,29,301,29"/>
+<area shape="rect" id="Node000004" href="$graphics_8c.html#a460fcb0d7ccc8d32ff90ae711a9b9c5c" title="Calculates the bytes per pixel." alt="" coords="501,5,639,48"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="454,24,486,24,486,29,454,29"/>
+</map>

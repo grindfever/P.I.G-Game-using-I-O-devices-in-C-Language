@@ -1,0 +1,15 @@
+<map id="keyboard_enable_interrupts" name="keyboard_enable_interrupts">
+<area shape="rect" id="Node000001" title="Enables keyboard interrupts." alt="" coords="5,56,186,83"/>
+<area shape="rect" id="Node000002" href="$kbc_8c.html#a8a6e0380c885eb5575aa54ab8aa71874" title="Reads data from the keyboard output buffer." alt="" coords="422,5,596,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="165,53,233,41,407,23,407,28,234,47,166,58"/>
+<area shape="rect" id="Node000004" href="$kbc_8c.html#afddf9c7199a712735b93a7fe94343272" title="Writes an argument to the KBC." alt="" coords="235,56,373,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="186,67,220,67,220,72,186,72"/>
+<area shape="rect" id="Node000006" href="$kbc_8c.html#a270b74b960c1dbb8abf3ef95fcafb2b0" title="Writes a command to the KBC." alt="" coords="234,107,374,133"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="154,81,232,100,231,105,153,86"/>
+<area shape="rect" id="Node000003" href="$utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Reads a byte from the specified I/O port." alt="" coords="644,31,735,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="597,28,629,33,628,38,596,34"/>
+<area shape="rect" id="Node000005" href="$kbc_8c.html#aa4c58a11cd49c54cc0eb02a79010a9cc" title="Reads the status from the KBC." alt="" coords="451,56,568,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="373,67,435,67,435,72,373,72"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="568,58,628,50,629,55,569,64"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="360,103,437,84,438,90,362,109"/>
+</map>

@@ -115,27 +115,5 @@ int (draw_sprite)(uint8_t *sprite, uint16_t posX, uint16_t posY, uint16_t width,
  */
 int (draw_element)(xpm_row_t *pixmap, uint16_t posX, uint16_t posY);
 
-/**
- * @brief Loads the digit sprites into memory.
- * 
- * This function loads the digit sprites into memory from the sprite number list.
- * Each digit sprite is loaded and stored in an array for later use.
- * 
- * @return Returns 0 on success, 1 on failure.
- */
-int load_digit_sprites();
-
-/**
- * @brief Draws a digit sprite at the specified position.
- * 
- * This function draws a digit sprite at the specified position on the screen.
- * The digit to be drawn is specified by the 'digit' parameter.
- * 
- * @param digit The digit to draw (0-9).
- * @param x The x-coordinate of the top-left corner of the digit sprite.
- * @param y The y-coordinate of the top-left corner of the digit sprite.
- * @return Returns 0 on success, 1 on failure.
- */
-int draw_digit(int digit, uint16_t x, uint16_t y);
 
 #endif /* GRAPHICS_H */

@@ -1,0 +1,12 @@
+<map id="draw_game_timer" name="draw_game_timer">
+<area shape="rect" id="Node000001" title="Draws the game timer on the screen." alt="" coords="429,31,553,57"/>
+<area shape="rect" id="Node000002" href="$game_8c.html#a51dcdfacc630b01955c034dd8a61254f" title="Draws the game board on the screen." alt="" coords="255,5,381,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="413,35,381,31,382,25,414,30"/>
+<area shape="rect" id="Node000005" href="$game_8c.html#ad06c7427b8dd527c51a0f1b102093e83" title="Draws the game window when the player wins." alt="" coords="262,56,375,83"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="414,58,376,64,375,58,413,53"/>
+<area shape="rect" id="Node000003" href="$proj_8c.html#abc3e3d6009223609dc366720373a7d94" title="Main event loop of the program." alt="" coords="162,31,207,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="240,36,208,42,207,37,239,31"/>
+<area shape="rect" id="Node000004" href="$proj_8c.html#af244d65e69677cf312af1950452ec256" title="Main function of the project, initializes and runs the main event loop." alt="" coords="5,31,114,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="146,47,114,47,114,41,146,41"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="246,58,207,51,208,46,247,53"/>
+</map>

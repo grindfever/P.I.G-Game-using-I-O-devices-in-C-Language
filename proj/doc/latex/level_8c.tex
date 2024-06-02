@@ -1,0 +1,134 @@
+\doxysection{model/level.c File Reference}
+\hypertarget{level_8c}{}\label{level_8c}\index{model/level.c@{model/level.c}}
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include "{}menu.\+h"{}}\newline
+{\ttfamily \#include "{}./controller/keyboard.\+h"{}}\newline
+{\ttfamily \#include "{}./controller/\+I8042.\+h"{}}\newline
+Include dependency graph for level.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{level_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{level_8c_a9a3789ce78b0e2352f16abf90b4e5527}{keyboard\+\_\+level\+\_\+handler}} ()
+\begin{DoxyCompactList}\small\item\em Handles keyboard input during level selection. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{level_8c_a0313d6534c07a51418762ba08b7ec8be}{display\+Choose\+Game}} ()
+\begin{DoxyCompactList}\small\item\em Displays the menu for choosing the game level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{level_8c_aa994ce97f850c47d514fa292e7b5e632}{keyboard\+\_\+complete}}
+\item 
+struct \mbox{\hyperlink{structscan__code__stats}{scan\+\_\+code\+\_\+stats}} \mbox{\hyperlink{level_8c_ade98e68e2c7eefdec9f0c803b5ccc002}{scan\+\_\+code}}
+\item 
+\mbox{\hyperlink{group__info_gaa3041ae4242c0dd57a126d17505443b2}{Menu\+State}} \mbox{\hyperlink{level_8c_a7aa13957f2040b70e6f5a5413a2b620f}{menu\+\_\+state}}
+\item 
+\mbox{\hyperlink{struct_board}{Board}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{level_8c_a650c1b72f570d3a1c728419467a69336}{b}}
+\item 
+int \mbox{\hyperlink{level_8c_a8fc70a69455d3e98c2f452b36dfba082}{selected\+\_\+level}} = 0
+\item 
+int \mbox{\hyperlink{level_8c_a0b2b2fe4e584c7f09cf13630a33270ee}{buttons\+\_\+level}} = 3
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{level_8c_a0313d6534c07a51418762ba08b7ec8be}\index{level.c@{level.c}!displayChooseGame@{displayChooseGame}}
+\index{displayChooseGame@{displayChooseGame}!level.c@{level.c}}
+\doxysubsubsection{\texorpdfstring{displayChooseGame()}{displayChooseGame()}}
+{\footnotesize\ttfamily \label{level_8c_a0313d6534c07a51418762ba08b7ec8be} 
+int display\+Choose\+Game (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Displays the menu for choosing the game level. 
+
+\begin{DoxyReturn}{Returns}
+0 on success, 1 on failure. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{level_8c_a0313d6534c07a51418762ba08b7ec8be_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{level_8c_a0313d6534c07a51418762ba08b7ec8be_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{level_8c_a9a3789ce78b0e2352f16abf90b4e5527}\index{level.c@{level.c}!keyboard\_level\_handler@{keyboard\_level\_handler}}
+\index{keyboard\_level\_handler@{keyboard\_level\_handler}!level.c@{level.c}}
+\doxysubsubsection{\texorpdfstring{keyboard\_level\_handler()}{keyboard\_level\_handler()}}
+{\footnotesize\ttfamily \label{level_8c_a9a3789ce78b0e2352f16abf90b4e5527} 
+void keyboard\+\_\+level\+\_\+handler (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Handles keyboard input during level selection. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{level_8c_a9a3789ce78b0e2352f16abf90b4e5527_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{level_8c_a9a3789ce78b0e2352f16abf90b4e5527_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{level_8c_a650c1b72f570d3a1c728419467a69336}\index{level.c@{level.c}!b@{b}}
+\index{b@{b}!level.c@{level.c}}
+\doxysubsubsection{\texorpdfstring{b}{b}}
+{\footnotesize\ttfamily \label{level_8c_a650c1b72f570d3a1c728419467a69336} 
+\mbox{\hyperlink{struct_board}{Board}}\texorpdfstring{$\ast$}{*} b\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{level_8c_a0b2b2fe4e584c7f09cf13630a33270ee}\index{level.c@{level.c}!buttons\_level@{buttons\_level}}
+\index{buttons\_level@{buttons\_level}!level.c@{level.c}}
+\doxysubsubsection{\texorpdfstring{buttons\_level}{buttons\_level}}
+{\footnotesize\ttfamily \label{level_8c_a0b2b2fe4e584c7f09cf13630a33270ee} 
+int buttons\+\_\+level = 3}
+
+\Hypertarget{level_8c_aa994ce97f850c47d514fa292e7b5e632}\index{level.c@{level.c}!keyboard\_complete@{keyboard\_complete}}
+\index{keyboard\_complete@{keyboard\_complete}!level.c@{level.c}}
+\doxysubsubsection{\texorpdfstring{keyboard\_complete}{keyboard\_complete}}
+{\footnotesize\ttfamily \label{level_8c_aa994ce97f850c47d514fa292e7b5e632} 
+bool keyboard\+\_\+complete\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{level_8c_a7aa13957f2040b70e6f5a5413a2b620f}\index{level.c@{level.c}!menu\_state@{menu\_state}}
+\index{menu\_state@{menu\_state}!level.c@{level.c}}
+\doxysubsubsection{\texorpdfstring{menu\_state}{menu\_state}}
+{\footnotesize\ttfamily \label{level_8c_a7aa13957f2040b70e6f5a5413a2b620f} 
+\mbox{\hyperlink{group__info_gaa3041ae4242c0dd57a126d17505443b2}{Menu\+State}} menu\+\_\+state\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{level_8c_ade98e68e2c7eefdec9f0c803b5ccc002}\index{level.c@{level.c}!scan\_code@{scan\_code}}
+\index{scan\_code@{scan\_code}!level.c@{level.c}}
+\doxysubsubsection{\texorpdfstring{scan\_code}{scan\_code}}
+{\footnotesize\ttfamily \label{level_8c_ade98e68e2c7eefdec9f0c803b5ccc002} 
+struct \mbox{\hyperlink{structscan__code__stats}{scan\+\_\+code\+\_\+stats}} scan\+\_\+code\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{level_8c_a8fc70a69455d3e98c2f452b36dfba082}\index{level.c@{level.c}!selected\_level@{selected\_level}}
+\index{selected\_level@{selected\_level}!level.c@{level.c}}
+\doxysubsubsection{\texorpdfstring{selected\_level}{selected\_level}}
+{\footnotesize\ttfamily \label{level_8c_a8fc70a69455d3e98c2f452b36dfba082} 
+int selected\+\_\+level = 0}
+

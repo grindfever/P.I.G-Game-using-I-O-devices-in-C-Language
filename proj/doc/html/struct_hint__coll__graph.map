@@ -1,0 +1,4 @@
+<map id="Hint" name="Hint">
+<area shape="rect" id="Node000001" title="Structure representing a hint in the game." alt="" coords="5,5,61,75"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="61,25,79,27,86,32,88,40,86,48,80,53,76,49,81,45,83,40,81,35,77,32,61,30"/>
+</map>

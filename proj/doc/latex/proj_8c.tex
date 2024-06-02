@@ -1,0 +1,209 @@
+\doxysection{proj.\+c File Reference}
+\hypertarget{proj_8c}{}\label{proj_8c}\index{proj.c@{proj.c}}
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include "{}controller/keyboard.\+h"{}}\newline
+{\ttfamily \#include "{}controller/mouse.\+h"{}}\newline
+{\ttfamily \#include "{}controller/\+I8042.\+h"{}}\newline
+{\ttfamily \#include "{}controller/graphics.\+h"{}}\newline
+{\ttfamily \#include "{}model/board.\+h"{}}\newline
+{\ttfamily \#include "{}model/tile.\+h"{}}\newline
+{\ttfamily \#include "{}model/game.\+h"{}}\newline
+{\ttfamily \#include "{}model/level.\+h"{}}\newline
+{\ttfamily \#include "{}model/menu.\+h"{}}\newline
+Include dependency graph for proj.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{proj_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{proj_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\item 
+int \mbox{\hyperlink{proj_8c_ac92d3b835636641550b12b0f93daf21d}{start}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the system by subscribing to interrupts and setting up the video mode. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{proj_8c_a882067407682fbb5472b9ebaed581708}{end}} ()
+\begin{DoxyCompactList}\small\item\em Cleans up the system by unsubscribing from interrupts and exiting the video mode. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{proj_8c_abc3e3d6009223609dc366720373a7d94}{loop}} ()
+\begin{DoxyCompactList}\small\item\em Main event loop of the program. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{proj_8c_af244d65e69677cf312af1950452ec256}{proj\+\_\+main\+\_\+loop}} (int argc, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}argv)
+\begin{DoxyCompactList}\small\item\em Main function of the project, initializes and runs the main event loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{proj_8c_aadbf3757def1a49b68caa15ef9117b0f}{irq\+\_\+set\+\_\+timer}} = 0
+\item 
+int \mbox{\hyperlink{proj_8c_a492428101cf654ca73d0b290d6dc7dfc}{irq\+\_\+set\+\_\+kbd}} = 0
+\item 
+int \mbox{\hyperlink{proj_8c_afd357e4e90c5ce77865791f8e690db27}{irq\+\_\+set\+\_\+mouse}} = 0
+\item 
+\mbox{\hyperlink{struct_board}{Board}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{proj_8c_a650c1b72f570d3a1c728419467a69336}{b}}
+\item 
+\mbox{\hyperlink{group__info_gaa3041ae4242c0dd57a126d17505443b2}{Menu\+State}} \mbox{\hyperlink{proj_8c_a7aa13957f2040b70e6f5a5413a2b620f}{menu\+\_\+state}} = \mbox{\hyperlink{group__info_ggaa3041ae4242c0dd57a126d17505443b2a4c40e60bc71a32b924ce1f08d57f9721}{MENU}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{proj_8c_a882067407682fbb5472b9ebaed581708}\index{proj.c@{proj.c}!end@{end}}
+\index{end@{end}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily \label{proj_8c_a882067407682fbb5472b9ebaed581708} 
+int end (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Cleans up the system by unsubscribing from interrupts and exiting the video mode. 
+
+\begin{DoxyReturn}{Returns}
+0 on success, 1 on failure. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{proj_8c_a882067407682fbb5472b9ebaed581708_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{proj_8c_a882067407682fbb5472b9ebaed581708_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{proj_8c_abc3e3d6009223609dc366720373a7d94}\index{proj.c@{proj.c}!loop@{loop}}
+\index{loop@{loop}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily \label{proj_8c_abc3e3d6009223609dc366720373a7d94} 
+int loop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Main event loop of the program. 
+
+This function handles the main event loop, processing messages from the system and updating the game state accordingly. It handles keyboard and mouse interrupts, updates the display, and manages the main menu and game states.
+
+\begin{DoxyReturn}{Returns}
+0 on success, 1 on failure. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{proj_8c_abc3e3d6009223609dc366720373a7d94_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{proj_8c_abc3e3d6009223609dc366720373a7d94_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{proj_8c_a0ddf1224851353fc92bfbff6f499fa97}\index{proj.c@{proj.c}!main@{main}}
+\index{main@{main}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{proj_8c_a0ddf1224851353fc92bfbff6f499fa97} 
+int main (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{argv}{\mbox{[}$\,$\mbox{]}}\end{DoxyParamCaption})}
+
+\Hypertarget{proj_8c_af244d65e69677cf312af1950452ec256}\index{proj.c@{proj.c}!proj\_main\_loop@{proj\_main\_loop}}
+\index{proj\_main\_loop@{proj\_main\_loop}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{proj\_main\_loop()}{proj\_main\_loop()}}
+{\footnotesize\ttfamily \label{proj_8c_af244d65e69677cf312af1950452ec256} 
+int proj\+\_\+main\+\_\+loop (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{argv}{}\end{DoxyParamCaption})}
+
+
+
+Main function of the project, initializes and runs the main event loop. 
+
+This function initializes the system, runs the main event loop, and then performs cleanup.
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Number of arguments. \\
+\hline
+{\em argv} & Array of arguments. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, 1 on failure. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{proj_8c_af244d65e69677cf312af1950452ec256_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{proj_8c_ac92d3b835636641550b12b0f93daf21d}\index{proj.c@{proj.c}!start@{start}}
+\index{start@{start}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily \label{proj_8c_ac92d3b835636641550b12b0f93daf21d} 
+int start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initializes the system by subscribing to interrupts and setting up the video mode. 
+
+\begin{DoxyReturn}{Returns}
+0 on success, 1 on failure. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{proj_8c_ac92d3b835636641550b12b0f93daf21d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{proj_8c_ac92d3b835636641550b12b0f93daf21d_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{proj_8c_a650c1b72f570d3a1c728419467a69336}\index{proj.c@{proj.c}!b@{b}}
+\index{b@{b}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{b}{b}}
+{\footnotesize\ttfamily \label{proj_8c_a650c1b72f570d3a1c728419467a69336} 
+\mbox{\hyperlink{struct_board}{Board}}\texorpdfstring{$\ast$}{*} b}
+
+\Hypertarget{proj_8c_a492428101cf654ca73d0b290d6dc7dfc}\index{proj.c@{proj.c}!irq\_set\_kbd@{irq\_set\_kbd}}
+\index{irq\_set\_kbd@{irq\_set\_kbd}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{irq\_set\_kbd}{irq\_set\_kbd}}
+{\footnotesize\ttfamily \label{proj_8c_a492428101cf654ca73d0b290d6dc7dfc} 
+int irq\+\_\+set\+\_\+kbd = 0}
+
+\Hypertarget{proj_8c_afd357e4e90c5ce77865791f8e690db27}\index{proj.c@{proj.c}!irq\_set\_mouse@{irq\_set\_mouse}}
+\index{irq\_set\_mouse@{irq\_set\_mouse}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{irq\_set\_mouse}{irq\_set\_mouse}}
+{\footnotesize\ttfamily \label{proj_8c_afd357e4e90c5ce77865791f8e690db27} 
+int irq\+\_\+set\+\_\+mouse = 0}
+
+\Hypertarget{proj_8c_aadbf3757def1a49b68caa15ef9117b0f}\index{proj.c@{proj.c}!irq\_set\_timer@{irq\_set\_timer}}
+\index{irq\_set\_timer@{irq\_set\_timer}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{irq\_set\_timer}{irq\_set\_timer}}
+{\footnotesize\ttfamily \label{proj_8c_aadbf3757def1a49b68caa15ef9117b0f} 
+int irq\+\_\+set\+\_\+timer = 0}
+
+\Hypertarget{proj_8c_a7aa13957f2040b70e6f5a5413a2b620f}\index{proj.c@{proj.c}!menu\_state@{menu\_state}}
+\index{menu\_state@{menu\_state}!proj.c@{proj.c}}
+\doxysubsubsection{\texorpdfstring{menu\_state}{menu\_state}}
+{\footnotesize\ttfamily \label{proj_8c_a7aa13957f2040b70e6f5a5413a2b620f} 
+\mbox{\hyperlink{group__info_gaa3041ae4242c0dd57a126d17505443b2}{Menu\+State}} menu\+\_\+state = \mbox{\hyperlink{group__info_ggaa3041ae4242c0dd57a126d17505443b2a4c40e60bc71a32b924ce1f08d57f9721}{MENU}}}
+

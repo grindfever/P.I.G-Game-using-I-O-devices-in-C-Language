@@ -1,0 +1,7 @@
+<map id="check_game_win" name="check_game_win">
+<area shape="rect" id="Node000001" title="Checks if the player has won the game." alt="" coords="5,5,127,32"/>
+<area shape="rect" id="Node000002" href="$board_8c.html#a1e564180f1804046f94cfa020b62d7bf" title="Checks if the player has won the game." alt="" coords="175,5,257,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="127,16,159,16,159,21,127,21"/>
+<area shape="rect" id="Node000003" href="$tile_8c.html#ac1f8d36f1b1faf824a0b21262d5b120a" title="Checks if the tile is in the wrong state compared to its solution." alt="" coords="305,5,377,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="257,16,289,16,289,21,257,21"/>
+</map>

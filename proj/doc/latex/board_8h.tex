@@ -1,0 +1,244 @@
+\doxysection{model/board.h File Reference}
+\hypertarget{board_8h}{}\label{board_8h}\index{model/board.h@{model/board.h}}
+
+
+Header file for the \doxylink{struct_board}{Board} module, containing definitions and function prototypes for board operations.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include "{}tile.\+h"{}}\newline
+Include dependency graph for board.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=161pt]{board_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{board_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_hint}{Hint}}
+\begin{DoxyCompactList}\small\item\em Structure representing a hint in the game. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_board}{Board}}
+\begin{DoxyCompactList}\small\item\em Structure representing the game board. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct Hint \mbox{\hyperlink{board_8h_a38824a20aa9bf00e59b97c6276126dbb}{Hint}}
+\begin{DoxyCompactList}\small\item\em Structure representing a hint in the game. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_board}{Board}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{board_8h_a070545227dbea425f6e9c3669856ff07}{construct\+\_\+board}} (uint16\+\_\+t x, uint16\+\_\+t y, uint16\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Constructs a new \doxylink{struct_board}{Board}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{board_8h_a1e564180f1804046f94cfa020b62d7bf}{check\+\_\+win}} (\mbox{\hyperlink{struct_board}{Board}} \texorpdfstring{$\ast$}{*}board)
+\begin{DoxyCompactList}\small\item\em Checks if the player has won the game. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{board_8h_a4ccf0696a0c902d5909ad2d365bbcf82}{toggle\+\_\+board\+\_\+tile}} (uint16\+\_\+t x, uint16\+\_\+t y, \mbox{\hyperlink{struct_board}{Board}} \texorpdfstring{$\ast$}{*}board)
+\begin{DoxyCompactList}\small\item\em Toggles the state of a tile on the board. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{board_8h_a2d3fcb5e323919bfaeda8c9e0f7e6be8}{print\+\_\+board}} (\mbox{\hyperlink{struct_board}{Board}} \texorpdfstring{$\ast$}{*}board)
+\begin{DoxyCompactList}\small\item\em Prints the game board to the console. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{board_8h_a7b320a002c228b58a1d6753e850fc349}{print\+\_\+h\+\_\+hints}} (\mbox{\hyperlink{struct_board}{Board}} \texorpdfstring{$\ast$}{*}board)
+\begin{DoxyCompactList}\small\item\em Prints the horizontal hints of the board to the console. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{board_8h_a2bd9df095efd565768ac9528c02c7166}{destroy\+\_\+board}} (\mbox{\hyperlink{struct_board}{Board}} \texorpdfstring{$\ast$}{*}board)
+\begin{DoxyCompactList}\small\item\em Destroys the game board and frees memory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for the \doxylink{struct_board}{Board} module, containing definitions and function prototypes for board operations. 
+
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{board_8h_a38824a20aa9bf00e59b97c6276126dbb}\index{board.h@{board.h}!Hint@{Hint}}
+\index{Hint@{Hint}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{Hint}{Hint}}
+{\footnotesize\ttfamily \label{board_8h_a38824a20aa9bf00e59b97c6276126dbb} 
+typedef struct Hint Hint}
+
+
+
+Structure representing a hint in the game. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{board_8h_a1e564180f1804046f94cfa020b62d7bf}\index{board.h@{board.h}!check\_win@{check\_win}}
+\index{check\_win@{check\_win}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{check\_win()}{check\_win()}}
+{\footnotesize\ttfamily \label{board_8h_a1e564180f1804046f94cfa020b62d7bf} 
+bool check\+\_\+win (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_board}{Board}} \texorpdfstring{$\ast$}{*}}]{board}{}\end{DoxyParamCaption})}
+
+
+
+Checks if the player has won the game. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em board} & The game board. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the player has won, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{board_8h_a1e564180f1804046f94cfa020b62d7bf_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{board_8h_a1e564180f1804046f94cfa020b62d7bf_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{board_8h_a070545227dbea425f6e9c3669856ff07}\index{board.h@{board.h}!construct\_board@{construct\_board}}
+\index{construct\_board@{construct\_board}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{construct\_board()}{construct\_board()}}
+{\footnotesize\ttfamily \label{board_8h_a070545227dbea425f6e9c3669856ff07} 
+\mbox{\hyperlink{struct_board}{Board}} \texorpdfstring{$\ast$}{*} construct\+\_\+board (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x}{, }\item[{uint16\+\_\+t}]{y}{, }\item[{uint16\+\_\+t}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a new \doxylink{struct_board}{Board}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x-\/coordinate of the board. \\
+\hline
+{\em y} & The y-\/coordinate of the board. \\
+\hline
+{\em size} & The size of the board. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the newly constructed \doxylink{struct_board}{Board}. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{board_8h_a070545227dbea425f6e9c3669856ff07_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{board_8h_a070545227dbea425f6e9c3669856ff07_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{board_8h_a2bd9df095efd565768ac9528c02c7166}\index{board.h@{board.h}!destroy\_board@{destroy\_board}}
+\index{destroy\_board@{destroy\_board}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{destroy\_board()}{destroy\_board()}}
+{\footnotesize\ttfamily \label{board_8h_a2bd9df095efd565768ac9528c02c7166} 
+void destroy\+\_\+board (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_board}{Board}} \texorpdfstring{$\ast$}{*}}]{board}{}\end{DoxyParamCaption})}
+
+
+
+Destroys the game board and frees memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em board} & The game board to destroy. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{board_8h_a2bd9df095efd565768ac9528c02c7166_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{board_8h_a2bd9df095efd565768ac9528c02c7166_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{board_8h_a2d3fcb5e323919bfaeda8c9e0f7e6be8}\index{board.h@{board.h}!print\_board@{print\_board}}
+\index{print\_board@{print\_board}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{print\_board()}{print\_board()}}
+{\footnotesize\ttfamily \label{board_8h_a2d3fcb5e323919bfaeda8c9e0f7e6be8} 
+void print\+\_\+board (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_board}{Board}} \texorpdfstring{$\ast$}{*}}]{board}{}\end{DoxyParamCaption})}
+
+
+
+Prints the game board to the console. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em board} & The game board. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{board_8h_a7b320a002c228b58a1d6753e850fc349}\index{board.h@{board.h}!print\_h\_hints@{print\_h\_hints}}
+\index{print\_h\_hints@{print\_h\_hints}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{print\_h\_hints()}{print\_h\_hints()}}
+{\footnotesize\ttfamily \label{board_8h_a7b320a002c228b58a1d6753e850fc349} 
+void print\+\_\+h\+\_\+hints (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_board}{Board}} \texorpdfstring{$\ast$}{*}}]{board}{}\end{DoxyParamCaption})}
+
+
+
+Prints the horizontal hints of the board to the console. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em board} & The game board. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{board_8h_a4ccf0696a0c902d5909ad2d365bbcf82}\index{board.h@{board.h}!toggle\_board\_tile@{toggle\_board\_tile}}
+\index{toggle\_board\_tile@{toggle\_board\_tile}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{toggle\_board\_tile()}{toggle\_board\_tile()}}
+{\footnotesize\ttfamily \label{board_8h_a4ccf0696a0c902d5909ad2d365bbcf82} 
+int toggle\+\_\+board\+\_\+tile (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x}{, }\item[{uint16\+\_\+t}]{y}{, }\item[{\mbox{\hyperlink{struct_board}{Board}} \texorpdfstring{$\ast$}{*}}]{board}{}\end{DoxyParamCaption})}
+
+
+
+Toggles the state of a tile on the board. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x-\/coordinate of the tile. \\
+\hline
+{\em y} & The y-\/coordinate of the tile. \\
+\hline
+{\em board} & The game board. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the tile coordinates are out of bounds, 0 otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{board_8h_a4ccf0696a0c902d5909ad2d365bbcf82_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{board_8h_a4ccf0696a0c902d5909ad2d365bbcf82_icgraph}
+\end{center}
+\end{figure}

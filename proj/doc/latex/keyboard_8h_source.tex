@@ -1,0 +1,28 @@
+\doxysection{keyboard.\+h}
+\hypertarget{keyboard_8h_source}{}\label{keyboard_8h_source}\index{controller/keyboard.h@{controller/keyboard.h}}
+\mbox{\hyperlink{keyboard_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ KEYBOARD\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ KEYBOARD\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <lcom/lcf.h>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structscan__code__stats}{scan\_code\_stats}}\ \{}
+\DoxyCodeLine{00012\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structscan__code__stats_a5140741de52d986f75d72c15ecffa353}{make\_break}};\ \ }
+\DoxyCodeLine{00013\ \ \ uint8\_t\ \mbox{\hyperlink{structscan__code__stats_a3669eb5a3b74651cfeb15139a93884dd}{code}}[2];\ \ }
+\DoxyCodeLine{00014\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structscan__code__stats_a272574b51b73409e3afc79e88931a69b}{size}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00015\ \};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00023\ void\ (\mbox{\hyperlink{keyboard_8h_ab9e6ed7960d60aa4834f2038247d4536}{kbc\_ih}})();}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00033\ int\ (\mbox{\hyperlink{keyboard_8h_a8eee4d0a15beada731a514481b5ad4bf}{keyboard\_subscribe\_int}})(uint8\_t\ *bit\_no);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00042\ int\ (\mbox{\hyperlink{keyboard_8h_ac95aea27a5e91b363b876fed881f368f}{keyboard\_unsubscribe\_int}})();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00051\ int\ (\mbox{\hyperlink{keyboard_8h_a1944fd3a1e8c15001ab35dc85ea5c745}{keyboard\_enable\_interrupts}})();}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ KEYBOARD\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

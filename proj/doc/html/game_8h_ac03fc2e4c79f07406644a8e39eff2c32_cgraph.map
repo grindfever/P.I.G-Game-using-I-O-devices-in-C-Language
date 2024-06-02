@@ -1,0 +1,13 @@
+<map id="draw_game_hints" name="draw_game_hints">
+<area shape="rect" id="Node000001" title="Draws the game hints on the screen." alt="" coords="5,39,128,65"/>
+<area shape="rect" id="Node000002" href="$graphics_8c.html#a6dacc40d20c596753095d0dab84bd84e" title="Draws an element from a pixmap." alt="" coords="176,39,277,65"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="128,49,160,49,160,55,128,55"/>
+<area shape="rect" id="Node000003" href="$graphics_8c.html#a1199cbef3b31c4563b9faa89a4b7c717" title="Draws a sprite." alt="" coords="329,13,416,40"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="277,41,313,34,314,39,278,46"/>
+<area shape="rect" id="Node000006" href="$graphics_8c.html#a6bf3e0b95804bf911b0489b7ba9cb4f5" title="Reads a pixmap." alt="" coords="325,64,420,91"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="278,58,310,64,309,69,277,63"/>
+<area shape="rect" id="Node000004" href="$graphics_8c.html#ae907e670d59453c138dcca7b2830cc50" title="Generates a pixel at a given position." alt="" coords="468,13,574,40"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="417,24,453,24,453,29,417,29"/>
+<area shape="rect" id="Node000005" href="$graphics_8c.html#a460fcb0d7ccc8d32ff90ae711a9b9c5c" title="Calculates the bytes per pixel." alt="" coords="622,5,759,48"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="574,24,606,24,606,29,574,29"/>
+</map>

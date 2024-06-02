@@ -1,0 +1,18 @@
+<map id="displayChooseGame" name="displayChooseGame">
+<area shape="rect" id="Node000001" title="Displays the menu for choosing the game level." alt="" coords="5,81,147,108"/>
+<area shape="rect" id="Node000002" href="$graphics_8c.html#a3d417295448da946ebd81af96d7b9bb9" title="Clears the graphics screen." alt="" coords="196,5,348,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,78,194,42,212,35,213,40,196,46,108,83"/>
+<area shape="rect" id="Node000003" href="$graphics_8c.html#a6dacc40d20c596753095d0dab84bd84e" title="Draws an element from a pixmap." alt="" coords="221,56,323,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="147,83,206,75,206,80,147,88"/>
+<area shape="rect" id="Node000005" href="$graphics_8c.html#ae907e670d59453c138dcca7b2830cc50" title="Generates a pixel at a given position." alt="" coords="540,56,646,83"/>
+<area shape="poly" id="edge8_Node000001_Node000005" title=" " alt="" coords="147,97,305,102,399,100,492,92,532,84,533,90,493,97,399,105,305,108,147,103"/>
+<area shape="rect" id="Node000008" href="$graphics_8c.html#ad3116adb629249602eb2c3c5265985f1" title="Draws the content from the buffer to the screen." alt="" coords="195,157,349,184"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="114,106,222,149,220,154,112,111"/>
+<area shape="rect" id="Node000004" href="$graphics_8c.html#a1199cbef3b31c4563b9faa89a4b7c717" title="Draws a sprite." alt="" coords="401,5,488,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="319,53,385,33,387,38,321,58"/>
+<area shape="rect" id="Node000007" href="$graphics_8c.html#a6bf3e0b95804bf911b0489b7ba9cb4f5" title="Reads a pixmap." alt="" coords="397,56,492,83"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="323,67,382,67,382,72,323,72"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="487,30,538,48,536,53,485,35"/>
+<area shape="rect" id="Node000006" href="$graphics_8c.html#a460fcb0d7ccc8d32ff90ae711a9b9c5c" title="Calculates the bytes per pixel." alt="" coords="694,48,831,91"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="646,67,678,67,678,72,646,72"/>
+</map>

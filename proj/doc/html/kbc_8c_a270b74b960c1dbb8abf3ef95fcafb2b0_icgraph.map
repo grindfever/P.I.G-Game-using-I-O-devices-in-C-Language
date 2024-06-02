@@ -1,0 +1,14 @@
+<map id="kbc_write_command" name="kbc_write_command">
+<area shape="rect" id="Node000001" title="Writes a command to the KBC." alt="" coords="485,31,626,57"/>
+<area shape="rect" id="Node000002" href="$keyboard_8c.html#a1944fd3a1e8c15001ab35dc85ea5c745" title="Enables keyboard interrupts." alt="" coords="257,5,437,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="470,36,438,32,438,27,470,31"/>
+<area shape="rect" id="Node000003" href="$mouse_8c.html#a99cf8d768d25662a7332b0796b66afd1" title="Sends a command to the mouse." alt="" coords="268,56,427,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="470,57,428,62,427,57,470,52"/>
+<area shape="rect" id="Node000004" href="$proj_8c.html#a882067407682fbb5472b9ebaed581708" title="Cleans up the system by unsubscribing from interrupts and exiting the video mode." alt="" coords="164,31,207,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="252,57,207,50,208,45,253,52"/>
+<area shape="rect" id="Node000006" href="$proj_8c.html#ac92d3b835636641550b12b0f93daf21d" title="Initializes the system by subscribing to interrupts and setting up the video mode." alt="" coords="162,81,209,108"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="253,87,210,94,209,88,252,82"/>
+<area shape="rect" id="Node000005" href="$proj_8c.html#af244d65e69677cf312af1950452ec256" title="Main function of the project, initializes and runs the main event loop." alt="" coords="5,56,114,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="149,54,115,61,114,56,148,49"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="146,90,113,83,114,78,147,84"/>
+</map>

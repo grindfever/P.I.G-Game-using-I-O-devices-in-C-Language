@@ -1,0 +1,67 @@
+\doxysection{I8042.\+h}
+\hypertarget{_i8042_8h_source}{}\label{_i8042_8h_source}\index{controller/I8042.h@{controller/I8042.h}}
+\mbox{\hyperlink{_i8042_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_LCOM\_I8042\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_LCOM\_I8042\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{comment}{/*\ KEYBOARD\ */}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ KBC\_OUT\_BUF\ 0x60}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ KBC\_ST\_REG\ 0x64}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ KBC\_CMD\_REG\ 0x64}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ KBC\_ARG\_REG\ 0x60}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ WAIT\_KBC\ 20000}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ KBC\_OBF\ BIT(0)}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ KBC\_IBF\ BIT(1)}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ KBC\_INH\ BIT(4)}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ KBC\_AUX\ BIT(5)}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ KBC\_TIME\_OUT\ BIT(6)}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ KBC\_PARITY\ BIT(7)}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{comment}{//COMMAND\ BYTE}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ KBC\_DIS\ BIT(4)}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ KBC\_DIS2\ BIT(5)}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ KBC\_INT\ BIT(0)}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ KBC\_INT2\ BIT(1)}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{//MOUSE\ COMMANDS\ -\/>\ passed\ as\ arg\ of\ command\ 0xD4}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ KBC\_RES\_MOUSE\ 0xFF\ }\textcolor{comment}{//Reset\ Mouse\ reset}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ KBC\_RESEND\_ERR\ 0xFE\ }\textcolor{comment}{//Resend\ For\ serial\ communications\ errors}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ KBC\_SET\_DEF\ 0xF6\ }\textcolor{comment}{//Set\ Defaults\ Set\ default\ values}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ KBC\_DIS\_REP\ 0xF5\ }\textcolor{comment}{//Disable\ (Data\ Reporting)\ In\ stream\ mode,\ should\ be\ sent\ before\ any\ other\ command}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ KBC\_EN\_REP\ 0xF4\ }\textcolor{comment}{//Enable\ (Data\ Reporting)\ In\ stream\ mode\ only}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ KBC\_SET\_SAMPLE\ 0xF3\ }\textcolor{comment}{//Set\ Sample\ Rate\ Sets\ state\ sampling\ rate}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ KBC\_SET\_REMOTE\ 0xF0\ }\textcolor{comment}{//Set\ Remote\ Mode\ Send\ data\ on\ request\ only}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ KBC\_READ\_DATA\ 0xEB\ }\textcolor{comment}{//Read\ Data\ Send\ data\ packet\ request}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ KBC\_SET\_STREAM\ 0xEA\ }\textcolor{comment}{//Set\ Stream\ Mode\ Send\ data\ on\ events}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ KBC\_GET\_CONF\ 0xE9\ }\textcolor{comment}{//Status\ Request\ Get\ mouse\ configuration\ (3\ bytes)}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ KBC\_SET\_RES\ 0xE8\ }\textcolor{comment}{//Set\ Resolution}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ KBC\_SET\_SCAL\_ACCEL\ 0xE7\ }\textcolor{comment}{//Set\ Scaling\ 2:1\ Acceleration\ mode}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ KBC\_SET\_SCAL\_LIN\ 0xE6\ }\textcolor{comment}{//Set\ Scaling\ 1:1\ Linear\ mode}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ KBC\_BREAK\_ESC\ 0x81}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ KBC\_FIRST\_SCAN\ 0xE0}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ KBC\_READ\_CMD\ 0x20}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ KBC\_WRITE\_CMD\ 0x60}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ KBC\_CHECK\ 0xAA\ }}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ KBC\_CHECK\_ERROR\ 0xFC}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ KBC\_CHECK\_OK\ 0x55}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ KBC\_CHECK\_ERROR\ 0xFC}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ KBC\_CHECK\_INTERFACE\ 0xAB\ }\textcolor{comment}{//0\ =\ OK}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ KBC\_DISABLE\ 0xAD}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ KBC\_ENABLE\ 0xAE}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ KBC\_DISABLE\_MOUSE\ 0xA7\ }}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ KBC\_ENABLE\_MOUSE\ 0xA8\ }}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ KBC\_CHECK\_MOUSE\ 0xA9\ }\textcolor{comment}{//Check\ Mouse\ Interface\ Returns\ 0,\ if\ OK}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ KBC\_WRITE\_MOUSE\_BYTE\ 0xD4\ }\textcolor{comment}{//Write\ Byte\ to\ Mouse\ Byte\ (A)}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_LCOM\_I8042\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ }
+
+\end{DoxyCode}

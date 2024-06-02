@@ -1,0 +1,15 @@
+<map id="mouse_send_command" name="mouse_send_command">
+<area shape="rect" id="Node000001" title="Sends a command to the mouse." alt="" coords="5,56,165,83"/>
+<area shape="rect" id="Node000002" href="$kbc_8c.html#adf98cd9774ec792744d8983ef532acf4" title="Reads data from the mouse output buffer." alt="" coords="401,5,561,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="149,53,212,41,386,23,386,28,213,47,150,58"/>
+<area shape="rect" id="Node000004" href="$kbc_8c.html#afddf9c7199a712735b93a7fe94343272" title="Writes an argument to the KBC." alt="" coords="214,56,352,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="165,67,198,67,198,72,165,72"/>
+<area shape="rect" id="Node000006" href="$kbc_8c.html#a270b74b960c1dbb8abf3ef95fcafb2b0" title="Writes a command to the KBC." alt="" coords="213,107,353,133"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="141,81,214,100,213,105,140,86"/>
+<area shape="rect" id="Node000003" href="$utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Reads a byte from the specified I/O port." alt="" coords="609,31,700,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="562,28,594,33,593,38,561,33"/>
+<area shape="rect" id="Node000005" href="$kbc_8c.html#aa4c58a11cd49c54cc0eb02a79010a9cc" title="Reads the status from the KBC." alt="" coords="423,56,540,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="352,67,408,67,408,72,352,72"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="540,58,594,50,595,55,541,63"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="337,103,411,84,412,90,339,109"/>
+</map>

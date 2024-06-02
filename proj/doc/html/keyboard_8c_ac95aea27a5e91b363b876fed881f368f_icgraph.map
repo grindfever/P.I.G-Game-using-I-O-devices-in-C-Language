@@ -1,0 +1,7 @@
+<map id="keyboard_unsubscribe_int" name="keyboard_unsubscribe_int">
+<area shape="rect" id="Node000001" title="Unsubscribes keyboard interrupts." alt="" coords="252,5,424,32"/>
+<area shape="rect" id="Node000002" href="$proj_8c.html#a882067407682fbb5472b9ebaed581708" title="Cleans up the system by unsubscribing from interrupts and exiting the video mode." alt="" coords="162,5,204,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="236,21,204,21,204,16,236,16"/>
+<area shape="rect" id="Node000003" href="$proj_8c.html#af244d65e69677cf312af1950452ec256" title="Main function of the project, initializes and runs the main event loop." alt="" coords="5,5,114,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="146,21,114,21,114,16,146,16"/>
+</map>

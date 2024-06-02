@@ -1,0 +1,18 @@
+<map id="displayMainMenu" name="displayMainMenu">
+<area shape="rect" id="Node000001" title="Displays the main menu." alt="" coords="5,81,128,108"/>
+<area shape="rect" id="Node000002" href="$graphics_8c.html#a3d417295448da946ebd81af96d7b9bb9" title="Clears the graphics screen." alt="" coords="177,5,329,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,78,175,42,192,35,194,40,177,46,96,83"/>
+<area shape="rect" id="Node000003" href="$graphics_8c.html#a6dacc40d20c596753095d0dab84bd84e" title="Draws an element from a pixmap." alt="" coords="202,56,304,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="128,84,186,76,187,81,128,89"/>
+<area shape="rect" id="Node000005" href="$graphics_8c.html#ae907e670d59453c138dcca7b2830cc50" title="Generates a pixel at a given position." alt="" coords="521,56,627,83"/>
+<area shape="poly" id="edge8_Node000001_Node000005" title=" " alt="" coords="128,97,285,102,379,100,473,92,513,84,514,90,474,97,379,105,285,107,128,102"/>
+<area shape="rect" id="Node000008" href="$graphics_8c.html#ad3116adb629249602eb2c3c5265985f1" title="Draws the content from the buffer to the screen." alt="" coords="176,157,330,184"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="103,106,205,149,203,153,101,111"/>
+<area shape="rect" id="Node000004" href="$graphics_8c.html#a1199cbef3b31c4563b9faa89a4b7c717" title="Draws a sprite." alt="" coords="382,5,469,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="300,53,366,33,368,38,302,58"/>
+<area shape="rect" id="Node000007" href="$graphics_8c.html#a6bf3e0b95804bf911b0489b7ba9cb4f5" title="Reads a pixmap." alt="" coords="378,56,473,83"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="304,67,363,67,363,72,304,72"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="468,30,519,48,517,53,466,35"/>
+<area shape="rect" id="Node000006" href="$graphics_8c.html#a460fcb0d7ccc8d32ff90ae711a9b9c5c" title="Calculates the bytes per pixel." alt="" coords="675,48,812,91"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="627,67,659,67,659,72,627,72"/>
+</map>

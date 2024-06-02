@@ -1,0 +1,13 @@
+<map id="draw_game_mouse" name="draw_game_mouse">
+<area shape="rect" id="Node000001" title="Draws the mouse cursor for the game." alt="" coords="5,39,139,65"/>
+<area shape="rect" id="Node000002" href="$graphics_8c.html#a6dacc40d20c596753095d0dab84bd84e" title="Draws an element from a pixmap." alt="" coords="187,39,288,65"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="139,49,171,49,171,55,139,55"/>
+<area shape="rect" id="Node000003" href="$graphics_8c.html#a1199cbef3b31c4563b9faa89a4b7c717" title="Draws a sprite." alt="" coords="340,13,427,40"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="288,41,324,34,325,39,289,46"/>
+<area shape="rect" id="Node000006" href="$graphics_8c.html#a6bf3e0b95804bf911b0489b7ba9cb4f5" title="Reads a pixmap." alt="" coords="336,64,431,91"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="289,58,321,64,320,69,288,63"/>
+<area shape="rect" id="Node000004" href="$graphics_8c.html#ae907e670d59453c138dcca7b2830cc50" title="Generates a pixel at a given position." alt="" coords="479,13,585,40"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="428,24,464,24,464,29,428,29"/>
+<area shape="rect" id="Node000005" href="$graphics_8c.html#a460fcb0d7ccc8d32ff90ae711a9b9c5c" title="Calculates the bytes per pixel." alt="" coords="633,5,770,48"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="585,24,617,24,617,29,585,29"/>
+</map>

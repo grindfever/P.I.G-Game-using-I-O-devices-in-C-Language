@@ -1,0 +1,9 @@
+<map id="mouse_default_handler" name="mouse_default_handler">
+<area shape="rect" id="Node000001" title="Handles default mouse events." alt="" coords="5,5,160,32"/>
+<area shape="rect" id="Node000002" href="$mouse_8c.html#a834b6d7efe311484d6da234db333cb97" title="Mouse interrupt handler." alt="" coords="208,5,285,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,16,192,16,192,21,160,21"/>
+<area shape="rect" id="Node000003" href="$kbc_8c.html#adf98cd9774ec792744d8983ef532acf4" title="Reads data from the mouse output buffer." alt="" coords="333,5,493,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="285,16,318,16,318,21,285,21"/>
+<area shape="rect" id="Node000004" href="$utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Reads a byte from the specified I/O port." alt="" coords="541,5,632,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="494,16,526,16,526,21,494,21"/>
+</map>

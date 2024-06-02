@@ -1,0 +1,133 @@
+\doxysection{model/tile.c File Reference}
+\hypertarget{tile_8c}{}\label{tile_8c}\index{model/tile.c@{model/tile.c}}
+
+
+Implementation of the \doxylink{struct_tile}{Tile} structure and its associated functions.  
+
+
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include "{}tile.\+h"{}}\newline
+Include dependency graph for tile.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{tile_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_tile}{Tile}} \mbox{\hyperlink{tile_8c_a1e4c668a482c281454806d0725d8c5aa}{construct\+\_\+tile}} (uint16\+\_\+t x, uint16\+\_\+t y, uint8\+\_\+t solution)
+\begin{DoxyCompactList}\small\item\em Constructs a tile with the given coordinates and solution value. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{tile_8c_ae8e5c4f04e92e8a88ad9a2f97a5c7390}{toggle\+\_\+tile}} (\mbox{\hyperlink{struct_tile}{Tile}} \texorpdfstring{$\ast$}{*}tile)
+\begin{DoxyCompactList}\small\item\em Toggles the state of the given tile (turns it on if off, off if on). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{tile_8c_ac1f8d36f1b1faf824a0b21262d5b120a}{is\+\_\+wrong}} (\mbox{\hyperlink{struct_tile}{Tile}} tile)
+\begin{DoxyCompactList}\small\item\em Checks if the tile is in the wrong state compared to its solution. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{tile_8c_a3a56f96ede05468b48d91c96aa635458}{destroy\+\_\+tile}} (\mbox{\hyperlink{struct_tile}{Tile}} \texorpdfstring{$\ast$}{*}tile)
+\begin{DoxyCompactList}\small\item\em Frees memory allocated for the given tile. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of the \doxylink{struct_tile}{Tile} structure and its associated functions. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{tile_8c_a1e4c668a482c281454806d0725d8c5aa}\index{tile.c@{tile.c}!construct\_tile@{construct\_tile}}
+\index{construct\_tile@{construct\_tile}!tile.c@{tile.c}}
+\doxysubsubsection{\texorpdfstring{construct\_tile()}{construct\_tile()}}
+{\footnotesize\ttfamily \label{tile_8c_a1e4c668a482c281454806d0725d8c5aa} 
+\mbox{\hyperlink{struct_tile}{Tile}} construct\+\_\+tile (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x}{, }\item[{uint16\+\_\+t}]{y}{, }\item[{uint8\+\_\+t}]{solution}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a tile with the given coordinates and solution value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x-\/coordinate of the tile. \\
+\hline
+{\em y} & The y-\/coordinate of the tile. \\
+\hline
+{\em solution} & The solution value of the tile (1 for on, 0 for off). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The constructed tile. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{tile_8c_a1e4c668a482c281454806d0725d8c5aa_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{tile_8c_a3a56f96ede05468b48d91c96aa635458}\index{tile.c@{tile.c}!destroy\_tile@{destroy\_tile}}
+\index{destroy\_tile@{destroy\_tile}!tile.c@{tile.c}}
+\doxysubsubsection{\texorpdfstring{destroy\_tile()}{destroy\_tile()}}
+{\footnotesize\ttfamily \label{tile_8c_a3a56f96ede05468b48d91c96aa635458} 
+void destroy\+\_\+tile (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_tile}{Tile}} \texorpdfstring{$\ast$}{*}}]{tile}{}\end{DoxyParamCaption})}
+
+
+
+Frees memory allocated for the given tile. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tile} & Pointer to the tile to destroy. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{tile_8c_ac1f8d36f1b1faf824a0b21262d5b120a}\index{tile.c@{tile.c}!is\_wrong@{is\_wrong}}
+\index{is\_wrong@{is\_wrong}!tile.c@{tile.c}}
+\doxysubsubsection{\texorpdfstring{is\_wrong()}{is\_wrong()}}
+{\footnotesize\ttfamily \label{tile_8c_ac1f8d36f1b1faf824a0b21262d5b120a} 
+int is\+\_\+wrong (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_tile}{Tile}}}]{tile}{}\end{DoxyParamCaption})}
+
+
+
+Checks if the tile is in the wrong state compared to its solution. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tile} & The tile to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the tile is in the wrong state, 0 otherwise. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{tile_8c_ac1f8d36f1b1faf824a0b21262d5b120a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{tile_8c_ae8e5c4f04e92e8a88ad9a2f97a5c7390}\index{tile.c@{tile.c}!toggle\_tile@{toggle\_tile}}
+\index{toggle\_tile@{toggle\_tile}!tile.c@{tile.c}}
+\doxysubsubsection{\texorpdfstring{toggle\_tile()}{toggle\_tile()}}
+{\footnotesize\ttfamily \label{tile_8c_ae8e5c4f04e92e8a88ad9a2f97a5c7390} 
+int toggle\+\_\+tile (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_tile}{Tile}} \texorpdfstring{$\ast$}{*}}]{tile}{}\end{DoxyParamCaption})}
+
+
+
+Toggles the state of the given tile (turns it on if off, off if on). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tile} & Pointer to the tile to toggle. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, 1 if the tile pointer is NULL. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{tile_8c_ae8e5c4f04e92e8a88ad9a2f97a5c7390_icgraph}
+\end{center}
+\end{figure}

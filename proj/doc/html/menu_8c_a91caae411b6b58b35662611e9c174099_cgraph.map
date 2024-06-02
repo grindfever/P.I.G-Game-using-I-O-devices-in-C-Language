@@ -1,0 +1,18 @@
+<map id="displayRules" name="displayRules">
+<area shape="rect" id="Node000001" title="Displays the rules menu." alt="" coords="5,81,101,108"/>
+<area shape="rect" id="Node000002" href="$graphics_8c.html#a3d417295448da946ebd81af96d7b9bb9" title="Clears the graphics screen." alt="" coords="150,5,302,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="76,78,148,42,163,35,165,40,150,46,79,83"/>
+<area shape="rect" id="Node000003" href="$graphics_8c.html#a6dacc40d20c596753095d0dab84bd84e" title="Draws an element from a pixmap." alt="" coords="175,56,277,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="101,85,159,76,160,82,102,90"/>
+<area shape="rect" id="Node000005" href="$graphics_8c.html#ae907e670d59453c138dcca7b2830cc50" title="Generates a pixel at a given position." alt="" coords="494,56,600,83"/>
+<area shape="poly" id="edge8_Node000001_Node000005" title=" " alt="" coords="101,96,255,102,350,100,446,92,486,84,487,90,447,97,351,105,255,107,101,101"/>
+<area shape="rect" id="Node000008" href="$graphics_8c.html#ad3116adb629249602eb2c3c5265985f1" title="Draws the content from the buffer to the screen." alt="" coords="149,157,303,184"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="85,106,150,136,178,149,176,154,148,141,82,111"/>
+<area shape="rect" id="Node000004" href="$graphics_8c.html#a1199cbef3b31c4563b9faa89a4b7c717" title="Draws a sprite." alt="" coords="355,5,442,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="273,53,339,33,341,38,275,58"/>
+<area shape="rect" id="Node000007" href="$graphics_8c.html#a6bf3e0b95804bf911b0489b7ba9cb4f5" title="Reads a pixmap." alt="" coords="351,56,446,83"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="277,67,336,67,336,72,277,72"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="441,30,492,48,490,53,439,35"/>
+<area shape="rect" id="Node000006" href="$graphics_8c.html#a460fcb0d7ccc8d32ff90ae711a9b9c5c" title="Calculates the bytes per pixel." alt="" coords="648,48,785,91"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="600,67,632,67,632,72,600,72"/>
+</map>

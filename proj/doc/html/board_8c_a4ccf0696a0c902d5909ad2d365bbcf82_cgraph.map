@@ -1,0 +1,5 @@
+<map id="toggle_board_tile" name="toggle_board_tile">
+<area shape="rect" id="Node000001" title="Toggles the state of a tile on the board." alt="" coords="5,5,125,32"/>
+<area shape="rect" id="Node000002" href="$tile_8c.html#ae8e5c4f04e92e8a88ad9a2f97a5c7390" title="Toggles the state of the given tile (turns it on if off, off if on)." alt="" coords="173,5,253,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="125,16,157,16,157,21,125,21"/>
+</map>

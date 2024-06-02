@@ -1,0 +1,13 @@
+<map id="keyboard_game_handler" name="keyboard_game_handler">
+<area shape="rect" id="Node000001" title="Handles keyboard input during the game." alt="" coords="5,31,168,57"/>
+<area shape="rect" id="Node000002" href="$board_8c.html#a2bd9df095efd565768ac9528c02c7166" title="Destroys the game board and frees memory." alt="" coords="216,5,319,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="168,30,200,25,201,31,168,35"/>
+<area shape="rect" id="Node000004" href="$keyboard_8c.html#ab9e6ed7960d60aa4834f2038247d4536" title="Keyboard interrupt handler." alt="" coords="238,56,297,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="168,53,223,61,222,66,168,58"/>
+<area shape="rect" id="Node000003" href="$board_8c.html#a9af48ffab8db9fa65f285fb25cb03d47" title="Destroys a linked list of hints." alt="" coords="405,5,504,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="319,16,389,16,389,21,319,21"/>
+<area shape="rect" id="Node000005" href="$kbc_8c.html#a8a6e0380c885eb5575aa54ab8aa71874" title="Reads data from the keyboard output buffer." alt="" coords="367,56,541,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="297,67,351,67,351,72,297,72"/>
+<area shape="rect" id="Node000006" href="$utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Reads a byte from the specified I/O port." alt="" coords="589,56,680,83"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="542,67,574,67,574,72,542,72"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="generate_pixel" name="generate_pixel">
+<area shape="rect" id="Node000001" title="Generates a pixel at a given position." alt="" coords="5,13,111,40"/>
+<area shape="rect" id="Node000002" href="$graphics_8c.html#a460fcb0d7ccc8d32ff90ae711a9b9c5c" title="Calculates the bytes per pixel." alt="" coords="159,5,296,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,24,143,24,143,29,111,29"/>
+</map>

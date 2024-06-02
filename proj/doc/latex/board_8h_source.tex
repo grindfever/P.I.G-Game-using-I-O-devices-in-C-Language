@@ -1,0 +1,42 @@
+\doxysection{board.\+h}
+\hypertarget{board_8h_source}{}\label{board_8h_source}\index{model/board.h@{model/board.h}}
+\mbox{\hyperlink{board_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ \_BOARD\_H\_}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ \_BOARD\_H\_}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{tile_8h}{tile.h}}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_hint}{Hint}}\ \{}
+\DoxyCodeLine{00016\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_hint_a6adea9fd2db9d532cc34c27d698cce3b}{count}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00017\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_hint}{Hint}}*\ \mbox{\hyperlink{struct_hint_a1333b01e4bd86b1d6c9c5d77502a7a65}{next}};\ \ \ \ }
+\DoxyCodeLine{00018\ \}\ \mbox{\hyperlink{board_8h_a38824a20aa9bf00e59b97c6276126dbb}{Hint}};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00024\ \ \ \mbox{\hyperlink{struct_tile}{Tile}}**\ \mbox{\hyperlink{struct_board_ac97e292de355a2dfdc45b478ca7a16f9}{tiles}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00025\ \ \ int16\_t\ \mbox{\hyperlink{struct_board_a57900a6b886e59cb517c4d92e09f2231}{size}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00026\ \ \ uint8\_t\ \mbox{\hyperlink{struct_board_a6c4631e9a86497d2f6fb7032f4f34948}{x}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00027\ \ \ uint8\_t\ \mbox{\hyperlink{struct_board_a554faceadd90988884224d4a08c903e0}{y}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00028\ \ \ \mbox{\hyperlink{struct_hint}{Hint}}**\ \mbox{\hyperlink{struct_board_a2cc5e189409b0dd3732f7b28452c9864}{h\_hints}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00029\ \ \ \mbox{\hyperlink{struct_hint}{Hint}}**\ \mbox{\hyperlink{struct_board_ae3487c5dfec190bdd27b245e673c2919}{v\_hints}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00030\ \}\ \mbox{\hyperlink{struct_board}{Board}};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00040\ \mbox{\hyperlink{struct_board}{Board}}\ *\mbox{\hyperlink{board_8h_a070545227dbea425f6e9c3669856ff07}{construct\_board}}(uint16\_t\ x,\ uint16\_t\ y,\ uint16\_t\ size);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00048\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{board_8h_a1e564180f1804046f94cfa020b62d7bf}{check\_win}}(\mbox{\hyperlink{struct_board}{Board}}\ *board);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00058\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{board_8h_a4ccf0696a0c902d5909ad2d365bbcf82}{toggle\_board\_tile}}(uint16\_t\ x,\ uint16\_t\ y,\ \mbox{\hyperlink{struct_board}{Board}}\ *board);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00065\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{board_8h_a2d3fcb5e323919bfaeda8c9e0f7e6be8}{print\_board}}(\mbox{\hyperlink{struct_board}{Board}}\ *board);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00072\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{board_8h_a7b320a002c228b58a1d6753e850fc349}{print\_h\_hints}}(\mbox{\hyperlink{struct_board}{Board}}\ *board);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00079\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{board_8h_a2bd9df095efd565768ac9528c02c7166}{destroy\_board}}(\mbox{\hyperlink{struct_board}{Board}}\ *board);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_Board\_H\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00082\ }
+
+\end{DoxyCode}

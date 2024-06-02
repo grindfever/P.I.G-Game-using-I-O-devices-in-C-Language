@@ -1,0 +1,22 @@
+<map id="kbc_read_return_keyboard" name="kbc_read_return_keyboard">
+<area shape="rect" id="Node000001" title="Reads data from the keyboard output buffer." alt="" coords="700,107,874,133"/>
+<area shape="rect" id="Node000002" href="$keyboard_8c.html#ab9e6ed7960d60aa4834f2038247d4536" title="Keyboard interrupt handler." alt="" coords="532,81,591,108"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="684,111,591,101,592,95,685,106"/>
+<area shape="rect" id="Node000009" href="$keyboard_8c.html#a1944fd3a1e8c15001ab35dc85ea5c745" title="Enables keyboard interrupts." alt="" coords="471,132,652,159"/>
+<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="685,134,652,138,652,133,684,129"/>
+<area shape="rect" id="Node000003" href="$menu_8c.html#a6eb418097083cd54ffc6e1b26ac32c24" title="Handles keyboard input for default actions in menus." alt="" coords="255,5,423,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="517,81,422,47,387,35,389,30,424,41,518,76"/>
+<area shape="rect" id="Node000006" href="$game_8c.html#af289f12ffb9bf16e86333e7d11c42147" title="Handles keyboard input during the game." alt="" coords="258,56,420,83"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="516,92,420,81,421,76,517,87"/>
+<area shape="rect" id="Node000007" href="$level_8c.html#a9a3789ce78b0e2352f16abf90b4e5527" title="Handles keyboard input during level selection." alt="" coords="262,107,417,133"/>
+<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="517,102,418,114,417,108,516,97"/>
+<area shape="rect" id="Node000008" href="$menu_8c.html#abc694d3389743fa19a930e0d176934c3" title="Handles keyboard input during the main menu." alt="" coords="258,157,420,184"/>
+<area shape="poly" id="edge9_Node000002_Node000008" title=" " alt="" coords="518,108,472,122,424,148,392,159,391,154,422,143,470,118,516,103"/>
+<area shape="rect" id="Node000004" href="$proj_8c.html#abc3e3d6009223609dc366720373a7d94" title="Main event loop of the program." alt="" coords="162,81,207,108"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="270,40,256,46,227,64,203,83,200,79,224,60,254,42,268,35"/>
+<area shape="rect" id="Node000005" href="$proj_8c.html#af244d65e69677cf312af1950452ec256" title="Main function of the project, initializes and runs the main event loop." alt="" coords="5,81,114,108"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="146,97,114,97,114,92,146,92"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="243,88,208,94,207,88,242,83"/>
+<area shape="poly" id="edge8_Node000007_Node000004" title=" " alt="" coords="246,107,207,101,208,96,247,102"/>
+<area shape="poly" id="edge10_Node000008_Node000004" title=" " alt="" coords="268,154,254,148,224,130,200,110,203,106,227,125,256,143,270,149"/>
+</map>

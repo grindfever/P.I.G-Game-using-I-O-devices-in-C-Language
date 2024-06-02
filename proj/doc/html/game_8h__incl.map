@@ -1,0 +1,10 @@
+<map id="model/game.h" name="model/game.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="11,5,115,32"/>
+<area shape="rect" id="Node000002" href="$board_8h.html" title="Header file for the Board module, containing definitions and function prototypes for board operations..." alt="" coords="5,80,121,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="66,33,66,64,60,64,60,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="31,229,95,256"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="64,107,60,155,63,214,57,214,55,155,59,107"/>
+<area shape="rect" id="Node000004" href="$tile_8h.html" title=" " alt="" coords="70,155,120,181"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="71,106,86,139,81,142,66,108"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="92,183,77,216,72,214,87,181"/>
+</map>

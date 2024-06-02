@@ -1,0 +1,83 @@
+\doxysection{Board Struct Reference}
+\hypertarget{struct_board}{}\label{struct_board}\index{Board@{Board}}
+
+
+Structure representing the game board.  
+
+
+
+
+{\ttfamily \#include $<$board.\+h$>$}
+
+
+
+Collaboration diagram for Board\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{struct_board__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_tile}{Tile}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_board_ac97e292de355a2dfdc45b478ca7a16f9}{tiles}}
+\item 
+int16\+\_\+t \mbox{\hyperlink{struct_board_a57900a6b886e59cb517c4d92e09f2231}{size}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct_board_a6c4631e9a86497d2f6fb7032f4f34948}{x}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct_board_a554faceadd90988884224d4a08c903e0}{y}}
+\item 
+\mbox{\hyperlink{struct_hint}{Hint}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_board_a2cc5e189409b0dd3732f7b28452c9864}{h\+\_\+hints}}
+\item 
+\mbox{\hyperlink{struct_hint}{Hint}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_board_ae3487c5dfec190bdd27b245e673c2919}{v\+\_\+hints}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure representing the game board. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_board_a2cc5e189409b0dd3732f7b28452c9864}\index{Board@{Board}!h\_hints@{h\_hints}}
+\index{h\_hints@{h\_hints}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{h\_hints}{h\_hints}}
+{\footnotesize\ttfamily \label{struct_board_a2cc5e189409b0dd3732f7b28452c9864} 
+\mbox{\hyperlink{struct_hint}{Hint}}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} Board\+::h\+\_\+hints}
+
+Horizontal hints of the board. \Hypertarget{struct_board_a57900a6b886e59cb517c4d92e09f2231}\index{Board@{Board}!size@{size}}
+\index{size@{size}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily \label{struct_board_a57900a6b886e59cb517c4d92e09f2231} 
+int16\+\_\+t Board\+::size}
+
+The size of the board. \Hypertarget{struct_board_ac97e292de355a2dfdc45b478ca7a16f9}\index{Board@{Board}!tiles@{tiles}}
+\index{tiles@{tiles}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{tiles}{tiles}}
+{\footnotesize\ttfamily \label{struct_board_ac97e292de355a2dfdc45b478ca7a16f9} 
+\mbox{\hyperlink{struct_tile}{Tile}}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} Board\+::tiles}
+
+2D array of tiles representing the board. \Hypertarget{struct_board_ae3487c5dfec190bdd27b245e673c2919}\index{Board@{Board}!v\_hints@{v\_hints}}
+\index{v\_hints@{v\_hints}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{v\_hints}{v\_hints}}
+{\footnotesize\ttfamily \label{struct_board_ae3487c5dfec190bdd27b245e673c2919} 
+\mbox{\hyperlink{struct_hint}{Hint}}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} Board\+::v\+\_\+hints}
+
+Vertical hints of the board. \Hypertarget{struct_board_a6c4631e9a86497d2f6fb7032f4f34948}\index{Board@{Board}!x@{x}}
+\index{x@{x}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily \label{struct_board_a6c4631e9a86497d2f6fb7032f4f34948} 
+uint8\+\_\+t Board\+::x}
+
+The x-\/coordinate of the board. \Hypertarget{struct_board_a554faceadd90988884224d4a08c903e0}\index{Board@{Board}!y@{y}}
+\index{y@{y}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily \label{struct_board_a554faceadd90988884224d4a08c903e0} 
+uint8\+\_\+t Board\+::y}
+
+The y-\/coordinate of the board. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+model/\mbox{\hyperlink{board_8h}{board.\+h}}\end{DoxyCompactItemize}
